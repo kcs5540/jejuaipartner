@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initScrollSpy();
   calculateSavings();
+  initHeroCarousel();
 });
 
 /* ==================== NAVIGATION & HEADER ==================== */
@@ -62,6 +63,84 @@ function initScrollSpy() {
       }
     });
   });
+}
+
+/* ==================== 3D IMAGE CAROUSEL HERO ==================== */
+function initHeroCarousel() {
+  const container = document.getElementById('hero-carousel-container');
+  if (!container) return;
+
+  const images = [
+    { id: "1", src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80", alt: "제주 푸른 바다", rotation: -15 },
+    { id: "2", src: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80", alt: "노형동 흑돼지", rotation: -8 },
+    { id: "3", src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80", alt: "애월 감성 펜션", rotation: 5 },
+    { id: "4", src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80", alt: "서귀포 힐링 스파", rotation: 12 },
+    { id: "5", src: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80", alt: "승마 & 카트", rotation: -12 },
+    { id: "6", src: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80", alt: "노형 카페 몽상", rotation: 8 },
+    { id: "7", src: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80", alt: "반려동물 동반", rotation: -6 },
+    { id: "8", src: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80", alt: "셀프 데이터 허브", rotation: 10 }
+  ];
+
+  let currentAngles = images.map((_, i) => i * (360 / images.length));
+  let mousePos = { x: 0, y: 0 };
+
+  // Render Card Elements inside 3D container
+  container.innerHTML = images.map((img, idx) => `
+    <div id="carousel-card-${idx}" class="carousel-card-item absolute w-28 h-36 sm:w-40 sm:h-52 cursor-pointer group rounded-2xl overflow-hidden shadow-2xl border border-sky-400/40 bg-slate-900 flex flex-col justify-between" onclick="openPortfolioModal('${img.alt}')">
+      <img src="${img.src}" alt="${img.alt}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-2 sm:p-3 pointer-events-none">
+        <span class="bg-sky-500/90 text-white font-extrabold text-[10px] sm:text-xs px-2 py-0.5 rounded-md w-fit shadow">${img.alt}</span>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-br from-white/25 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+    </div>
+  `).join('');
+
+  // Mouse tilt handlers for 3D perspective effect
+  const handleMouseMove = (e) => {
+    const rect = container.getBoundingClientRect();
+    mousePos.x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+    mousePos.y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+  };
+
+  const handleMouseLeave = () => {
+    mousePos.x = 0;
+    mousePos.y = 0;
+  };
+
+  container.addEventListener('mousemove', handleMouseMove);
+  container.addEventListener('mouseleave', handleMouseLeave);
+
+  // Continuous rotation animation loop
+  const animate = () => {
+    const isMobile = window.innerWidth < 640;
+    const radius = isMobile ? 120 : 210;
+
+    images.forEach((img, i) => {
+      currentAngles[i] = (currentAngles[i] + 0.35) % 360;
+      const rad = currentAngles[i] * (Math.PI / 180);
+      const x = Math.cos(rad) * radius;
+      const y = Math.sin(rad) * radius;
+
+      const perspectiveX = mousePos.x * 16;
+      const perspectiveY = mousePos.y * -16;
+
+      const cardEl = document.getElementById(`carousel-card-${i}`);
+      if (cardEl) {
+        cardEl.style.transform = `translate(${x}px, ${y}px) rotateX(${perspectiveY}deg) rotateY(${perspectiveX}deg) rotateZ(${img.rotation}deg)`;
+      }
+    });
+
+    requestAnimationFrame(animate);
+  };
+
+  animate();
+}
+
+function openPortfolioModal(title) {
+  const modal = document.getElementById('website-modal');
+  if (modal) {
+    openWebsiteModal(title + ' 포트폴리오 사례', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80', '조회수/예약률 +50% 상승', '100% 모바일 SPA • AI 카피라이팅');
+  }
 }
 
 /* ==================== ROI / PRICE CALCULATOR ==================== */

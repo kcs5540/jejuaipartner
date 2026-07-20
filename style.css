@@ -23,6 +23,25 @@
   scroll-behavior: smooth;
 }
 
+/* 3D Image Carousel Hero Styles */
+.carousel-perspective {
+  perspective: 1000px;
+}
+
+.carousel-card-container {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.carousel-card-item {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+}
+
+.carousel-card-item:hover {
+  box-shadow: 0 20px 40px -10px rgba(56, 189, 248, 0.5);
+}
+
 body {
   background-color: var(--bg-dark);
   color: var(--text-main);
