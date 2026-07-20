@@ -342,3 +342,41 @@ function showToast(message) {
     toast.remove();
   }, 3500);
 }
+
+/* ==================== FAQ TOGGLE ==================== */
+function toggleFaq(index) {
+  const content = document.getElementById(`faq-content-${index}`);
+  const icon = document.getElementById(`faq-icon-${index}`);
+  
+  if (content && icon) {
+    const isHidden = content.classList.contains('hidden');
+    if (isHidden) {
+      content.classList.remove('hidden');
+      icon.classList.add('rotate-180');
+    } else {
+      content.classList.add('hidden');
+      icon.classList.remove('rotate-180');
+    }
+  }
+}
+
+/* ==================== FLOATING ACTION HANDLERS ==================== */
+function handleKakaoChatClick(event) {
+  const kakaoBtn = document.getElementById('btn-kakao-chat');
+  const href = kakaoBtn ? kakaoBtn.getAttribute('href') : '';
+  if (!href || href === '#' || href === 'javascript:void(0)') {
+    event.preventDefault();
+    openConsultingModal();
+    showToast('카카오톡 1:1 상담 신청 폼이 열렸습니다!');
+  }
+}
+
+function handlePhoneCallClick(event) {
+  const phoneBtn = document.getElementById('btn-phone-call');
+  const href = phoneBtn ? phoneBtn.getAttribute('href') : '';
+  if (href === 'tel:010-0000-0000' || !href || href === '#') {
+    event.preventDefault();
+    openConsultingModal();
+    showToast('대표 직통 전화 상담 신청 폼으로 연결됩니다.');
+  }
+}

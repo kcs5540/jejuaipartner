@@ -1160,6 +1160,97 @@
     </div>
   </section>
 
+  <!-- ==================== FAQ SECTION (자주 묻는 질문) ==================== -->
+  <section id="faq" class="py-20 relative bg-gradient-to-b from-[#050C1A] via-[#0A1931]/80 to-[#0F2C59]/40 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+        <span class="bg-sky-500/20 text-sky-300 text-xs px-4 py-1.5 rounded-full font-bold border border-sky-500/30 uppercase inline-flex items-center justify-center gap-1.5 w-fit mx-auto">
+          <i class="fa-solid fa-circle-question text-sky-400"></i> Frequently Asked Questions
+        </span>
+        <h2 class="text-3xl font-extrabold text-white">
+          제주 사장님들이 <span class="text-gradient">자주 묻는 핵심 질문 FAQ</span>
+        </h2>
+        <p class="text-slate-300 text-sm">궁금하신 점을 빠르게 해결해 드립니다.</p>
+      </div>
+
+      <div class="space-y-4" id="faq-accordion">
+        
+        <!-- FAQ Item 1 -->
+        <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaq(1)" class="w-full p-5 text-left font-bold text-base text-white flex justify-between items-center hover:text-sky-400 transition-colors focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 text-sm font-mono flex items-center justify-center shrink-0">Q1</span>
+              홈페이지 제작(30만원)은 기간이 얼마나 걸리나요?
+            </span>
+            <i id="faq-icon-1" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+          </button>
+          <div id="faq-content-1" class="hidden px-6 pb-5 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 bg-slate-950/40">
+            사장님께서 매장 기본 사진과 소개글(또는 메뉴판)을 <strong>셀프 데이터 허브</strong>로 전달해주시면, <strong>자료 수급 후 평균 3~5일 이내</strong>에 모바일 최적화 고품질 홈페이지 제작이 완성됩니다. 급하신 경우 24시간 내 긴급 런칭도 서포트합니다.
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaq(2)" class="w-full p-5 text-left font-bold text-base text-white flex justify-between items-center hover:text-sky-400 transition-colors focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 text-sm font-mono flex items-center justify-center shrink-0">Q2</span>
+              매달 추가로 내야 하는 숨겨진 유지보수비나 서버비가 있나요?
+            </span>
+            <i id="faq-icon-2" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+          </button>
+          <div id="faq-content-2" class="hidden px-6 pb-5 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 bg-slate-950/40">
+            <strong>절대 없습니다!</strong> 제주AI파트너스는 기존 에이전시의 불필요한 유지보수 강요 계약을 전면 배제합니다. 30만 원 1회 완산형으로 제작되며, 웹사이트의 모든 소유권과 관리 권한은 100% 사장님께 넘겨드립니다.
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaq(3)" class="w-full p-5 text-left font-bold text-base text-white flex justify-between items-center hover:text-sky-400 transition-colors focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 text-sm font-mono flex items-center justify-center shrink-0">Q3</span>
+              중국인 관광객(싼커) 유치를 위한 샤오홍슈 계정 개설도 지원되나요?
+            </span>
+            <i id="faq-icon-3" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+          </button>
+          <div id="faq-content-3" class="hidden px-6 pb-5 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 bg-slate-950/40">
+            네! <strong>글로벌 숏폼 서비스</strong> 이용 시 중국 최고 트렌드 채널인 샤오홍슈(Xiaohongshu) 및 따종디엔핑의 프로필 초기 레이아웃 세팅, 중국어 번역 자막 제작, 현지 최적화 해시태그 믹싱까지 원스톱으로 관리해 드립니다.
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaq(4)" class="w-full p-5 text-left font-bold text-base text-white flex justify-between items-center hover:text-sky-400 transition-colors focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 text-sm font-mono flex items-center justify-center shrink-0">Q4</span>
+              숏폼 영상 제작에 필요한 촬영은 어떻게 진행되나요?
+            </span>
+            <i id="faq-icon-4" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+          </button>
+          <div id="faq-content-4" class="hidden px-6 pb-5 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 bg-slate-950/40">
+            사장님께서 매장이나 메뉴를 스마트폰으로 간단히 10~15초 내외로 1~2개 촬영하여 <strong>셀프 데이터 허브</strong>에 업로드해 주시면, 저희가 AI 파이프라인(Vrew, CapCut)을 활용해 대본 기획, 자막, 예능 음성효과, 트렌디 템플릿 편집을 전담합니다.
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden transition-all">
+          <button onclick="toggleFaq(5)" class="w-full p-5 text-left font-bold text-base text-white flex justify-between items-center hover:text-sky-400 transition-colors focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-400 text-sm font-mono flex items-center justify-center shrink-0">Q5</span>
+              노형동 사무실 직접 방문 상담도 가능한가요?
+            </span>
+            <i id="faq-icon-5" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+          </button>
+          <div id="faq-content-5" class="hidden px-6 pb-5 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 bg-slate-950/40">
+            네, 당연합니다! 제주시 노형동 본사 사무실로 미리 온라인 예약을 주시면 정보처리기사 자격을 보유한 김철수 대표가 직접 따뜻한 차 한 잔과 함께 사장님 매장의 1:1 맞춤 디지털 마케팅 진단과 시뮬레이션을 무료로 진행해 드립니다.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
   <!-- ==================== ONLINE RESERVATION & INQUIRY FORM ==================== -->
   <section id="reservation" class="py-24 relative bg-[#0A1931]/60 border-t border-slate-800">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1483,6 +1574,25 @@
         </button>
       </div>
     </div>
+  </div>
+
+  <!-- ==================== FLOATING QUICK CONTACT BAR (카카오톡 & 전화) ==================== -->
+  <div class="fixed bottom-6 left-6 z-40 flex flex-col gap-3">
+    <!-- Kakao Floating Button -->
+    <a id="btn-kakao-chat" href="#" onclick="handleKakaoChatClick(event)" class="relative group flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#FEE500] text-[#3c1e1e] font-extrabold text-xs shadow-2xl shadow-yellow-500/30 hover:scale-105 active:scale-95 transition-all">
+      <i class="fa-solid fa-comment text-base"></i>
+      <span class="whitespace-nowrap">카톡 1:1 실시간 상담</span>
+      <span class="flex h-2 w-2 relative">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+      </span>
+    </a>
+
+    <!-- Direct Call Floating Button -->
+    <a id="btn-phone-call" href="tel:010-0000-0000" onclick="handlePhoneCallClick(event)" class="relative group flex items-center gap-2.5 px-4 py-3 rounded-full bg-emerald-500 text-white font-extrabold text-xs shadow-2xl shadow-emerald-500/30 hover:scale-105 active:scale-95 transition-all">
+      <i class="fa-solid fa-phone text-sm"></i>
+      <span class="whitespace-nowrap">대표 직통 전화문의</span>
+    </a>
   </div>
 
   <!-- JavaScript App Logic -->
