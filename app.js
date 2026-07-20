@@ -321,14 +321,16 @@ function selectPackage(packageName) {
 /* ==================== RESERVATION FORM SUBMISSION ==================== */
 function handleReservationSubmit(event) {
   event.preventDefault();
-  alert('🎉 상담 및 방문 예약이 정상적으로 접수되었습니다!\n\n제주AI파트너스 (김철수 대표)에서 기재해주신 연락처로 24시간 이내에 친절히 안내드리겠습니다.');
+  alert('🎉 상담 및 방문 예약이 정상적으로 접수되었습니다!\n\n제주AI파트너스 (김철수 대표 / 010-3306-5540)에서 기재해주신 연락처로 24시간 이내에 직접 안내해 드리겠습니다.');
+  window.open('https://open.kakao.com/o/s7J7jYEi', '_blank');
   event.target.reset();
 }
 
 function handleModalConsultingSubmit(event) {
   event.preventDefault();
   closeConsultingModal();
-  alert('🎉 무료 마케팅 컨설팅 신청이 접수되었습니다! 담당자가 신속히 검토 후 연락드리겠습니다.');
+  alert('🎉 무료 마케팅 컨설팅 신청이 접수되었습니다!\n\n김철수 대표 (010-3306-5540)가 신속히 검토 후 연락드리겠습니다.');
+  window.open('https://open.kakao.com/o/s7J7jYEi', '_blank');
 }
 
 /* Helper Toast Notification */
