@@ -282,18 +282,8 @@ body.light-theme::-webkit-scrollbar-thumb:hover {
 body.light-theme .bg-\[\#050C1A\] {
   background-color: #F8FAFC !important;
 }
-body.light-theme .bg-\[\#0A1931\] {
-  background-color: #F1F5F9 !important;
-}
-body.light-theme .bg-\[\#0A1931\]\/40 {
-  background-color: rgba(241, 245, 249, 0.4) !important;
-}
-body.light-theme .bg-\[\#0A1931\]\/95 {
-  background-color: rgba(255, 255, 255, 0.98) !important;
-}
-/* Background overrides */
-body.light-theme .bg-\[\#050C1A\] {
-  background-color: #F8FAFC !important;
+body.light-theme .bg-\[\#050C1A\]\/40 {
+  background-color: rgba(248, 250, 252, 0.4) !important;
 }
 body.light-theme .bg-\[\#0A1931\] {
   background-color: #F1F5F9 !important;
@@ -303,6 +293,12 @@ body.light-theme .bg-\[\#0A1931\]\/40 {
 }
 body.light-theme .bg-\[\#0A1931\]\/95 {
   background-color: rgba(255, 255, 255, 0.98) !important;
+}
+body.light-theme .bg-gradient-to-b.from-\[\#0A1931\]\/90.via-\[\#0F2C59\]\/40.to-\[\#050C1A\] {
+  background: linear-gradient(to bottom, #F1F5F9 0%, #E2E8F0 50%, #F8FAFC 100%) !important;
+}
+body.light-theme .bg-sky-500\/20 {
+  background-color: rgba(2, 132, 199, 0.15) !important;
 }
 
 /* Master attribute background selector for all card bodies and sub-boxes */
@@ -520,4 +516,21 @@ body.light-theme .bg-gradient-to-br.from-\[\#030712\].to-\[\#0F172A\] {
 }
 body.light-theme .bg-[#0F172A]/90 {
   background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Footer Legibility Rules for Light Theme */
+body.light-theme footer,
+body.light-theme footer * {
+  color: revert !important;
+}
+body.light-theme footer p,
+body.light-theme footer a,
+body.light-theme footer span {
+  color: #94A3B8 !important;
+}
+body.light-theme footer a:hover {
+  color: #FFFFFF !important;
+}
+body.light-theme footer h3 {
+  color: #FFFFFF !important;
 }
