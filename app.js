@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   calculateSavings();
   initHeroCarousel();
+  updateThemeIcons();
 });
 
 /* ==================== NAVIGATION & HEADER ==================== */
@@ -531,4 +532,30 @@ function handlePhoneCallClick(event) {
     openConsultingModal();
     showToast('대표 직통 전화 상담 신청 폼으로 연결됩니다.');
   }
+}
+
+/* ==================== THEME MANAGER (DARK / LIGHT MODE) ==================== */
+function toggleTheme() {
+  const isLight = document.body.classList.toggle('light-theme');
+  if (isLight) {
+    localStorage.setItem('theme', 'light');
+    document.documentElement.classList.remove('dark');
+    showToast('밝은 화면 모드로 전환되었습니다.');
+  } else {
+    localStorage.setItem('theme', 'dark');
+    document.documentElement.classList.add('dark');
+    showToast('어두운 화면 모드로 전환되었습니다.');
+  }
+  updateThemeIcons();
+}
+
+function updateThemeIcons() {
+  const isLight = document.body.classList.contains('light-theme');
+  const desktopIcon = document.getElementById('theme-toggle-icon');
+  const mobileIcon = document.getElementById('theme-toggle-icon-mobile');
+  
+  const iconClass = isLight ? 'fa-solid fa-sun text-amber-500 hover:text-amber-600 text-lg' : 'fa-solid fa-moon text-slate-300 hover:text-amber-400 text-lg';
+  
+  if (desktopIcon) desktopIcon.className = iconClass;
+  if (mobileIcon) mobileIcon.className = iconClass;
 }
