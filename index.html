@@ -1233,25 +1233,25 @@
             <!-- Company / Store Name -->
             <div>
               <label class="block text-xs font-bold text-slate-300 mb-2">가맹점명 / 상호명 <span class="text-red-400">*</span></label>
-              <input type="text" required placeholder="예: 제주 노형동 카페 몽상" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400" />
+              <input type="text" id="res-store-name" name="상호명" required placeholder="예: 제주 노형동 카페 몽상" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400" />
             </div>
 
             <!-- Contact Name / Representative -->
             <div>
               <label class="block text-xs font-bold text-slate-300 mb-2">성함 / 대표자명 <span class="text-red-400">*</span></label>
-              <input type="text" required placeholder="예: 김철수" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400" />
+              <input type="text" id="res-owner-name" name="성함" required placeholder="예: 김철수" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400" />
             </div>
 
             <!-- Phone Number -->
             <div>
               <label class="block text-xs font-bold text-slate-300 mb-2">연락처 <span class="text-red-400">*</span></label>
-              <input type="tel" required placeholder="예: 010-1234-5678" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400" />
+              <input type="tel" id="res-phone" name="연락처" required placeholder="예: 010-1234-5678" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400" />
             </div>
 
             <!-- Select Desired Package -->
             <div>
               <label class="block text-xs font-bold text-slate-300 mb-2">희망 서비스 선택 <span class="text-red-400">*</span></label>
-              <select id="form-package-select" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400">
+              <select id="form-package-select" name="희망서비스" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400">
                 <option value="홈페이지 제작 대행">[3-1] 홈페이지 제작 대행 (모바일 SPA, Self Data Hub)</option>
                 <option value="숏폼 제작 및 플랫폼 배포 대행">[3-2] 숏폼 제작 및 플랫폼 배포 대행 (쇼츠, 릴스, 클립, 샤오홍슈)</option>
                 <option value="네이버 플레이스 세팅 관리">[3-3] 네이버 플레이스 세팅 관리 (제주 SEO, AI 카피라이팅)</option>
@@ -1263,16 +1263,16 @@
             <!-- Preferred Date -->
             <div>
               <label class="block text-xs font-bold text-slate-300 mb-2">희망 상담 날짜</label>
-              <input type="date" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400" />
+              <input type="date" id="res-date" name="상담날짜" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400" />
             </div>
 
             <!-- Preferred Contact Method -->
             <div>
               <label class="block text-xs font-bold text-slate-300 mb-2">상담 방식</label>
-              <select class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400">
-                <option value="phone">전화 상담 (가장 빠름)</option>
-                <option value="visit">노형동 사무실 직접 방문</option>
-                <option value="kakao">카카오톡 전용 상담</option>
+              <select id="res-method" name="상담방식" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400">
+                <option value="전화 상담">전화 상담 (가장 빠름)</option>
+                <option value="노형동 사무실 직접 방문">노형동 사무실 직접 방문</option>
+                <option value="카카오톡 전용 상담">카카오톡 전용 상담</option>
               </select>
             </div>
 
@@ -1281,7 +1281,7 @@
           <!-- Memo Note -->
           <div>
             <label class="block text-xs font-bold text-slate-300 mb-2">문의 내용 / 강조하고 싶은 사항</label>
-            <textarea rows="3" placeholder="예: 샤오홍슈 계정 개설도 같이 문의드려요." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400"></textarea>
+            <textarea id="res-memo" name="문의내용" rows="3" placeholder="예: 샤오홍슈 계정 개설도 같이 문의드려요." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400"></textarea>
           </div>
 
           <!-- Submit Button -->
@@ -1377,19 +1377,19 @@
       <form onsubmit="handleModalConsultingSubmit(event)" class="space-y-4 text-xs">
         <div>
           <label class="block font-bold text-slate-300 mb-1">상호명</label>
-          <input type="text" required placeholder="예: 애월 흑돼지 식당" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-white focus:outline-none focus:border-sky-400" />
+          <input type="text" id="modal-store-name" name="상호명" required placeholder="예: 애월 흑돼지 식당" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-white focus:outline-none focus:border-sky-400" />
         </div>
         <div>
           <label class="block font-bold text-slate-300 mb-1">연락처</label>
-          <input type="tel" required placeholder="예: 010-1234-5678" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-white focus:outline-none focus:border-sky-400" />
+          <input type="tel" id="modal-phone" name="연락처" required placeholder="예: 010-1234-5678" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-white focus:outline-none focus:border-sky-400" />
         </div>
         <div>
           <label class="block font-bold text-slate-300 mb-1">고민되는 부분</label>
-          <select class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-white focus:outline-none focus:border-sky-400">
-            <option>소상공인 홈페이지 제작</option>
-            <option>마케팅 비용 대비 효과 부족</option>
-            <option>중국인 관광객 (샤오홍슈) 유치 희망</option>
-            <option>숏폼 대본 기획 및 편집 어려움</option>
+          <select id="modal-issue" name="고민부분" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-white focus:outline-none focus:border-sky-400">
+            <option value="소상공인 홈페이지 제작">소상공인 홈페이지 제작</option>
+            <option value="마케팅 비용 대비 효과 부족">마케팅 비용 대비 효과 부족</option>
+            <option value="중국인 관광객 (샤오홍슈) 유치 희망">중국인 관광객 (샤오홍슈) 유치 희망</option>
+            <option value="숏폼 대본 기획 및 편집 어려움">숏폼 대본 기획 및 편집 어려움</option>
           </select>
         </div>
         <button type="submit" class="w-full py-3.5 bg-gradient-button text-white font-bold text-sm rounded-xl shadow-lg mt-2">

@@ -398,18 +398,89 @@ function selectPackage(packageName) {
 }
 
 /* ==================== RESERVATION FORM SUBMISSION ==================== */
-function handleReservationSubmit(event) {
+/* ==================== RESERVATION FORM SUBMISSION ==================== */
+async function handleReservationSubmit(event) {
   event.preventDefault();
-  alert('🎉 상담 및 방문 예약이 정상적으로 접수되었습니다!\n\n제주AI파트너스 (김철수 대표 / 010-3306-5540)에서 기재해주신 연락처로 24시간 이내에 직접 안내해 드리겠습니다.');
+  
+  const form = event.target;
+  const storeName = document.getElementById('res-store-name')?.value || '';
+  const ownerName = document.getElementById('res-owner-name')?.value || '';
+  const phone = document.getElementById('res-phone')?.value || '';
+  const service = document.getElementById('form-package-select')?.value || '';
+  const date = document.getElementById('res-date')?.value || '미정';
+  const method = document.getElementById('res-method')?.value || '전화 상담';
+  const memo = document.getElementById('res-memo')?.value || '없음';
+
+  // 1. Prepare formatted message for clipboard & email
+  const formattedText = `[제주AI파트너스 상담 신청서]\n• 상호명: ${storeName}\n• 성함: ${ownerName}\n• 연락처: ${phone}\n• 희망서비스: ${service}\n• 상담날짜: ${date}\n• 상담방식: ${method}\n• 문의내용: ${memo}`;
+
+  // 2. Copy to clipboard for easy KakaoTalk pasting
+  try {
+    if (navigator.clipboard) {
+      await navigator.clipboard.writeText(formattedText);
+    }
+  } catch (err) {
+    console.log('Clipboard copy fallback:', err);
+  }
+
+  // 3. Send email to csjeju21@gmail.com via FormSubmit AJAX API
+  fetch('https://formsubmit.co/ajax/csjeju21@gmail.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      _subject: `[제주AI파트너스] ${storeName} 사장님의 신규 상담 신청 접수!`,
+      상호명: storeName,
+      대표자명: ownerName,
+      연락처: phone,
+      희망서비스: service,
+      희망상담일: date,
+      상담방식: method,
+      문의내용: memo
+    })
+  }).catch(e => console.log('Email send notification:', e));
+
+  // 4. Show friendly alert & open Kakao Open Chat
+  alert(`🎉 상담 및 방문 예약이 정상 접수되었습니다!\n\n• 신청서가 김철수 대표 이메일(csjeju21@gmail.com)로 즉시 전송되었습니다.\n• 신청 내용이 클립보드에 자동 복사되었습니다. 카카오톡 창이 열리면 [붙여넣기]만 누르시면 바로 1:1 상담도 가능합니다.`);
   window.open('https://open.kakao.com/o/s7J7jYEi', '_blank');
-  event.target.reset();
+  form.reset();
 }
 
-function handleModalConsultingSubmit(event) {
+async function handleModalConsultingSubmit(event) {
   event.preventDefault();
+  
+  const form = event.target;
+  const storeName = document.getElementById('modal-store-name')?.value || '';
+  const phone = document.getElementById('modal-phone')?.value || '';
+  const issue = document.getElementById('modal-issue')?.value || '';
+
+  // 1. Formatted Text
+  const formattedText = `[제주AI파트너스 무료 컨설팅 신청]\n• 상호명: ${storeName}\n• 연락처: ${phone}\n• 고민부분: ${issue}`;
+
+  // 2. Clipboard auto copy
+  try {
+    if (navigator.clipboard) {
+      await navigator.clipboard.writeText(formattedText);
+    }
+  } catch (err) {
+    console.log('Clipboard copy fallback:', err);
+  }
+
+  // 3. Send email to csjeju21@gmail.com via FormSubmit AJAX API
+  fetch('https://formsubmit.co/ajax/csjeju21@gmail.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      _subject: `[제주AI파트너스 컨설팅] ${storeName} 사장님의 컨설팅 신청!`,
+      상호명: storeName,
+      연락처: phone,
+      고민부분: issue
+    })
+  }).catch(e => console.log('Email send notification:', e));
+
   closeConsultingModal();
-  alert('🎉 무료 마케팅 컨설팅 신청이 접수되었습니다!\n\n김철수 대표 (010-3306-5540)가 신속히 검토 후 연락드리겠습니다.');
+  alert(`🎉 무료 마케팅 컨설팅 신청이 접수되었습니다!\n\n• 김철수 대표 이메일(csjeju21@gmail.com)로 신청 내용이 전송되었습니다.\n• 신청 내용이 복사되었습니다. 카카오톡 대화창에서 [붙여넣기]를 하시면 더욱 빠른 1:1 상담이 가능합니다.`);
   window.open('https://open.kakao.com/o/s7J7jYEi', '_blank');
+  form.reset();
 }
 
 /* Helper Toast Notification */
