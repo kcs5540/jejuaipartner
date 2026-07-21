@@ -291,44 +291,62 @@ body.light-theme .bg-\[\#0A1931\]\/40 {
 body.light-theme .bg-\[\#0A1931\]\/95 {
   background-color: rgba(255, 255, 255, 0.98) !important;
 }
-body.light-theme .bg-[#0F172A],
-body.light-theme .bg-[#0F172A]/90,
-body.light-theme .bg-[#0F172A]/60,
-body.light-theme .bg-slate-900,
-body.light-theme .bg-slate-900\/90,
-body.light-theme .bg-slate-900\/80,
-body.light-theme .bg-slate-900\/70,
-body.light-theme .bg-slate-900\/60,
-body.light-theme .bg-slate-900\/50,
-body.light-theme .bg-slate-950,
-body.light-theme .bg-slate-950\/90,
-body.light-theme .bg-slate-950\/80,
-body.light-theme .bg-slate-950\/70,
-body.light-theme .bg-slate-950\/60,
-body.light-theme .bg-slate-950\/50,
-body.light-theme .bg-slate-950\/40,
-body.light-theme .bg-slate-950\/30,
-body.light-theme .bg-slate-950\/20 {
-  background-color: #FFFFFF !important;
-  color: #0F172A !important;
+/* Background overrides */
+body.light-theme .bg-\[\#050C1A\] {
+  background-color: #F8FAFC !important;
+}
+body.light-theme .bg-\[\#0A1931\] {
+  background-color: #F1F5F9 !important;
+}
+body.light-theme .bg-\[\#0A1931\]\/40 {
+  background-color: rgba(241, 245, 249, 0.4) !important;
+}
+body.light-theme .bg-\[\#0A1931\]\/95 {
+  background-color: rgba(255, 255, 255, 0.98) !important;
 }
 
-body.light-theme .bg-slate-800 {
-  background-color: #E2E8F0 !important; /* Slate 200 */
+/* Master attribute background selector for all card bodies and sub-boxes */
+body.light-theme [class*="bg-slate-950"],
+body.light-theme [class*="bg-slate-900"],
+body.light-theme [class*="bg-slate-800"],
+body.light-theme [class*="bg-[#0F172A]"],
+body.light-theme [class*="bg-[#0A1931]"],
+body.light-theme [class*="bg-slate-950/"],
+body.light-theme [class*="bg-slate-900/"] {
+  background-color: #F1F5F9 !important; /* Soft Slate 100 for sub-box depth */
+  background-image: none !important;
   color: #0F172A !important;
-  border-color: #CBD5E1 !important;
+  border-color: #E2E8F0 !important; /* Slate 200 */
+}
+
+/* Force pure white for main card containers */
+body.light-theme .glass-panel,
+body.light-theme .port-item,
+body.light-theme .lg\:col-span-5.glass-panel,
+body.light-theme .lg\:col-span-7.glass-panel {
+  background-color: #FFFFFF !important;
+  border-color: rgba(2, 132, 199, 0.15) !important;
 }
 
 body.light-theme .bg-sky-950\/90 {
   background-color: rgba(224, 242, 254, 0.9) !important;
 }
 
+/* Specific partnership banner light mode background mapping */
+body.light-theme .bg-gradient-to-r.from-slate-900\/90.via-sky-950\/80.to-slate-900\/90 {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.95), rgba(224, 242, 254, 0.8), rgba(255, 255, 255, 0.95)) !important;
+  color: #0F172A !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* 3D Pricing Card custom light mode backgrounds */
 body.light-theme .bg-gradient-to-b.from-\[\#0F2C59\]\/80.to-\[\#050C1A\],
 body.light-theme .bg-gradient-to-b.from-\[\#0F2C59\]\/60.to-\[\#0A1931\]\/90 {
   background: linear-gradient(to bottom, rgba(224, 242, 254, 0.6) 0%, #FFFFFF 100%) !important;
+  border-color: rgba(2, 132, 199, 0.2) !important;
 }
 
-/* Text overrides */
+/* Text overrides for headers and general tags */
 body.light-theme h1,
 body.light-theme h2,
 body.light-theme h3,
@@ -348,6 +366,7 @@ body.light-theme em {
   color: #334155 !important;
 }
 
+/* Force slate text for text utility classes */
 body.light-theme .text-white,
 body.light-theme .text-slate-100,
 body.light-theme .text-slate-200,
@@ -361,6 +380,28 @@ body.light-theme .text-gray-400 {
   color: #334155 !important;
 }
 
+/* Specific elements containing text inside dark boxes */
+body.light-theme [class*="bg-slate-"] h1,
+body.light-theme [class*="bg-slate-"] h2,
+body.light-theme [class*="bg-slate-"] h3,
+body.light-theme [class*="bg-slate-"] h4,
+body.light-theme [class*="bg-slate-"] strong,
+body.light-theme [class*="bg-slate-"] span:not(.text-sky-400):not(.text-emerald-400):not(.text-amber-400):not(.text-amber-300):not(.text-red-400):not(.text-pink-400) {
+  color: #0F172A !important;
+}
+
+body.light-theme [class*="bg-slate-"] p,
+body.light-theme [class*="bg-slate-"] li,
+body.light-theme [class*="bg-slate-"] div {
+  color: #334155 !important;
+}
+
+/* Revert icons inside dark elements so they keep brand colors */
+body.light-theme [class*="bg-slate-"] i {
+  color: revert !important;
+}
+
+/* Brand colored texts contrast fix for light mode */
 body.light-theme .text-sky-300 {
   color: #0284C7 !important;
 }
@@ -380,9 +421,9 @@ body.light-theme .text-amber-400 {
   color: #D97706 !important;
 }
 
-/* Force white text inside buttons, cards, and original badges */
-body.light-theme button,
-body.light-theme button *,
+/* Force original styles inside interactive actions */
+body.light-theme button:not(.border-slate-700\/80):not(.bg-slate-900\/90),
+body.light-theme button:not(.border-slate-700\/80):not(.bg-slate-900\/90) *,
 body.light-theme .bg-gradient-button,
 body.light-theme .bg-gradient-button *,
 body.light-theme .bg-sky-500,
@@ -395,14 +436,22 @@ body.light-theme .bg-pink-500,
 body.light-theme .bg-pink-500 *,
 body.light-theme .bg-red-600,
 body.light-theme .bg-red-600 *,
-body.light-theme .bg-slate-900\/90 a,
-body.light-theme .bg-slate-900\/90 a *,
 body.light-theme .badge-live,
 body.light-theme .badge-live *,
 body.light-theme a.btn-primary-sm,
 body.light-theme a.btn-primary-sm *,
 body.light-theme #btn-kakao-chat * {
   color: revert !important;
+}
+
+/* Explicit secondary button dark slate text */
+body.light-theme button.border-slate-700\/80,
+body.light-theme button.border-slate-700\/80 *,
+body.light-theme button.bg-slate-900\/90,
+body.light-theme button.bg-slate-900\/90 *,
+body.light-theme [class*="bg-slate-"] button,
+body.light-theme [class*="bg-slate-"] button * {
+  color: #1E293B !important;
 }
 
 /* Borders */
@@ -420,17 +469,6 @@ body.light-theme .border-amber-500\/30 {
 }
 
 /* Nav & Glass overrides */
-body.light-theme .glass-panel {
-  background: rgba(255, 255, 255, 0.8) !important;
-  border-color: rgba(2, 132, 199, 0.15) !important;
-  box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.05) !important;
-  color: #0F172A !important;
-}
-body.light-theme .glass-panel-hover:hover {
-  background: rgba(255, 255, 255, 0.98) !important;
-  border-color: rgba(2, 132, 199, 0.3) !important;
-  box-shadow: 0 15px 35px -10px rgba(2, 132, 199, 0.12) !important;
-}
 body.light-theme .glass-nav {
   background: rgba(255, 255, 255, 0.85) !important;
   border-bottom: 1px solid rgba(2, 132, 199, 0.15) !important;
