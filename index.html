@@ -64,7 +64,7 @@
       <div class="flex items-center justify-between h-20 gap-2">
         
         <!-- Brand Logo -->
-        <a href="#" class="flex items-center gap-2.5 group shrink-0 whitespace-nowrap">
+        <a href="index.html" class="flex items-center gap-2.5 group shrink-0 whitespace-nowrap">
           <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 via-blue-600 to-cyan-400 p-0.5 shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform shrink-0">
             <div class="w-full h-full bg-[#050C1A] rounded-[10px] flex items-center justify-center">
               <i class="fa-solid fa-water text-sky-400 text-lg"></i>
@@ -79,16 +79,20 @@
         </a>
 
         <!-- Desktop Navigation Menu -->
-        <nav class="hidden lg:flex items-center gap-5 xl:gap-8 whitespace-nowrap">
+        <nav class="hidden lg:flex items-center gap-4 xl:gap-6 whitespace-nowrap">
+          <a href="index.html" class="nav-link text-xs xl:text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors whitespace-nowrap">홈</a>
           <a href="#about" class="nav-link text-xs xl:text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors whitespace-nowrap">회사 소개</a>
           <a href="#services" class="nav-link text-xs xl:text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors whitespace-nowrap">주요 서비스</a>
-          <a href="#portfolio" class="nav-link text-xs xl:text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors whitespace-nowrap">포트폴리오</a>
           <a href="#workflow" class="nav-link text-xs xl:text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors whitespace-nowrap">AI 워크플로우</a>
           <a href="#data-hub" class="nav-link text-xs xl:text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors flex items-center gap-1.5 whitespace-nowrap">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping shrink-0"></span>
             셀프 데이터 허브
           </a>
           <a href="#reservation" class="nav-link text-xs xl:text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors whitespace-nowrap">상담·예약</a>
+          <a href="portfolio.html" class="nav-link text-xs xl:text-sm font-bold text-amber-300 hover:text-amber-200 transition-colors whitespace-nowrap flex items-center gap-1">
+            <i class="fa-solid fa-layer-group text-amber-400 text-xs"></i>
+            <span>포트폴리오 센터</span>
+          </a>
         </nav>
 
         <!-- Right Fixed Action CTA -->
@@ -556,263 +560,7 @@
     </div>
   </section>
 
-  <!-- ==================== PORTFOLIO SHOWCASE SECTION ==================== -->
-  <section id="portfolio" class="py-24 relative border-t border-slate-800/60 bg-[#0A1931]/30">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
-        <span class="text-emerald-400 text-sm font-bold tracking-widest uppercase">Portfolio Showcase</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
-          제주 현장 실전 <span class="text-gradient">포트폴리오 센터</span>
-        </h2>
-        <p class="text-slate-400 text-base">
-          제주 소상공인을 위해 직접 제작한 <strong class="text-amber-300">맞춤형 홈페이지</strong>와 <strong class="text-sky-300">고효율 숏폼 영상</strong> 성공 사례입니다.
-        </p>
 
-        <!-- Domain Selection Main Switch -->
-        <div class="flex flex-wrap items-center justify-center gap-3 pt-4">
-          <button onclick="filterPortfolioDomain('all')" class="domain-tab active px-5 py-2.5 rounded-2xl text-xs font-extrabold transition-all bg-gradient-button text-white shadow-lg shadow-sky-500/20 flex items-center gap-2">
-            <i class="fa-solid fa-layer-group"></i> 전체 실전 포트폴리오
-          </button>
-          <button onclick="filterPortfolioDomain('website')" class="domain-tab px-5 py-2.5 rounded-2xl text-xs font-extrabold transition-all bg-slate-900 border border-amber-400/40 text-amber-300 hover:bg-amber-400/10 flex items-center gap-2">
-            <i class="fa-solid fa-laptop-code text-amber-400"></i> 🌐 홈페이지 제작 사례
-          </button>
-          <button onclick="filterPortfolioDomain('shortform')" class="domain-tab px-5 py-2.5 rounded-2xl text-xs font-extrabold transition-all bg-slate-900 border border-sky-400/40 text-sky-300 hover:bg-sky-400/10 flex items-center gap-2">
-            <i class="fa-solid fa-video text-sky-400"></i> 📹 숏폼 마케팅 사례
-          </button>
-        </div>
-
-        <!-- Industry Sub-Filter Pills -->
-        <div class="flex flex-wrap items-center justify-center gap-2 pt-3">
-          <span class="text-[11px] text-slate-500 self-center mr-1">업종별:</span>
-          <button onclick="filterPortfolioSub('all')" class="sub-tab active px-3 py-1 rounded-full text-[11px] font-bold transition-all bg-slate-800 text-white">전체</button>
-          <button onclick="filterPortfolioSub('dining')" class="sub-tab px-3 py-1 rounded-full text-[11px] font-bold transition-all bg-slate-900 text-slate-400 hover:text-white border border-slate-800">맛집·카페</button>
-          <button onclick="filterPortfolioSub('stay')" class="sub-tab px-3 py-1 rounded-full text-[11px] font-bold transition-all bg-slate-900 text-slate-400 hover:text-white border border-slate-800">숙박·펜션</button>
-          <button onclick="filterPortfolioSub('beauty')" class="sub-tab px-3 py-1 rounded-full text-[11px] font-bold transition-all bg-slate-900 text-slate-400 hover:text-white border border-slate-800">뷰티·체험</button>
-          <button onclick="filterPortfolioSub('global')" class="sub-tab px-3 py-1 rounded-full text-[11px] font-bold transition-all bg-slate-900 text-slate-400 hover:text-white border border-slate-800">샤오홍슈 (중국)</button>
-        </div>
-      </div>
-
-      <!-- Portfolio Grid (8 Items: 4 Website + 4 Shortform) -->
-      <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        
-        <!-- WEBSITE ITEM 1 (Dining) -->
-        <div class="portfolio-card website dining glass-panel rounded-2xl overflow-hidden border border-amber-400/30 group hover:border-amber-400 transition-all flex flex-col justify-between">
-          <div>
-            <div class="relative h-48 overflow-hidden cursor-pointer" onclick="openWebsiteModal('노형동 흑돼지 전문점 공식 원페이지 웹', 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80', '온라인 직접 예약 +60% 상승', '모바일 SPA • SEO 최적화 • 네이버 예약 연동')">
-              <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Restaurant Web Mockup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-3">
-                <div class="flex justify-between items-center">
-                  <span class="bg-amber-400 text-slate-950 text-[10px] px-2 py-0.5 rounded font-black">🌐 홈페이지 제작</span>
-                  <span class="bg-slate-900/80 backdrop-blur text-amber-300 text-[10px] px-2 py-0.5 rounded font-mono">100% 모바일</span>
-                </div>
-                <div class="flex items-center justify-center">
-                  <span class="w-10 h-10 rounded-full bg-amber-400/90 text-slate-950 flex items-center justify-center text-sm font-bold shadow-lg group-hover:scale-110 transition-transform">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="p-4 space-y-2">
-              <span class="text-amber-300 text-[11px] font-semibold">노형동 맛집</span>
-              <h4 class="text-sm font-bold text-white leading-tight">제주 흑돼지 전문점 공식 원페이지 웹사이트</h4>
-              <p class="text-[11px] text-slate-400">모바일 반응형 • 네이버 예약 연동 • 셀프 데이터 허브</p>
-            </div>
-          </div>
-          <div class="p-3 bg-slate-900/80 border-t border-slate-800/80 text-xs flex justify-between items-center text-slate-300">
-            <span class="text-slate-400 text-[11px]">맞춤 브랜드 구축</span>
-            <span class="text-emerald-400 font-bold text-[11px]">온라인 예약 +60%</span>
-          </div>
-        </div>
-
-        <!-- WEBSITE ITEM 2 (Stay) -->
-        <div class="portfolio-card website stay glass-panel rounded-2xl overflow-hidden border border-amber-400/30 group hover:border-amber-400 transition-all flex flex-col justify-between">
-          <div>
-            <div class="relative h-48 overflow-hidden cursor-pointer" onclick="openWebsiteModal('애월 감성 오션뷰 독채 펜션 공식 웹', 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80', '주말 예약 완판 및 자체 예약 80%', '감성 갤러리 • 실시간 숙박 문의 폼 • 인스타 연동')">
-              <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" alt="Pension Web Mockup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-3">
-                <div class="flex justify-between items-center">
-                  <span class="bg-amber-400 text-slate-950 text-[10px] px-2 py-0.5 rounded font-black">🌐 홈페이지 제작</span>
-                  <span class="bg-slate-900/80 backdrop-blur text-amber-300 text-[10px] px-2 py-0.5 rounded font-mono">100% 모바일</span>
-                </div>
-                <div class="flex items-center justify-center">
-                  <span class="w-10 h-10 rounded-full bg-amber-400/90 text-slate-950 flex items-center justify-center text-sm font-bold shadow-lg group-hover:scale-110 transition-transform">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="p-4 space-y-2">
-              <span class="text-amber-300 text-[11px] font-semibold">애월 독채 펜션</span>
-              <h4 class="text-sm font-bold text-white leading-tight">애월 감성 오션뷰 독채 펜션 공식 웹사이트</h4>
-              <p class="text-[11px] text-slate-400">객실 갤러리 • 실시간 예약 문의 폼 • 오션뷰 디자인</p>
-            </div>
-          </div>
-          <div class="p-3 bg-slate-900/80 border-t border-slate-800/80 text-xs flex justify-between items-center text-slate-300">
-            <span class="text-slate-400 text-[11px]">맞춤 브랜드 구축</span>
-            <span class="text-emerald-400 font-bold text-[11px]">주말 예약 완판</span>
-          </div>
-        </div>
-
-        <!-- WEBSITE ITEM 3 (Beauty/Global) -->
-        <div class="portfolio-card website beauty global glass-panel rounded-2xl overflow-hidden border border-amber-400/30 group hover:border-amber-400 transition-all flex flex-col justify-between">
-          <div>
-            <div class="relative h-48 overflow-hidden cursor-pointer" onclick="openWebsiteModal('서귀포 힐링 스파 샤오홍슈 연동 다국어 웹', 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80', '방한 중국인 싼커 방문 3.5배', '중국어 번역 지원 • 샤오홍슈 연동 • 구글/네이버 SEO')">
-              <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" alt="Spa Web Mockup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-3">
-                <div class="flex justify-between items-center">
-                  <span class="bg-amber-400 text-slate-950 text-[10px] px-2 py-0.5 rounded font-black">🌐 홈페이지 제작</span>
-                  <span class="bg-red-600 text-white text-[10px] px-2 py-0.5 rounded font-bold">小红书 연동</span>
-                </div>
-                <div class="flex items-center justify-center">
-                  <span class="w-10 h-10 rounded-full bg-amber-400/90 text-slate-950 flex items-center justify-center text-sm font-bold shadow-lg group-hover:scale-110 transition-transform">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="p-4 space-y-2">
-              <span class="text-cyan-300 text-[11px] font-semibold">서귀포 스파 &amp; 뷰티</span>
-              <h4 class="text-sm font-bold text-white leading-tight">서귀포 힐링 스파 중국인 타겟 다국어 웹사이트</h4>
-              <p class="text-[11px] text-slate-400">중국어 자막/번역 • 샤오홍슈 연동 • 모바일 반응형</p>
-            </div>
-          </div>
-          <div class="p-3 bg-slate-900/80 border-t border-slate-800/80 text-xs flex justify-between items-center text-slate-300">
-            <span class="text-slate-400 text-[11px]">맞춤 브랜드 구축</span>
-            <span class="text-cyan-400 font-bold text-[11px]">싼커 유입 3.5배</span>
-          </div>
-        </div>
-
-        <!-- WEBSITE ITEM 4 (Experience) -->
-        <div class="portfolio-card website beauty glass-panel rounded-2xl overflow-hidden border border-amber-400/30 group hover:border-amber-400 transition-all flex flex-col justify-between">
-          <div>
-            <div class="relative h-48 overflow-hidden cursor-pointer" onclick="openWebsiteModal('제주 조천 승마 & 카트 액티비티 웹사이트', 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80', '카카오톡 예약 문의 일 30건 이상', '모바일 디지털 명함 • 카카오톡 상담 연동 • 위치 가이드')">
-              <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80" alt="Activity Web Mockup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-3">
-                <div class="flex justify-between items-center">
-                  <span class="bg-amber-400 text-slate-950 text-[10px] px-2 py-0.5 rounded font-black">🌐 홈페이지 제작</span>
-                  <span class="bg-slate-900/80 backdrop-blur text-amber-300 text-[10px] px-2 py-0.5 rounded font-mono">100% 모바일</span>
-                </div>
-                <div class="flex items-center justify-center">
-                  <span class="w-10 h-10 rounded-full bg-amber-400/90 text-slate-950 flex items-center justify-center text-sm font-bold shadow-lg group-hover:scale-110 transition-transform">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="p-4 space-y-2">
-              <span class="text-amber-300 text-[11px] font-semibold">조천 액티비티</span>
-              <h4 class="text-sm font-bold text-white leading-tight">제주 조천 승마 &amp; 카트 액티비티 공식 웹</h4>
-              <p class="text-[11px] text-slate-400">이용안내 갤러리 • 카카오톡 예약 연동 • SEO 노출</p>
-            </div>
-          </div>
-          <div class="p-3 bg-slate-900/80 border-t border-slate-800/80 text-xs flex justify-between items-center text-slate-300">
-            <span class="text-slate-400 text-[11px]">맞춤 브랜드 구축</span>
-            <span class="text-emerald-400 font-bold text-[11px]">카톡 문의 급증</span>
-          </div>
-        </div>
-
-        <!-- SHORTFORM ITEM 1 (Dining) -->
-        <div class="portfolio-card shortform dining glass-panel rounded-2xl overflow-hidden border border-sky-500/30 group hover:border-sky-500 transition-all flex flex-col justify-between">
-          <div class="relative shortform-card" onclick="openVideoModal('노형동 흑돼지 전문점 숏폼')">
-            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80" alt="Jeju Pork Shortform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 shortform-overlay flex flex-col justify-between p-4">
-              <div class="flex justify-between items-center">
-                <span class="bg-red-500 text-white text-[10px] px-2 py-0.5 rounded font-bold">📹 Shorts</span>
-                <span class="bg-black/60 backdrop-blur text-white text-[10px] px-2 py-0.5 rounded font-mono">조회수 14.2만회</span>
-              </div>
-              <div>
-                <span class="text-sky-300 text-xs font-semibold">노형동 맛집</span>
-                <h4 class="text-sm font-bold text-white mt-1">제주 흑돼지 구이 육즙 극대화 연출 숏폼</h4>
-              </div>
-            </div>
-            <div class="absolute inset-0 m-auto w-12 h-12 rounded-full bg-sky-500/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-              <i class="fa-solid fa-play text-lg ml-0.5"></i>
-            </div>
-          </div>
-          <div class="p-3 bg-slate-900/60 border-t border-slate-800/80 text-xs flex justify-between items-center text-slate-400">
-            <span>제작 스피드: 1일</span>
-            <span class="text-emerald-400 font-semibold text-[11px]">방문객 +45%</span>
-          </div>
-        </div>
-
-        <!-- SHORTFORM ITEM 2 (Stay) -->
-        <div class="portfolio-card shortform stay glass-panel rounded-2xl overflow-hidden border border-sky-500/30 group hover:border-sky-500 transition-all flex flex-col justify-between">
-          <div class="relative shortform-card" onclick="openVideoModal('애월 감성 펜션 숏폼')">
-            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=500&q=80" alt="Aewol Stay Shortform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 shortform-overlay flex flex-col justify-between p-4">
-              <div class="flex justify-between items-center">
-                <span class="bg-pink-500 text-white text-[10px] px-2 py-0.5 rounded font-bold">📹 Reels</span>
-                <span class="bg-black/60 backdrop-blur text-white text-[10px] px-2 py-0.5 rounded font-mono">조회수 9.8만회</span>
-              </div>
-              <div>
-                <span class="text-sky-300 text-xs font-semibold">애월 독채 펜션</span>
-                <h4 class="text-sm font-bold text-white mt-1">오션뷰 감성 자쿠지 투어 릴스 영상</h4>
-              </div>
-            </div>
-            <div class="absolute inset-0 m-auto w-12 h-12 rounded-full bg-sky-500/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-              <i class="fa-solid fa-play text-lg ml-0.5"></i>
-            </div>
-          </div>
-          <div class="p-3 bg-slate-900/60 border-t border-slate-800/80 text-xs flex justify-between items-center text-slate-400">
-            <span>제작 스피드: 1일</span>
-            <span class="text-emerald-400 font-semibold text-[11px]">주말 예약 완판</span>
-          </div>
-        </div>
-
-        <!-- SHORTFORM ITEM 3 (Global / Xiaohongshu) -->
-        <div class="portfolio-card shortform global beauty glass-panel rounded-2xl overflow-hidden border border-cyan-500/30 group hover:border-cyan-400 transition-all flex flex-col justify-between">
-          <div class="relative shortform-card" onclick="openVideoModal('샤오홍슈 중국어 특화 숏폼')">
-            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80" alt="Xiaohongshu Jeju Beauty" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 shortform-overlay flex flex-col justify-between p-4">
-              <div class="flex justify-between items-center">
-                <span class="bg-red-600 text-white text-[10px] px-2 py-0.5 rounded font-bold">📹 小红书</span>
-                <span class="bg-black/60 backdrop-blur text-white text-[10px] px-2 py-0.5 rounded font-mono">좋아요 2.4만개</span>
-              </div>
-              <div>
-                <span class="text-cyan-300 text-xs font-semibold">서귀포 스파 &amp; 뷰티</span>
-                <h4 class="text-sm font-bold text-white mt-1">중국 싼커 타겟 제주 힐링 스파 중국어 숏폼</h4>
-              </div>
-            </div>
-            <div class="absolute inset-0 m-auto w-12 h-12 rounded-full bg-cyan-500/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-              <i class="fa-solid fa-play text-lg ml-0.5"></i>
-            </div>
-          </div>
-          <div class="p-3 bg-slate-900/60 border-t border-slate-800/80 text-xs flex justify-between items-center text-slate-400">
-            <span>샤오홍슈 대행</span>
-            <span class="text-cyan-400 font-semibold text-[11px]">싼커 유입 3배</span>
-          </div>
-        </div>
-
-        <!-- SHORTFORM ITEM 4 (Beauty / Experience) -->
-        <div class="portfolio-card shortform beauty glass-panel rounded-2xl overflow-hidden border border-sky-500/30 group hover:border-sky-500 transition-all flex flex-col justify-between">
-          <div class="relative shortform-card" onclick="openVideoModal('제주 승마 체험 숏폼')">
-            <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=500&q=80" alt="Jeju Experience Shortform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 shortform-overlay flex flex-col justify-between p-4">
-              <div class="flex justify-between items-center">
-                <span class="bg-emerald-500 text-white text-[10px] px-2 py-0.5 rounded font-bold">📹 Naver Clip</span>
-                <span class="bg-black/60 backdrop-blur text-white text-[10px] px-2 py-0.5 rounded font-mono">조회수 8.1만회</span>
-              </div>
-              <div>
-                <span class="text-sky-300 text-xs font-semibold">조천 액티비티</span>
-                <h4 class="text-sm font-bold text-white mt-1">제주 초원 승마 &amp; 카트 액티비티 체험 홍보</h4>
-              </div>
-            </div>
-            <div class="absolute inset-0 m-auto w-12 h-12 rounded-full bg-sky-500/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-              <i class="fa-solid fa-play text-lg ml-0.5"></i>
-            </div>
-          </div>
-          <div class="p-3 bg-slate-900/60 border-t border-slate-800/80 text-xs flex justify-between items-center text-slate-400">
-            <span>제작 스피드: 1일</span>
-            <span class="text-emerald-400 font-semibold text-[11px]">네이버 예약 급증</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
 
   <!-- ==================== AI WORKFLOW SECTION ==================== -->
   <section id="workflow" class="py-24 relative">
