@@ -141,9 +141,15 @@ body {
   50% { transform: translateY(-12px) rotate(1deg); }
 }
 
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.05); }
+@keyframes modalPopOnce {
+  0% { transform: scale(0.92) translateY(12px); opacity: 0; }
+  50% { transform: scale(1.02) translateY(-3px); opacity: 1; }
+  75% { transform: scale(0.99) translateY(1px); opacity: 1; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.animate-pop-once {
+  animation: modalPopOnce 0.35s cubic-bezier(0.16, 1, 0.3, 1) 1 forwards;
 }
 
 .animate-float {
