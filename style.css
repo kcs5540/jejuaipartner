@@ -291,10 +291,14 @@ body.light-theme .bg-\[\#0A1931\] {
 body.light-theme .bg-\[\#0A1931\]\/40 {
   background-color: rgba(241, 245, 249, 0.4) !important;
 }
+body.light-theme .bg-\[\#0A1931\]\/60 {
+  background-color: rgba(241, 245, 249, 0.6) !important;
+}
 body.light-theme .bg-\[\#0A1931\]\/95 {
   background-color: rgba(255, 255, 255, 0.98) !important;
 }
-body.light-theme .bg-gradient-to-b.from-\[\#0A1931\]\/90.via-\[\#0F2C59\]\/40.to-\[\#050C1A\] {
+body.light-theme .bg-gradient-to-b.from-\[\#0A1931\]\/90.via-\[\#0F2C59\]\/40.to-\[\#050C1A\],
+body.light-theme .bg-gradient-to-b.from-\[\#050C1A\].via-\[\#0A1931\]\/80.to-\[\#0F2C59\]\/40 {
   background: linear-gradient(to bottom, #F1F5F9 0%, #E2E8F0 50%, #F8FAFC 100%) !important;
 }
 body.light-theme .bg-sky-500\/20 {
