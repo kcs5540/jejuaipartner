@@ -78,7 +78,7 @@ function initHeroCarousel() {
     { id: "4", src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80", alt: "서귀포 힐링 스파", rotation: 12 },
     { id: "5", src: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80", alt: "승마 & 카트", rotation: -12 },
     { id: "6", src: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80", alt: "노형 카페 몽상", rotation: 8 },
-    { id: "7", src: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80", alt: "반려동물 동반", rotation: -6 },
+    { id: "7", src: "images/maru_breadsim.png", alt: "반려동물 펫스토리", rotation: -6 },
     { id: "8", src: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80", alt: "셀프 데이터 허브", rotation: 10 }
   ];
 
