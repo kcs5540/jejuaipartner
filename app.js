@@ -79,7 +79,7 @@ function initHeroCarousel() {
     { id: "5", src: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80", alt: "승마 & 카트", rotation: -12 },
     { id: "6", src: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80", alt: "노형 카페 몽상", rotation: 8 },
     { id: "7", src: "images/maru_breadsim.png", alt: "반려동물 펫스토리", rotation: -6 },
-    { id: "8", src: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80", alt: "셀프 데이터 허브", rotation: 10 }
+    { id: "8", src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80", alt: "한화생명 FP", rotation: 10 }
   ];
 
   let currentAngles = images.map((_, i) => i * (360 / images.length));
