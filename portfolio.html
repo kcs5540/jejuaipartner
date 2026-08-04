@@ -224,557 +224,597 @@
 
         </div>
 
-        <!-- Portfolio Cards Grid (13 Items) -->
-        <div id="full-portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          
-          <!-- FEATURED ITEM: Yaksan Garden Live Site -->
-          <div class="port-item website dining glass-panel rounded-3xl overflow-hidden border border-emerald-400/50 hover:border-emerald-400 shadow-2xl transition-all flex flex-col justify-between group relative">
-            <div class="absolute top-3 right-3 z-20">
-              <span class="bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 font-black text-[11px] px-3 py-1 rounded-full shadow-lg flex items-center gap-1 animate-pulse">
-                <i class="fa-solid fa-star"></i> LIVE SITE
-              </span>
-            </div>
-            <div>
-              <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://yaksan-garden.netlify.app/', '_blank')">
-                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="약산가든 공식 웹사이트" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
-                  <div class="flex justify-between items-center">
-                    <span class="bg-emerald-400 text-slate-950 text-xs px-2.5 py-1 rounded-lg font-black">🌐 실시간 라이브 웹</span>
-                    <span class="bg-slate-900/90 backdrop-blur text-emerald-300 text-xs px-2.5 py-1 rounded-lg font-mono">제주 흑돼지 전문</span>
-                  </div>
-                  <div class="flex items-center justify-center">
-                    <span class="w-12 h-12 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center text-lg font-bold shadow-xl group-hover:scale-110 transition-transform">
-                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6 space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="text-emerald-300 text-xs font-semibold">제주 대표 맛집</span>
-                  <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-circle-check mr-1"></i>실시간 운영 중</span>
-                </div>
-                <h3 class="text-lg font-bold text-white leading-snug">제주 약산가든 공식 프리미엄 모바일 웹</h3>
-                <p class="text-xs text-slate-400 leading-relaxed">제주 흑돼지 &amp; 가든 매장 안내 • 모바일 반응형 SPA • 네이버/카톡 연동</p>
-              </div>
-            </div>
-            <div class="p-4 bg-slate-900/90 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
-              <span class="text-emerald-400 font-bold text-xs"><i class="fa-solid fa-link mr-1"></i>yaksan-garden.netlify.app</span>
-              <a href="https://yaksan-garden.netlify.app/" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition-colors flex items-center gap-1">
-                사이트 바로가기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </a>
+        <!-- ==================== Section 1: Website Carousel ==================== -->
+        <div class="mb-16 relative">
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2">
+              <i class="fa-solid fa-laptop-code text-amber-400"></i>
+              <span>🌐 라이브 웹사이트 구축 &amp; 플랫폼 세팅 사례</span>
+            </h2>
+            <!-- Slider Controls -->
+            <div class="flex items-center gap-2">
+              <button id="web-slide-prev" onclick="scrollSlider('website-slider', -1)" class="slider-control-btn w-10 h-10 rounded-full flex items-center justify-center text-slate-300 hover:text-white" disabled>
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button id="web-slide-next" onclick="scrollSlider('website-slider', 1)" class="slider-control-btn w-10 h-10 rounded-full flex items-center justify-center text-slate-300 hover:text-white">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
             </div>
           </div>
-          <!-- ITEM 2: Website Hanwha Life Ahn Hyeyoung FP -->
-          <div class="port-item website glass-panel rounded-3xl overflow-hidden border border-amber-400/60 hover:border-amber-400 shadow-2xl transition-all flex flex-col justify-between group relative">
-            <div class="absolute top-3 right-3 z-10">
-              <span class="bg-gradient-to-r from-amber-400 to-orange-400 text-slate-950 font-black text-[11px] px-3 py-1 rounded-full shadow-lg flex items-center gap-1 animate-pulse">
-                <i class="fa-solid fa-star"></i> LIVE SITE
-              </span>
-            </div>
-            <div>
-              <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://an-hyeyoung.netlify.app/', '_blank')">
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="한화생명금융서비스 안혜영 FP 공식 웹사이트" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
-                  <div class="flex justify-between items-center">
-                    <span class="bg-amber-400 text-slate-950 text-xs px-2.5 py-1 rounded-lg font-black">🌐 실시간 라이브 웹</span>
-                    <span class="bg-slate-900/90 backdrop-blur text-amber-300 text-xs px-2.5 py-1 rounded-lg font-mono">한화생명금융서비스</span>
-                  </div>
-                  <div class="flex items-center justify-center">
-                    <span class="w-12 h-12 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center text-lg font-bold shadow-xl group-hover:scale-110 transition-transform">
-                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </span>
+          <div id="website-slider" class="slider-container scrollbar-none" onscroll="checkScrollLimits('website-slider', 'web-slide-prev', 'web-slide-next')">
+            
+            <!-- ITEM 1: Yaksan Garden Live Site -->
+            <div class="port-item website dining glass-panel rounded-3xl overflow-hidden border border-emerald-400/50 hover:border-emerald-400 shadow-2xl transition-all flex flex-col justify-between group relative">
+              <div class="absolute top-3 right-3 z-20">
+                <span class="bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 font-black text-[11px] px-3 py-1 rounded-full shadow-lg flex items-center gap-1 animate-pulse">
+                  <i class="fa-solid fa-star"></i> LIVE SITE
+                </span>
+              </div>
+              <div>
+                <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://yaksan-garden.netlify.app/', '_blank')">
+                  <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="약산가든 공식 웹사이트" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
+                    <div class="flex justify-between items-center">
+                      <span class="bg-emerald-400 text-slate-950 text-xs px-2.5 py-1 rounded-lg font-black">🌐 실시간 라이브 웹</span>
+                      <span class="bg-slate-900/90 backdrop-blur text-emerald-300 text-xs px-2.5 py-1 rounded-lg font-mono">제주 흑돼지 전문</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                      <span class="w-12 h-12 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center text-lg font-bold shadow-xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="p-6 space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="text-amber-300 text-xs font-semibold">제주 맞춤 자산·보험 전문가</span>
-                  <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-circle-check mr-1"></i>실시간 운영 중</span>
+                <div class="p-6 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-emerald-300 text-xs font-semibold">제주 대표 맛집</span>
+                    <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-circle-check mr-1"></i>실시간 운영 중</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white leading-snug">제주 약산가든 공식 프리미엄 모바일 웹</h3>
+                  <p class="text-xs text-slate-400 leading-relaxed">제주 흑돼지 &amp; 가든 매장 안내 • 모바일 반응형 SPA • 네이버/카톡 연동</p>
                 </div>
-                <h3 class="text-lg font-bold text-white leading-snug">한화생명금융서비스 안혜영 FP 공식 브랜딩 웹</h3>
-                <p class="text-xs text-slate-400 leading-relaxed">이도플러스지점 안혜영 FP • 1:1 맞춤 보장 분석 • 주요 보험사 고객센터 연동</p>
+              </div>
+              <div class="p-4 bg-slate-900/90 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
+                <span class="text-emerald-400 font-bold text-xs"><i class="fa-solid fa-link mr-1"></i>yaksan-garden.netlify.app</span>
+                <a href="https://yaksan-garden.netlify.app/" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition-colors flex items-center gap-1">
+                  사이트 바로가기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
               </div>
             </div>
-            <div class="p-4 bg-slate-900/90 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
-              <span class="text-amber-400 font-bold text-xs"><i class="fa-solid fa-link mr-1"></i>an-hyeyoung.netlify.app</span>
-              <a href="https://an-hyeyoung.netlify.app/" target="_blank" class="px-3 py-1.5 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs transition-colors flex items-center gap-1">
-                사이트 바로가기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </a>
-            </div>
-          </div>
 
-          <!-- ITEM 2: Website Dining (희양양 연동점) -->
-          <div class="port-item website dining glass-panel rounded-3xl overflow-hidden border border-emerald-400/50 hover:border-emerald-400 shadow-2xl transition-all flex flex-col justify-between group relative">
-            <div class="absolute top-3 right-3 z-10">
-              <span class="bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 font-black text-[11px] px-3 py-1 rounded-full shadow-lg flex items-center gap-1 animate-pulse">
-                <i class="fa-solid fa-star"></i> LIVE SITE
-              </span>
-            </div>
-            <div>
-              <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://huiyangyang.vercel.app/', '_blank')">
-                <img src="images/huiyangyang_preview.jpg" alt="희양양 연동점 공식 웹사이트" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
-                  <div class="flex justify-between items-center">
-                    <span class="bg-emerald-400 text-slate-950 text-xs px-2.5 py-1 rounded-lg font-black">🌐 실시간 라이브 웹</span>
-                    <span class="bg-slate-900/90 backdrop-blur text-emerald-300 text-xs px-2.5 py-1 rounded-lg font-mono">제주 연동 맛집</span>
-                  </div>
-                  <div class="flex items-center justify-center">
-                    <span class="w-12 h-12 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center text-lg font-bold shadow-xl group-hover:scale-110 transition-transform">
-                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </span>
+            <!-- ITEM 2: Website Hanwha Life Ahn Hyeyoung FP -->
+            <div class="port-item website glass-panel rounded-3xl overflow-hidden border border-amber-400/60 hover:border-amber-400 shadow-2xl transition-all flex flex-col justify-between group relative">
+              <div class="absolute top-3 right-3 z-10">
+                <span class="bg-gradient-to-r from-amber-400 to-orange-400 text-slate-950 font-black text-[11px] px-3 py-1 rounded-full shadow-lg flex items-center gap-1 animate-pulse">
+                  <i class="fa-solid fa-star"></i> LIVE SITE
+                </span>
+              </div>
+              <div>
+                <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://an-hyeyoung.netlify.app/', '_blank')">
+                  <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="한화생명금융서비스 안혜영 FP 공식 웹사이트" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
+                    <div class="flex justify-between items-center">
+                      <span class="bg-amber-400 text-slate-950 text-xs px-2.5 py-1 rounded-lg font-black">🌐 실시간 라이브 웹</span>
+                      <span class="bg-slate-900/90 backdrop-blur text-amber-300 text-xs px-2.5 py-1 rounded-lg font-mono">한화생명금융서비스</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                      <span class="w-12 h-12 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center text-lg font-bold shadow-xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="p-6 space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="text-emerald-300 text-xs font-semibold">프리미엄 양고기 다이닝</span>
-                  <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-circle-check mr-1"></i>실시간 운영 중</span>
+                <div class="p-6 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-amber-300 text-xs font-semibold">제주 맞춤 자산·보험 전문가</span>
+                    <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-circle-check mr-1"></i>실시간 운영 중</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white leading-snug">한화생명금융서비스 안혜영 FP 공식 브랜딩 웹</h3>
+                  <p class="text-xs text-slate-400 leading-relaxed">이도플러스지점 안혜영 FP • 1:1 맞춤 보장 분석 • 주요 보험사 고객센터 연동</p>
                 </div>
-                <h3 class="text-lg font-bold text-white leading-snug">희양양 연동점 공식 프리미엄 모바일 웹</h3>
-                <p class="text-xs text-slate-400 leading-relaxed">대나무 참숯 구이 • 전담 그릴링 서비스 • 프라이빗 룸 &amp; 개별 옷장 완비</p>
+              </div>
+              <div class="p-4 bg-slate-900/90 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
+                <span class="text-amber-400 font-bold text-xs"><i class="fa-solid fa-link mr-1"></i>an-hyeyoung.netlify.app</span>
+                <a href="https://an-hyeyoung.netlify.app/" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition-colors flex items-center gap-1">
+                  사이트 바로가기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
               </div>
             </div>
-            <div class="p-4 bg-slate-900/90 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
-              <span class="text-emerald-400 font-bold text-xs"><i class="fa-solid fa-link mr-1"></i>huiyangyang.vercel.app</span>
-              <a href="https://huiyangyang.vercel.app/" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition-colors flex items-center gap-1">
-                사이트 바로가기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </a>
+
+            <!-- ITEM 3: Website dining (Huiyangyang) -->
+            <div class="port-item website dining glass-panel rounded-3xl overflow-hidden border border-emerald-400/50 hover:border-emerald-400 shadow-2xl transition-all flex flex-col justify-between group relative">
+              <div class="absolute top-3 right-3 z-10">
+                <span class="bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 font-black text-[11px] px-3 py-1 rounded-full shadow-lg flex items-center gap-1 animate-pulse">
+                  <i class="fa-solid fa-star"></i> LIVE SITE
+                </span>
+              </div>
+              <div>
+                <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://huiyangyang.vercel.app/', '_blank')">
+                  <img src="images/huiyangyang_preview.jpg" alt="희양양 연동점 공식 웹사이트" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
+                    <div class="flex justify-between items-center">
+                      <span class="bg-emerald-400 text-slate-950 text-xs px-2.5 py-1 rounded-lg font-black">🌐 실시간 라이브 웹</span>
+                      <span class="bg-slate-900/90 backdrop-blur text-emerald-300 text-xs px-2.5 py-1 rounded-lg font-mono">제주 연동 맛집</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                      <span class="w-12 h-12 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center text-lg font-bold shadow-xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-emerald-300 text-xs font-semibold">프리미엄 양고기 다이닝</span>
+                    <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-circle-check mr-1"></i>실시간 운영 중</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white leading-snug">희양양 연동점 공식 프리미엄 모바일 웹</h3>
+                  <p class="text-xs text-slate-400 leading-relaxed">대나무 참숯 구이 • 전담 그릴링 서비스 • 프라이빗 룸 &amp; 개별 옷장 완비</p>
+                </div>
+              </div>
+              <div class="p-4 bg-slate-900/90 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
+                <span class="text-emerald-400 font-bold text-xs"><i class="fa-solid fa-link mr-1"></i>huiyangyang.vercel.app</span>
+                <a href="https://huiyangyang.vercel.app/" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition-colors flex items-center gap-1">
+                  사이트 바로가기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- ITEM 4: Sowonsa Live Site -->
+            <div class="port-item website activity glass-panel rounded-3xl overflow-hidden border border-emerald-400/50 hover:border-emerald-400 shadow-2xl transition-all flex flex-col justify-between group relative">
+              <div class="absolute top-3 right-3 z-10">
+                <span class="bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 font-black text-[11px] px-3 py-1 rounded-full shadow-lg flex items-center gap-1 animate-pulse">
+                  <i class="fa-solid fa-star"></i> LIVE SITE
+                </span>
+              </div>
+              <div>
+                <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://sowonsa.vercel.app/', '_blank')">
+                  <img src="https://sowonsa.vercel.app/images/20260719_135118.jpg" alt="제주 소원사 공식 웹사이트" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
+                    <div class="flex justify-between items-center">
+                      <span class="bg-emerald-400 text-slate-950 text-xs px-2.5 py-1 rounded-lg font-black">🌐 실시간 라이브 웹</span>
+                      <span class="bg-slate-900/90 backdrop-blur text-emerald-300 text-xs px-2.5 py-1 rounded-lg font-mono">제주 전통 사찰</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                      <span class="w-12 h-12 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center text-lg font-bold shadow-xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-emerald-300 text-xs font-semibold">한라산 소원 성취 도량</span>
+                    <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-circle-check mr-1"></i>실시간 운영 중</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white leading-snug">제주 소원사 공식 프리미엄 웹사이트</h3>
+                  <p class="text-xs text-slate-400 leading-relaxed">제주 오등동 사찰 • 영가 위패봉안 및 기도 안내 • 겹처마 부연정자 소개</p>
+                </div>
+              </div>
+              <div class="p-4 bg-slate-900/90 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
+                <span class="text-emerald-400 font-bold text-xs"><i class="fa-solid fa-link mr-1"></i>sowonsa.vercel.app</span>
+                <a href="https://sowonsa.vercel.app/" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition-colors flex items-center gap-1">
+                  사이트 바로가기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- ITEM 5: Website Beauty (OK안마원) -->
+            <div class="port-item website beauty glass-panel rounded-3xl overflow-hidden border border-emerald-400/50 hover:border-emerald-400 shadow-2xl transition-all flex flex-col justify-between group relative">
+              <div class="absolute top-3 right-3 z-10">
+                <span class="bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 font-black text-[11px] px-3 py-1 rounded-full shadow-lg flex items-center gap-1 animate-pulse">
+                  <i class="fa-solid fa-star"></i> LIVE SITE
+                </span>
+              </div>
+              <div>
+                <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://okanmawon.vercel.app/', '_blank')">
+                  <img src="images/okanmawon_preview.jpg" alt="OK안마원 공식 웹사이트" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
+                    <div class="flex justify-between items-center">
+                      <span class="bg-emerald-400 text-slate-950 text-xs px-2.5 py-1 rounded-lg font-black">🌐 실시간 라이브 웹</span>
+                      <span class="bg-slate-900/90 backdrop-blur text-emerald-300 text-xs px-2.5 py-1 rounded-lg font-mono">제주 연동 안마원</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                      <span class="w-12 h-12 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center text-lg font-bold shadow-xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-emerald-300 text-xs font-semibold">제주 최초 클린안마센터</span>
+                    <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-circle-check mr-1"></i>실시간 운영 중</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white leading-snug">국가공인 OK안마원 공식 프리미엄 모바일 웹</h3>
+                  <p class="text-xs text-slate-400 leading-relaxed">24시 연중무휴 • 보건복지부 지정 자격 안마사 • 디톡스 족욕 &amp; 수면실 완비</p>
+                </div>
+              </div>
+              <div class="p-4 bg-slate-900/90 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
+                <span class="text-emerald-400 font-bold text-xs"><i class="fa-solid fa-link mr-1"></i>okanmawon.vercel.app</span>
+                <a href="https://okanmawon.vercel.app/" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition-colors flex items-center gap-1">
+                  사이트 바로가기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- ITEM 6: Place Dining (성산 당근 비즈프로필) -->
+            <div class="port-item place dining glass-panel rounded-3xl overflow-hidden border border-orange-400/30 hover:border-orange-400 transition-all flex flex-col justify-between group">
+              <div>
+                <div class="relative h-56 overflow-hidden cursor-pointer" onclick="openWebsiteModal('성산일출봉 맛집 당근 비즈프로필 세팅', 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80', '당근 로컬 타겟 단골 1,200명 확보', '하이퍼로컬 마케팅 • 쿠폰 발행 연동')">
+                  <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Daangn Profile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
+                    <div class="flex justify-between items-center">
+                      <span class="bg-orange-500 text-white text-xs px-2.5 py-1 rounded-lg font-black">🥕 당근 비즈프로필</span>
+                      <span class="bg-slate-900/80 backdrop-blur text-orange-300 text-xs px-2.5 py-1 rounded-lg font-mono">하이퍼로컬</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                      <span class="w-12 h-12 rounded-full bg-orange-500/90 text-white flex items-center justify-center text-lg font-bold shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-carrot"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-orange-300 text-xs font-semibold">성산 맛집</span>
+                    <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-user-plus mr-1"></i>단골 1,200명</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white leading-snug">성산일출봉 향토맛집 당근 비즈프로필 세팅</h3>
+                  <p class="text-xs text-slate-400 leading-relaxed">제주 도민 및 관광객 타겟 당근 이웃 광고 • 쿠폰 발급 연동</p>
+                </div>
+              </div>
+              <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
+                <span class="text-slate-400 text-xs">당근비즈 전담</span>
+                <button onclick="openWebsiteModal('성산일출봉 맛집 당근 비즈프로필 세팅', 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80', '당근 로컬 타겟 단골 1,200명 확보', '하이퍼로컬 마케팅 • 쿠폰 발행 연동')" class="text-orange-300 hover:underline font-bold">상세 보기 ➔</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ==================== Section 2: Video Carousel ==================== -->
+        <div class="relative">
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2">
+              <i class="fa-solid fa-video text-sky-400"></i>
+              <span>📹 숏폼 &amp; 마케팅 동영상 사례</span>
+            </h2>
+            <!-- Slider Controls -->
+            <div class="flex items-center gap-2">
+              <button id="video-slide-prev" onclick="scrollSlider('video-slider', -1)" class="slider-control-btn w-10 h-10 rounded-full flex items-center justify-center text-slate-300 hover:text-white" disabled>
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button id="video-slide-next" onclick="scrollSlider('video-slider', 1)" class="slider-control-btn w-10 h-10 rounded-full flex items-center justify-center text-slate-300 hover:text-white">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
             </div>
           </div>
+          <div id="video-slider" class="slider-container scrollbar-none" onscroll="checkScrollLimits('video-slider', 'video-slide-prev', 'video-slide-next')">
 
-          <!-- ITEM 3: Sowonsa Live Site -->
-          <div class="port-item website activity glass-panel rounded-3xl overflow-hidden border border-emerald-400/50 hover:border-emerald-400 shadow-2xl transition-all flex flex-col justify-between group relative">
-            <div class="absolute top-3 right-3 z-10">
-              <span class="bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 font-black text-[11px] px-3 py-1 rounded-full shadow-lg flex items-center gap-1 animate-pulse">
-                <i class="fa-solid fa-star"></i> LIVE SITE
-              </span>
-            </div>
-            <div>
-              <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://sowonsa.vercel.app/', '_blank')">
-                <img src="https://sowonsa.vercel.app/images/20260719_135118.jpg" alt="제주 소원사 공식 웹사이트" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
-                  <div class="flex justify-between items-center">
-                    <span class="bg-emerald-400 text-slate-950 text-xs px-2.5 py-1 rounded-lg font-black">🌐 실시간 라이브 웹</span>
-                    <span class="bg-slate-900/90 backdrop-blur text-emerald-300 text-xs px-2.5 py-1 rounded-lg font-mono">제주 전통 사찰</span>
-                  </div>
-                  <div class="flex items-center justify-center">
-                    <span class="w-12 h-12 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center text-lg font-bold shadow-xl group-hover:scale-110 transition-transform">
-                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </span>
+            <!-- ITEM 7: YouTube Shorts Live Video (JMB LIFE) -->
+            <div class="port-item shortform dining beauty glass-panel rounded-3xl overflow-hidden border border-red-500/50 hover:border-red-500 shadow-xl transition-all flex flex-col justify-between group">
+              <div>
+                <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://youtube.com/shorts/wDq5n_AO9Bo?si=8L8k--azVF_xzjAm', '_blank')">
+                  <img src="images/jmb_life_preview.jpg" alt="제이엠비라이프 JMB LIFE 브랜드 숏폼 마케팅" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
+                    <div class="flex justify-between items-center">
+                      <span class="bg-red-600 text-white text-xs px-2.5 py-1 rounded-lg font-black flex items-center gap-1">
+                        <i class="fa-brands fa-youtube"></i> YouTube Shorts
+                      </span>
+                      <span class="bg-slate-900/90 backdrop-blur text-red-300 text-xs px-2.5 py-1 rounded-lg font-mono">브랜드 웰니스</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                      <span class="w-14 h-14 rounded-full bg-red-600/90 text-white flex items-center justify-center text-xl font-bold shadow-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-play ml-0.5"></i>
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="p-6 space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="text-emerald-300 text-xs font-semibold">한라산 소원 성취 도량</span>
-                  <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-circle-check mr-1"></i>실시간 운영 중</span>
+                <div class="p-6 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-red-400 text-xs font-semibold">청정 제주 원료 웰니스</span>
+                    <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-seedling mr-1"></i>30초 완성 가벼운 하루</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white leading-snug">바쁜 일상 속 프라이빗 웰니스, 제이엠비라이프 (JMB LIFE)</h3>
+                  <p class="text-xs text-slate-400 leading-relaxed">장 건강과 영양 밸런스 [한끼쏙 프리바이옴] • 속 편한 디톡스 힐링 [만나 디디차 &amp; 제주월동무우차] 숏폼 바이럴</p>
                 </div>
-                <h3 class="text-lg font-bold text-white leading-snug">제주 소원사 공식 프리미엄 웹사이트</h3>
-                <p class="text-xs text-slate-400 leading-relaxed">제주 오등동 사찰 • 영가 위패봉안 및 기도 안내 • 겹처마 부연정자 소개</p>
+              </div>
+              <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
+                <span class="text-red-400 font-mono text-[11px]"><i class="fa-brands fa-youtube mr-1"></i>youtube.com/shorts/wDq5n_AO9Bo</span>
+                <a href="https://youtube.com/shorts/wDq5n_AO9Bo?si=8L8k--azVF_xzjAm" target="_blank" class="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors flex items-center gap-1">
+                  쇼츠 감상하기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
               </div>
             </div>
-            <div class="p-4 bg-slate-900/90 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
-              <span class="text-emerald-400 font-bold text-xs"><i class="fa-solid fa-link mr-1"></i>sowonsa.vercel.app</span>
-              <a href="https://sowonsa.vercel.app/" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition-colors flex items-center gap-1">
-                사이트 바로가기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </a>
+
+            <!-- ITEM 8: YouTube Shorts Live Video (니나수 족욕카페) -->
+            <div class="port-item shortform dining beauty activity glass-panel rounded-3xl overflow-hidden border border-red-500/50 hover:border-red-500 shadow-xl transition-all flex flex-col justify-between group">
+              <div>
+                <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://youtube.com/shorts/z9ETfPXNEZ8?feature=share', '_blank')">
+                  <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="서귀포 니나수 족욕카페 숏폼" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
+                    <div class="flex justify-between items-center">
+                      <span class="bg-red-600 text-white text-xs px-2.5 py-1 rounded-lg font-black flex items-center gap-1">
+                        <i class="fa-brands fa-youtube"></i> YouTube Shorts
+                      </span>
+                      <span class="bg-slate-900/90 backdrop-blur text-red-300 text-xs px-2.5 py-1 rounded-lg font-mono">실시간 홍보</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                      <span class="w-14 h-14 rounded-full bg-red-600/90 text-white flex items-center justify-center text-xl font-bold shadow-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-play ml-0.5"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-red-400 text-xs font-semibold">서귀포 박수기정 힐링 명소</span>
+                    <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-spa mr-1"></i>족욕 이색카페</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white leading-snug">제주 서귀포 [니나수 족욕카페] 힐링 숏폼 마케팅</h3>
+                  <p class="text-xs text-slate-400 leading-relaxed">제주 여행객 타겟팅 • 감성 몰입 컷 편집 • AI 맞춤 성우 더빙</p>
+                </div>
+              </div>
+              <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
+                <span class="text-red-400 font-mono text-[11px]"><i class="fa-brands fa-youtube mr-1"></i>youtube.com/shorts/z9ETfPXNEZ8</span>
+                <a href="https://youtube.com/shorts/z9ETfPXNEZ8?feature=share" target="_blank" class="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors flex items-center gap-1">
+                  쇼츠 감상하기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+              </div>
             </div>
+
+            <!-- ITEM 9: Naver Blog Clip (제주 약산 흑염소 가든) -->
+            <div class="port-item shortform dining glass-panel rounded-3xl overflow-hidden border border-emerald-400/50 hover:border-emerald-400 shadow-xl transition-all flex flex-col justify-between group">
+              <div>
+                <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://m.blog.naver.com/csjeju/clip/14922717', '_blank')">
+                  <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="제주 약산 흑염소 가든 네이버 클립" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
+                    <div class="flex justify-between items-center">
+                      <span class="bg-emerald-500 text-slate-950 text-xs px-2.5 py-1 rounded-lg font-black flex items-center gap-1">
+                        <i class="fa-solid fa-video"></i> 네이버 클립(Clip)
+                      </span>
+                      <span class="bg-slate-900/90 backdrop-blur text-emerald-300 text-xs px-2.5 py-1 rounded-lg font-mono">보양식 맛집</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                      <span class="w-14 h-14 rounded-full bg-emerald-500/90 text-slate-950 flex items-center justify-center text-xl font-bold shadow-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-play ml-0.5"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-emerald-300 text-xs font-semibold">제주 보양식 대표 맛집</span>
+                    <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-fire mr-1"></i>흑염소 전골·수육</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white leading-snug">제주 약산 흑염소 가든 네이버 클립 보양식 숏폼</h3>
+                  <p class="text-xs text-slate-400 leading-relaxed">네이버 클립 상위 노출 • 흑염소 탕/전골/수육 시그니처 • 몸보신 추천</p>
+                </div>
+              </div>
+              <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
+                <span class="text-emerald-400 font-mono text-[11px]"><i class="fa-solid fa-link mr-1"></i>m.blog.naver.com/csjeju/clip</span>
+                <a href="https://m.blog.naver.com/csjeju/clip/14922717" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition-colors flex items-center gap-1">
+                  클립 감상하기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- ITEM 10: YouTube Shorts Pet Story (빵심이네 강아지 마루) -->
+            <div class="port-item shortform glass-panel rounded-3xl overflow-hidden border border-pink-400/50 hover:border-pink-400 shadow-xl transition-all flex flex-col justify-between group">
+              <div>
+                <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://youtube.com/shorts/vbVOkYTAcpc?feature=share', '_blank')">
+                  <img src="images/maru_breadsim.png" alt="빵심이네 귀여운 강아지 마루 펫 숏폼" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
+                    <div class="flex justify-between items-center">
+                      <span class="bg-pink-500 text-white text-xs px-2.5 py-1 rounded-lg font-black flex items-center gap-1">
+                        <i class="fa-brands fa-youtube"></i> YouTube Shorts
+                      </span>
+                      <span class="bg-slate-900/90 backdrop-blur text-pink-300 text-xs px-2.5 py-1 rounded-lg font-mono">펫 스토리텔링</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                      <span class="w-14 h-14 rounded-full bg-pink-500/90 text-white flex items-center justify-center text-xl font-bold shadow-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-play ml-0.5"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-pink-300 text-xs font-semibold">반려동물 펫 이색 콘텐츠</span>
+                    <span class="text-pink-400 text-xs font-bold"><i class="fa-solid fa-paw mr-1"></i>#마루 #빵심이</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white leading-snug">빵심이네 귀여운 강아지 [마루] 펫 숏폼 스토리</h3>
+                  <p class="text-xs text-slate-400 leading-relaxed">반려동물 감성 시나리오 • 펫 동반 매장 홍보 • AI 컷 편집 &amp; 더빙</p>
+                </div>
+              </div>
+              <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
+                <span class="text-pink-400 font-mono text-[11px]"><i class="fa-brands fa-youtube mr-1"></i>youtube.com/shorts/vbVOkYTAcpc</span>
+                <a href="https://youtube.com/shorts/vbVOkYTAcpc?feature=share" target="_blank" class="px-3 py-1.5 rounded-lg bg-pink-500 hover:bg-pink-400 text-slate-950 font-black text-xs transition-colors flex items-center gap-1">
+                  쇼츠 감상하기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- ITEM 11: YouTube Shorts Pet Story (마루의 눈보라속 산책) -->
+            <div class="port-item shortform glass-panel rounded-3xl overflow-hidden border border-sky-400/50 hover:border-sky-400 shadow-xl transition-all flex flex-col justify-between group">
+              <div>
+                <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://youtu.be/ej0jDtIoNk4', '_blank')">
+                  <img src="images/maru_snow_walk.png" alt="강아지 마루의 눈보라속 산책 숏폼" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
+                    <div class="flex justify-between items-center">
+                      <span class="bg-sky-500 text-white text-xs px-2.5 py-1 rounded-lg font-black flex items-center gap-1">
+                        <i class="fa-brands fa-youtube"></i> YouTube Shorts
+                      </span>
+                      <span class="bg-slate-900/90 backdrop-blur text-sky-300 text-xs px-2.5 py-1 rounded-lg font-mono">제주 설경 힐링</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                      <span class="w-14 h-14 rounded-full bg-sky-500/90 text-white flex items-center justify-center text-xl font-bold shadow-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-play ml-0.5"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-sky-300 text-xs font-semibold">제주 겨울 감성 숏폼</span>
+                    <span class="text-sky-400 text-xs font-bold"><i class="fa-solid fa-snowflake mr-1"></i>눈보라 속 산책</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white leading-snug">강아지 마루의 눈보라 속 신나는 산책 숏폼</h3>
+                  <p class="text-xs text-slate-400 leading-relaxed">제주 눈 오는 날 감성 힐링 • 아빠와 함께 뛰어놀기 • 바이럴 컷 편집</p>
+                </div>
+              </div>
+              <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
+                <span class="text-sky-400 font-mono text-[11px]"><i class="fa-brands fa-youtube mr-1"></i>youtu.be/ej0jDtIoNk4</span>
+                <a href="https://youtu.be/ej0jDtIoNk4" target="_blank" class="px-3 py-1.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-black text-xs transition-colors flex items-center gap-1">
+                  쇼츠 감상하기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- ITEM 12: Naver Blog Clip (제주 효성전자) -->
+            <div class="port-item shortform glass-panel rounded-3xl overflow-hidden border border-emerald-400/50 hover:border-emerald-400 shadow-xl transition-all flex flex-col justify-between group">
+              <div>
+                <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://m.blog.naver.com/csjeju/clip/14942851', '_blank')">
+                  <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=600&q=80" alt="제주 효성전자 네이버 클립" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
+                    <div class="flex justify-between items-center">
+                      <span class="bg-emerald-500 text-slate-950 text-xs px-2.5 py-1 rounded-lg font-black flex items-center gap-1">
+                        <i class="fa-solid fa-video"></i> 네이버 클립(Clip)
+                      </span>
+                      <span class="bg-slate-900/90 backdrop-blur text-emerald-300 text-xs px-2.5 py-1 rounded-lg font-mono">가전 최저가 보장</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                      <span class="w-14 h-14 rounded-full bg-emerald-500/90 text-slate-950 flex items-center justify-center text-xl font-bold shadow-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-play ml-0.5"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-emerald-300 text-xs font-semibold">제주도민 특혜 혜택</span>
+                    <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-truck-fast mr-1"></i>초특급 무료 배송</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white leading-snug">제주 효성전자 최저가 보장 &amp; 초특급 무료 배송 클립</h3>
+                  <p class="text-xs text-slate-400 leading-relaxed">제주도민 전용 가전 특혜 • 최저가 보장 • 네이버 클립 바이럴 숏폼</p>
+                </div>
+              </div>
+              <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
+                <span class="text-emerald-400 font-mono text-[11px]"><i class="fa-solid fa-link mr-1"></i>m.blog.naver.com/csjeju/clip/14942851</span>
+                <a href="https://m.blog.naver.com/csjeju/clip/14942851" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition-colors flex items-center gap-1">
+                  클립 감상하기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- ITEM 13: Global Shortform Beauty (Xiaohongshu) -->
+            <div class="port-item shortform global beauty glass-panel rounded-3xl overflow-hidden border border-red-400/40 hover:border-red-400 transition-all flex flex-col justify-between group">
+              <div>
+                <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('http://xhslink.com/o/2QPWaKuOZzU', '_blank')">
+                  <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=600&q=80" alt="Beauty Shortform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
+                    <div class="flex justify-between items-center">
+                      <span class="bg-red-600 text-white text-xs px-2.5 py-1 rounded-lg font-black">🇨🇳 샤오홍슈 숏폼</span>
+                      <span class="bg-slate-900/80 backdrop-blur text-red-300 text-xs px-2.5 py-1 rounded-lg font-bold">중국어 자막</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                      <span class="w-12 h-12 rounded-full bg-red-500/90 text-white flex items-center justify-center text-lg font-bold shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-play"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-red-300 text-xs font-semibold">중문 뷰티스파</span>
+                    <span class="text-cyan-400 text-xs font-bold"><i class="fa-solid fa-users mr-1"></i>싼커 4배 증가</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white leading-snug">중문 피부관리 스파 샤오홍슈 중국어 숏폼 마케팅</h3>
+                  <p class="text-xs text-slate-400 leading-relaxed">중국 현지 성우 AI 더빙 • 샤오홍슈 프로필 등록 • 싼커 타겟</p>
+                </div>
+              </div>
+              <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
+                <span class="text-slate-400 text-xs font-mono text-[11px]">xhslink.com/o/2QPWaKuOZzU</span>
+                <a href="http://xhslink.com/o/2QPWaKuOZzU" target="_blank" class="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors flex items-center gap-1">
+                  영상 보기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- ITEM 14: YouTube Shorts Live Video (웅진프리드라이프 제휴) -->
+            <div class="port-item shortform glass-panel rounded-3xl overflow-hidden border border-red-500/50 hover:border-red-500 shadow-xl transition-all flex flex-col justify-between group">
+              <div>
+                <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://youtube.com/shorts/BV0sOMWpP44?si=CF6wqS7_uMrztStk', '_blank')">
+                  <img src="images/preed_partnership.jpg" alt="제주AI파트너스 x 웅진프리드라이프 공식 제휴 안내 숏폼" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
+                    <div class="flex justify-between items-center">
+                      <span class="bg-red-600 text-white text-xs px-2.5 py-1 rounded-lg font-black flex items-center gap-1">
+                        <i class="fa-brands fa-youtube"></i> YouTube Shorts
+                      </span>
+                      <span class="bg-slate-900/90 backdrop-blur text-red-300 text-xs px-2.5 py-1 rounded-lg font-mono">공식 제휴</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                      <span class="w-14 h-14 rounded-full bg-red-600/90 text-white flex items-center justify-center text-xl font-bold shadow-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-play ml-0.5"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-red-400 text-xs font-semibold">공식 제휴 혜택</span>
+                    <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-gift mr-1"></i>마케팅 지원</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white leading-snug">AI 마케팅 솔루션을 0원에 이용하는 법?!</h3>
+                  <p class="text-xs text-slate-400 leading-relaxed">웅진프리드라이프 제주오라점 공식 제휴 • 가입 시 AI 라이트 파트너 솔루션 무료 제공 • 납입금 만기 시 100% 환급</p>
+                </div>
+              </div>
+              <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
+                <span class="text-red-400 font-mono text-[11px]"><i class="fa-brands fa-youtube mr-1"></i>youtube.com/shorts/BV0sOMWpP44</span>
+                <a href="https://youtube.com/shorts/BV0sOMWpP44?si=CF6wqS7_uMrztStk" target="_blank" class="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors flex items-center gap-1">
+                  쇼츠 감상하기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- ITEM 15: YouTube Shorts Live Video (디지털 성장 청사진) -->
+            <div class="port-item shortform glass-panel rounded-3xl overflow-hidden border border-red-500/50 hover:border-red-500 shadow-xl transition-all flex flex-col justify-between group">
+              <div>
+                <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://youtu.be/kia9KTPAZX0?si=RGRnGXVXQbMIEEIY', '_blank')">
+                  <img src="images/ai_growth_blueprint.jpg" alt="제주AI파트너스 지역 상권 디지털 성장 청사진 숏폼" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
+                    <div class="flex justify-between items-center">
+                      <span class="bg-red-600 text-white text-xs px-2.5 py-1 rounded-lg font-black flex items-center gap-1">
+                        <i class="fa-brands fa-youtube"></i> YouTube Shorts
+                      </span>
+                      <span class="bg-slate-900/90 backdrop-blur text-red-300 text-xs px-2.5 py-1 rounded-lg font-mono">성공 노하우</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                      <span class="w-14 h-14 rounded-full bg-red-600/90 text-white flex items-center justify-center text-xl font-bold shadow-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-play ml-0.5"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-red-400 text-xs font-semibold">디지털 마케팅 비법</span>
+                    <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-bolt mr-1"></i>초고효율 기획</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white leading-snug">제주 소상공인 지역 상권 디지털 성장 청사진</h3>
+                  <p class="text-xs text-slate-400 leading-relaxed">단돈 10만 원으로 시작하는 AI 숏폼 편집 • 비주얼 및 대본 생성 자동화 • 매장 매출 극대화 솔루션</p>
+                </div>
+              </div>
+              <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
+                <span class="text-red-400 font-mono text-[11px]"><i class="fa-brands fa-youtube mr-1"></i>youtube.com/shorts/kia9KTPAZX0</span>
+                <a href="https://youtu.be/kia9KTPAZX0?si=RGRnGXVXQbMIEEIY" target="_blank" class="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors flex items-center gap-1">
+                  쇼츠 감상하기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+              </div>
+            </div>
+
           </div>
-
-          <!-- ITEM 4: Website Beauty (OK안마원) -->
-          <div class="port-item website beauty glass-panel rounded-3xl overflow-hidden border border-emerald-400/50 hover:border-emerald-400 shadow-2xl transition-all flex flex-col justify-between group relative">
-            <div class="absolute top-3 right-3 z-10">
-              <span class="bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 font-black text-[11px] px-3 py-1 rounded-full shadow-lg flex items-center gap-1 animate-pulse">
-                <i class="fa-solid fa-star"></i> LIVE SITE
-              </span>
-            </div>
-            <div>
-              <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://okanmawon.vercel.app/', '_blank')">
-                <img src="images/okanmawon_preview.jpg" alt="OK안마원 공식 웹사이트" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
-                  <div class="flex justify-between items-center">
-                    <span class="bg-emerald-400 text-slate-950 text-xs px-2.5 py-1 rounded-lg font-black">🌐 실시간 라이브 웹</span>
-                    <span class="bg-slate-900/90 backdrop-blur text-emerald-300 text-xs px-2.5 py-1 rounded-lg font-mono">제주 연동 안마원</span>
-                  </div>
-                  <div class="flex items-center justify-center">
-                    <span class="w-12 h-12 rounded-full bg-emerald-400 text-slate-950 flex items-center justify-center text-lg font-bold shadow-xl group-hover:scale-110 transition-transform">
-                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6 space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="text-emerald-300 text-xs font-semibold">제주 최초 클린안마센터</span>
-                  <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-circle-check mr-1"></i>실시간 운영 중</span>
-                </div>
-                <h3 class="text-lg font-bold text-white leading-snug">국가공인 OK안마원 공식 프리미엄 모바일 웹</h3>
-                <p class="text-xs text-slate-400 leading-relaxed">24시 연중무휴 • 보건복지부 지정 자격 안마사 • 디톡스 족욕 &amp; 수면실 완비</p>
-              </div>
-            </div>
-            <div class="p-4 bg-slate-900/90 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
-              <span class="text-emerald-400 font-bold text-xs"><i class="fa-solid fa-link mr-1"></i>okanmawon.vercel.app</span>
-              <a href="https://okanmawon.vercel.app/" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition-colors flex items-center gap-1">
-                사이트 바로가기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- ITEM 5: YouTube Shorts Live Video (제이엠비라이프) -->
-          <div class="port-item shortform dining beauty glass-panel rounded-3xl overflow-hidden border border-red-500/50 hover:border-red-500 shadow-xl transition-all flex flex-col justify-between group">
-            <div>
-              <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://youtube.com/shorts/wDq5n_AO9Bo?si=8L8k--azVF_xzjAm', '_blank')">
-                <img src="images/jmb_life_preview.jpg" alt="제이엠비라이프 JMB LIFE 브랜드 숏폼 마케팅" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
-                  <div class="flex justify-between items-center">
-                    <span class="bg-red-600 text-white text-xs px-2.5 py-1 rounded-lg font-black flex items-center gap-1">
-                      <i class="fa-brands fa-youtube"></i> YouTube Shorts
-                    </span>
-                    <span class="bg-slate-900/90 backdrop-blur text-red-300 text-xs px-2.5 py-1 rounded-lg font-mono">브랜드 웰니스</span>
-                  </div>
-                  <div class="flex items-center justify-center">
-                    <span class="w-14 h-14 rounded-full bg-red-600/90 text-white flex items-center justify-center text-xl font-bold shadow-2xl group-hover:scale-110 transition-transform">
-                      <i class="fa-solid fa-play ml-0.5"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6 space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="text-red-400 text-xs font-semibold">청정 제주 원료 웰니스</span>
-                  <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-seedling mr-1"></i>30초 완성 가벼운 하루</span>
-                </div>
-                <h3 class="text-lg font-bold text-white leading-snug">바쁜 일상 속 프라이빗 웰니스, 제이엠비라이프 (JMB LIFE)</h3>
-                <p class="text-xs text-slate-400 leading-relaxed">장 건강과 영양 밸런스 [한끼쏙 프리바이옴] • 속 편한 디톡스 힐링 [만나 디디차 &amp; 제주월동무우차] 숏폼 바이럴</p>
-              </div>
-            </div>
-            <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
-              <span class="text-red-400 font-mono text-[11px]"><i class="fa-brands fa-youtube mr-1"></i>youtube.com/shorts/wDq5n_AO9Bo</span>
-              <a href="https://youtube.com/shorts/wDq5n_AO9Bo?si=8L8k--azVF_xzjAm" target="_blank" class="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors flex items-center gap-1">
-                쇼츠 감상하기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- ITEM 7: YouTube Shorts Live Video (니나수 족욕카페) -->
-          <div class="port-item shortform dining beauty activity glass-panel rounded-3xl overflow-hidden border border-red-500/50 hover:border-red-500 shadow-xl transition-all flex flex-col justify-between group">
-            <div>
-              <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://youtube.com/shorts/z9ETfPXNEZ8?feature=share', '_blank')">
-                <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="서귀포 니나수 족욕카페 숏폼" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
-                  <div class="flex justify-between items-center">
-                    <span class="bg-red-600 text-white text-xs px-2.5 py-1 rounded-lg font-black flex items-center gap-1">
-                      <i class="fa-brands fa-youtube"></i> YouTube Shorts
-                    </span>
-                    <span class="bg-slate-900/90 backdrop-blur text-red-300 text-xs px-2.5 py-1 rounded-lg font-mono">실시간 홍보</span>
-                  </div>
-                  <div class="flex items-center justify-center">
-                    <span class="w-14 h-14 rounded-full bg-red-600/90 text-white flex items-center justify-center text-xl font-bold shadow-2xl group-hover:scale-110 transition-transform">
-                      <i class="fa-solid fa-play ml-0.5"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6 space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="text-red-400 text-xs font-semibold">서귀포 박수기정 힐링 명소</span>
-                  <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-spa mr-1"></i>족욕 이색카페</span>
-                </div>
-                <h3 class="text-lg font-bold text-white leading-snug">제주 서귀포 [니나수 족욕카페] 힐링 숏폼 마케팅</h3>
-                <p class="text-xs text-slate-400 leading-relaxed">제주 여행객 타겟팅 • 감성 몰입 컷 편집 • AI 맞춤 성우 더빙</p>
-              </div>
-            </div>
-            <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
-              <span class="text-red-400 font-mono text-[11px]"><i class="fa-brands fa-youtube mr-1"></i>youtube.com/shorts/z9ETfPXNEZ8</span>
-              <a href="https://youtube.com/shorts/z9ETfPXNEZ8?feature=share" target="_blank" class="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors flex items-center gap-1">
-                쇼츠 감상하기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- ITEM 8: Naver Blog Clip (제주 약산 흑염소 가든) -->
-          <div class="port-item shortform dining glass-panel rounded-3xl overflow-hidden border border-emerald-400/50 hover:border-emerald-400 shadow-xl transition-all flex flex-col justify-between group">
-            <div>
-              <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://m.blog.naver.com/csjeju/clip/14922717', '_blank')">
-                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="제주 약산 흑염소 가든 네이버 클립" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
-                  <div class="flex justify-between items-center">
-                    <span class="bg-emerald-500 text-slate-950 text-xs px-2.5 py-1 rounded-lg font-black flex items-center gap-1">
-                      <i class="fa-solid fa-video"></i> 네이버 클립(Clip)
-                    </span>
-                    <span class="bg-slate-900/90 backdrop-blur text-emerald-300 text-xs px-2.5 py-1 rounded-lg font-mono">보양식 맛집</span>
-                  </div>
-                  <div class="flex items-center justify-center">
-                    <span class="w-14 h-14 rounded-full bg-emerald-500/90 text-slate-950 flex items-center justify-center text-xl font-bold shadow-2xl group-hover:scale-110 transition-transform">
-                      <i class="fa-solid fa-play ml-0.5"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6 space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="text-emerald-300 text-xs font-semibold">제주 보양식 대표 맛집</span>
-                  <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-fire mr-1"></i>흑염소 전골·수육</span>
-                </div>
-                <h3 class="text-lg font-bold text-white leading-snug">제주 약산 흑염소 가든 네이버 클립 보양식 숏폼</h3>
-                <p class="text-xs text-slate-400 leading-relaxed">네이버 클립 상위 노출 • 흑염소 탕/전골/수육 시그니처 • 몸보신 추천</p>
-              </div>
-            </div>
-            <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
-              <span class="text-emerald-400 font-mono text-[11px]"><i class="fa-solid fa-link mr-1"></i>m.blog.naver.com/csjeju/clip</span>
-              <a href="https://m.blog.naver.com/csjeju/clip/14922717" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition-colors flex items-center gap-1">
-                클립 감상하기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- ITEM 9: YouTube Shorts Pet Story (빵심이네 강아지 마루) -->
-          <div class="port-item shortform glass-panel rounded-3xl overflow-hidden border border-pink-400/50 hover:border-pink-400 shadow-xl transition-all flex flex-col justify-between group">
-            <div>
-              <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://youtube.com/shorts/vbVOkYTAcpc?feature=share', '_blank')">
-                <img src="images/maru_breadsim.png" alt="빵심이네 귀여운 강아지 마루 펫 숏폼" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
-                  <div class="flex justify-between items-center">
-                    <span class="bg-pink-500 text-white text-xs px-2.5 py-1 rounded-lg font-black flex items-center gap-1">
-                      <i class="fa-brands fa-youtube"></i> YouTube Shorts
-                    </span>
-                    <span class="bg-slate-900/90 backdrop-blur text-pink-300 text-xs px-2.5 py-1 rounded-lg font-mono">펫 스토리텔링</span>
-                  </div>
-                  <div class="flex items-center justify-center">
-                    <span class="w-14 h-14 rounded-full bg-pink-500/90 text-white flex items-center justify-center text-xl font-bold shadow-2xl group-hover:scale-110 transition-transform">
-                      <i class="fa-solid fa-play ml-0.5"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6 space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="text-pink-300 text-xs font-semibold">반려동물 펫 이색 콘텐츠</span>
-                  <span class="text-pink-400 text-xs font-bold"><i class="fa-solid fa-paw mr-1"></i>#마루 #빵심이</span>
-                </div>
-                <h3 class="text-lg font-bold text-white leading-snug">빵심이네 귀여운 강아지 [마루] 펫 숏폼 스토리</h3>
-                <p class="text-xs text-slate-400 leading-relaxed">반려동물 감성 시나리오 • 펫 동반 매장 홍보 • AI 컷 편집 &amp; 더빙</p>
-              </div>
-            </div>
-            <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
-              <span class="text-pink-400 font-mono text-[11px]"><i class="fa-brands fa-youtube mr-1"></i>youtube.com/shorts/vbVOkYTAcpc</span>
-              <a href="https://youtube.com/shorts/vbVOkYTAcpc?feature=share" target="_blank" class="px-3 py-1.5 rounded-lg bg-pink-500 hover:bg-pink-400 text-slate-950 font-black text-xs transition-colors flex items-center gap-1">
-                쇼츠 감상하기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- ITEM 10: YouTube Shorts Pet Story (마루의 눈보라속 산책) -->
-          <div class="port-item shortform glass-panel rounded-3xl overflow-hidden border border-sky-400/50 hover:border-sky-400 shadow-xl transition-all flex flex-col justify-between group">
-            <div>
-              <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://youtu.be/ej0jDtIoNk4', '_blank')">
-                <img src="images/maru_snow_walk.png" alt="강아지 마루의 눈보라속 산책 숏폼" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
-                  <div class="flex justify-between items-center">
-                    <span class="bg-sky-500 text-white text-xs px-2.5 py-1 rounded-lg font-black flex items-center gap-1">
-                      <i class="fa-brands fa-youtube"></i> YouTube Shorts
-                    </span>
-                    <span class="bg-slate-900/90 backdrop-blur text-sky-300 text-xs px-2.5 py-1 rounded-lg font-mono">제주 설경 힐링</span>
-                  </div>
-                  <div class="flex items-center justify-center">
-                    <span class="w-14 h-14 rounded-full bg-sky-500/90 text-white flex items-center justify-center text-xl font-bold shadow-2xl group-hover:scale-110 transition-transform">
-                      <i class="fa-solid fa-play ml-0.5"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6 space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="text-sky-300 text-xs font-semibold">제주 겨울 감성 숏폼</span>
-                  <span class="text-sky-400 text-xs font-bold"><i class="fa-solid fa-snowflake mr-1"></i>눈보라 속 산책</span>
-                </div>
-                <h3 class="text-lg font-bold text-white leading-snug">강아지 마루의 눈보라 속 신나는 산책 숏폼</h3>
-                <p class="text-xs text-slate-400 leading-relaxed">제주 눈 오는 날 감성 힐링 • 아빠와 함께 뛰어놀기 • 바이럴 컷 편집</p>
-              </div>
-            </div>
-            <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
-              <span class="text-sky-400 font-mono text-[11px]"><i class="fa-brands fa-youtube mr-1"></i>youtu.be/ej0jDtIoNk4</span>
-              <a href="https://youtu.be/ej0jDtIoNk4" target="_blank" class="px-3 py-1.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-black text-xs transition-colors flex items-center gap-1">
-                쇼츠 감상하기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- ITEM 11: Naver Blog Clip (제주 효성전자) -->
-          <div class="port-item shortform glass-panel rounded-3xl overflow-hidden border border-emerald-400/50 hover:border-emerald-400 shadow-xl transition-all flex flex-col justify-between group">
-            <div>
-              <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://m.blog.naver.com/csjeju/clip/14942851', '_blank')">
-                <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=600&q=80" alt="제주 효성전자 네이버 클립" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
-                  <div class="flex justify-between items-center">
-                    <span class="bg-emerald-500 text-slate-950 text-xs px-2.5 py-1 rounded-lg font-black flex items-center gap-1">
-                      <i class="fa-solid fa-video"></i> 네이버 클립(Clip)
-                    </span>
-                    <span class="bg-slate-900/90 backdrop-blur text-emerald-300 text-xs px-2.5 py-1 rounded-lg font-mono">가전 최저가 보장</span>
-                  </div>
-                  <div class="flex items-center justify-center">
-                    <span class="w-14 h-14 rounded-full bg-emerald-500/90 text-slate-950 flex items-center justify-center text-xl font-bold shadow-2xl group-hover:scale-110 transition-transform">
-                      <i class="fa-solid fa-play ml-0.5"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6 space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="text-emerald-300 text-xs font-semibold">제주도민 특혜 혜택</span>
-                  <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-truck-fast mr-1"></i>초특급 무료 배송</span>
-                </div>
-                <h3 class="text-lg font-bold text-white leading-snug">제주 효성전자 최저가 보장 &amp; 초특급 무료 배송 클립</h3>
-                <p class="text-xs text-slate-400 leading-relaxed">제주도민 전용 가전 특혜 • 최저가 보장 • 네이버 클립 바이럴 숏폼</p>
-              </div>
-            </div>
-            <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
-              <span class="text-emerald-400 font-mono text-[11px]"><i class="fa-solid fa-link mr-1"></i>m.blog.naver.com/csjeju/clip/14942851</span>
-              <a href="https://m.blog.naver.com/csjeju/clip/14942851" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition-colors flex items-center gap-1">
-                클립 감상하기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- ITEM 6: Global Shortform Beauty (Xiaohongshu) -->
-          <div class="port-item shortform global beauty glass-panel rounded-3xl overflow-hidden border border-red-400/40 hover:border-red-400 transition-all flex flex-col justify-between group">
-            <div>
-              <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('http://xhslink.com/o/2QPWaKuOZzU', '_blank')">
-                <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=600&q=80" alt="Beauty Shortform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
-                  <div class="flex justify-between items-center">
-                    <span class="bg-red-600 text-white text-xs px-2.5 py-1 rounded-lg font-black">🇨🇳 샤오홍슈 숏폼</span>
-                    <span class="bg-slate-900/80 backdrop-blur text-red-300 text-xs px-2.5 py-1 rounded-lg font-bold">중국어 자막</span>
-                  </div>
-                  <div class="flex items-center justify-center">
-                    <span class="w-12 h-12 rounded-full bg-red-500/90 text-white flex items-center justify-center text-lg font-bold shadow-lg group-hover:scale-110 transition-transform">
-                      <i class="fa-solid fa-play"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6 space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="text-red-300 text-xs font-semibold">중문 뷰티스파</span>
-                  <span class="text-cyan-400 text-xs font-bold"><i class="fa-solid fa-users mr-1"></i>싼커 4배 증가</span>
-                </div>
-                <h3 class="text-lg font-bold text-white leading-snug">중문 피부관리 스파 샤오홍슈 중국어 숏폼 마케팅</h3>
-                <p class="text-xs text-slate-400 leading-relaxed">중국 현지 성우 AI 더빙 • 샤오홍슈 프로필 등록 • 싼커 타겟</p>
-              </div>
-            </div>
-            <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
-              <span class="text-slate-400 text-xs font-mono text-[11px]">xhslink.com/o/2QPWaKuOZzU</span>
-              <a href="http://xhslink.com/o/2QPWaKuOZzU" target="_blank" class="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors flex items-center gap-1">
-                영상 보기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- ITEM 7: YouTube Shorts Live Video (웅진프리드라이프 제휴) -->
-          <div class="port-item shortform glass-panel rounded-3xl overflow-hidden border border-red-500/50 hover:border-red-500 shadow-xl transition-all flex flex-col justify-between group">
-            <div>
-              <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://youtube.com/shorts/BV0sOMWpP44?si=CF6wqS7_uMrztStk', '_blank')">
-                <img src="images/preed_partnership.jpg" alt="제주AI파트너스 x 웅진프리드라이프 공식 제휴 안내 숏폼" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
-                  <div class="flex justify-between items-center">
-                    <span class="bg-red-600 text-white text-xs px-2.5 py-1 rounded-lg font-black flex items-center gap-1">
-                      <i class="fa-brands fa-youtube"></i> YouTube Shorts
-                    </span>
-                    <span class="bg-slate-900/90 backdrop-blur text-red-300 text-xs px-2.5 py-1 rounded-lg font-mono">공식 제휴</span>
-                  </div>
-                  <div class="flex items-center justify-center">
-                    <span class="w-14 h-14 rounded-full bg-red-600/90 text-white flex items-center justify-center text-xl font-bold shadow-2xl group-hover:scale-110 transition-transform">
-                      <i class="fa-solid fa-play ml-0.5"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6 space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="text-red-400 text-xs font-semibold">공식 제휴 혜택</span>
-                  <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-gift mr-1"></i>마케팅 지원</span>
-                </div>
-                <h3 class="text-lg font-bold text-white leading-snug">AI 마케팅 솔루션을 0원에 이용하는 법?!</h3>
-                <p class="text-xs text-slate-400 leading-relaxed">웅진프리드라이프 제주오라점 공식 제휴 • 가입 시 AI 라이트 파트너 솔루션 무료 제공 • 납입금 만기 시 100% 환급</p>
-              </div>
-            </div>
-            <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
-              <span class="text-red-400 font-mono text-[11px]"><i class="fa-brands fa-youtube mr-1"></i>youtube.com/shorts/BV0sOMWpP44</span>
-              <a href="https://youtube.com/shorts/BV0sOMWpP44?si=CF6wqS7_uMrztStk" target="_blank" class="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors flex items-center gap-1">
-                쇼츠 감상하기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- ITEM 8: Place Dining -->
-          <div class="port-item place dining glass-panel rounded-3xl overflow-hidden border border-orange-400/30 hover:border-orange-400 transition-all flex flex-col justify-between group">
-            <div>
-              <div class="relative h-56 overflow-hidden cursor-pointer" onclick="openWebsiteModal('성산일출봉 맛집 당근 비즈프로필 세팅', 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80', '당근 로컬 타겟 단골 1,200명 확보', '하이퍼로컬 마케팅 • 쿠폰 발행 연동')">
-                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Daangn Profile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
-                  <div class="flex justify-between items-center">
-                    <span class="bg-orange-500 text-white text-xs px-2.5 py-1 rounded-lg font-black">🥕 당근 비즈프로필</span>
-                    <span class="bg-slate-900/80 backdrop-blur text-orange-300 text-xs px-2.5 py-1 rounded-lg font-mono">하이퍼로컬</span>
-                  </div>
-                  <div class="flex items-center justify-center">
-                    <span class="w-12 h-12 rounded-full bg-orange-500/90 text-white flex items-center justify-center text-lg font-bold shadow-lg group-hover:scale-110 transition-transform">
-                      <i class="fa-solid fa-carrot"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6 space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="text-orange-300 text-xs font-semibold">성산 맛집</span>
-                  <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-user-plus mr-1"></i>단골 1,200명</span>
-                </div>
-                <h3 class="text-lg font-bold text-white leading-snug">성산일출봉 향토맛집 당근 비즈프로필 세팅</h3>
-                <p class="text-xs text-slate-400 leading-relaxed">제주 도민 및 관광객 타겟 당근 이웃 광고 • 쿠폰 발급 연동</p>
-              </div>
-            </div>
-            <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
-              <span class="text-slate-400 text-xs">당근비즈 전담</span>
-              <button onclick="openWebsiteModal('성산일출봉 맛집 당근 비즈프로필 세팅', 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80', '당근 로컬 타겟 단골 1,200명 확보', '하이퍼로컬 마케팅 • 쿠폰 발행 연동')" class="text-orange-300 hover:underline font-bold">상세 보기 ➔</button>
-            </div>
-          </div>
-
-          <!-- ITEM 9: YouTube Shorts Live Video (디지털 성장 청사진) -->
-          <div class="port-item shortform glass-panel rounded-3xl overflow-hidden border border-red-500/50 hover:border-red-500 shadow-xl transition-all flex flex-col justify-between group">
-            <div>
-              <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://youtu.be/kia9KTPAZX0?si=RGRnGXVXQbMIEEIY', '_blank')">
-                <img src="images/ai_growth_blueprint.jpg" alt="제주AI파트너스 지역 상권 디지털 성장 청사진 숏폼" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
-                  <div class="flex justify-between items-center">
-                    <span class="bg-red-600 text-white text-xs px-2.5 py-1 rounded-lg font-black flex items-center gap-1">
-                      <i class="fa-brands fa-youtube"></i> YouTube Shorts
-                    </span>
-                    <span class="bg-slate-900/90 backdrop-blur text-red-300 text-xs px-2.5 py-1 rounded-lg font-mono">성공 노하우</span>
-                  </div>
-                  <div class="flex items-center justify-center">
-                    <span class="w-14 h-14 rounded-full bg-red-600/90 text-white flex items-center justify-center text-xl font-bold shadow-2xl group-hover:scale-110 transition-transform">
-                      <i class="fa-solid fa-play ml-0.5"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="p-6 space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="text-red-400 text-xs font-semibold">디지털 마케팅 비법</span>
-                  <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-bolt mr-1"></i>초고효율 기획</span>
-                </div>
-                <h3 class="text-lg font-bold text-white leading-snug">제주 소상공인 지역 상권 디지털 성장 청사진</h3>
-                <p class="text-xs text-slate-400 leading-relaxed">단돈 10만 원으로 시작하는 AI 숏폼 편집 • 비주얼 및 대본 생성 자동화 • 매장 매출 극대화 솔루션</p>
-              </div>
-            </div>
-            <div class="p-4 bg-slate-900/80 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
-              <span class="text-red-400 font-mono text-[11px]"><i class="fa-brands fa-youtube mr-1"></i>youtube.com/shorts/kia9KTPAZX0</span>
-              <a href="https://youtu.be/kia9KTPAZX0?si=RGRnGXVXQbMIEEIY" target="_blank" class="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold text-xs transition-colors flex items-center gap-1">
-                쇼츠 감상하기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
-              </a>
-            </div>
-          </div>
-
         </div>
 
         <!-- CTA Banner inside Portfolio Page -->
@@ -1030,7 +1070,7 @@
     }
 
     function applyFilters() {
-      const items = document.querySelectorAll('#full-portfolio-grid .port-item');
+      const items = document.querySelectorAll('.slider-container .port-item');
       items.forEach(item => {
         const matchesMain = (currentMainCat === 'all') || item.classList.contains(currentMainCat);
         const matchesInd = (currentIndCat === 'all') || item.classList.contains(currentIndCat);
@@ -1041,6 +1081,33 @@
           item.classList.add('hidden');
         }
       });
+      
+      // Reset scroll position on filtering
+      document.querySelectorAll('.slider-container').forEach(slider => {
+        slider.scrollTo({ left: 0 });
+      });
+
+      // Update button disabled state
+      checkScrollLimits('website-slider', 'web-slide-prev', 'web-slide-next');
+      checkScrollLimits('video-slider', 'video-slide-prev', 'video-slide-next');
+    }
+
+    // Slider Scroll Interaction Functions
+    function scrollSlider(sliderId, direction) {
+      const slider = document.getElementById(sliderId);
+      if (!slider) return;
+      const scrollAmount = slider.clientWidth * 0.75;
+      slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+
+    function checkScrollLimits(sliderId, prevBtnId, nextBtnId) {
+      const slider = document.getElementById(sliderId);
+      const prevBtn = document.getElementById(prevBtnId);
+      const nextBtn = document.getElementById(nextBtnId);
+      if (!slider || !prevBtn || !nextBtn) return;
+
+      prevBtn.disabled = slider.scrollLeft <= 5;
+      nextBtn.disabled = (slider.scrollLeft + slider.clientWidth) >= (slider.scrollWidth - 5);
     }
 
     // Check URL parameters on load (e.g. portfolio.html?cat=website)
@@ -1050,6 +1117,16 @@
       const indParam = params.get('ind');
       if (catParam) filterMainCategory(catParam);
       if (indParam) filterIndustry(indParam);
+      
+      setTimeout(() => {
+        checkScrollLimits('website-slider', 'web-slide-prev', 'web-slide-next');
+        checkScrollLimits('video-slider', 'video-slide-prev', 'video-slide-next');
+      }, 300);
+    });
+
+    window.addEventListener('resize', () => {
+      checkScrollLimits('website-slider', 'web-slide-prev', 'web-slide-next');
+      checkScrollLimits('video-slider', 'video-slide-prev', 'video-slide-next');
     });
   </script>
 </body>
