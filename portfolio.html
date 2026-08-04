@@ -204,6 +204,9 @@
             <button onclick="filterMainCategory('shortform')" id="btn-cat-shortform" class="port-cat-btn px-5 py-2.5 rounded-2xl text-xs font-extrabold transition-all bg-slate-900 border border-sky-400/40 text-sky-300 hover:bg-sky-400/10">
               <i class="fa-solid fa-video text-sky-400 mr-1.5"></i>숏폼 마케팅
             </button>
+            <button onclick="filterMainCategory('blog')" id="btn-cat-blog" class="port-cat-btn px-5 py-2.5 rounded-2xl text-xs font-extrabold transition-all bg-slate-900 border border-teal-400/40 text-teal-300 hover:bg-teal-400/10">
+              <i class="fa-solid fa-pen-nib text-teal-400 mr-1.5"></i>블로그 포스팅
+            </button>
             <button onclick="filterMainCategory('global')" id="btn-cat-global" class="port-cat-btn px-5 py-2.5 rounded-2xl text-xs font-extrabold transition-all bg-slate-900 border border-red-400/40 text-red-300 hover:bg-red-400/10">
               <i class="fa-solid fa-earth-asia text-red-400 mr-1.5"></i>샤오홍슈/중국어
             </button>
@@ -833,6 +836,64 @@
           </div>
         </div>
 
+        <!-- ==================== Section 3: Blog Carousel ==================== -->
+        <div class="mt-16 relative">
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2">
+              <i class="fa-solid fa-pen-nib text-teal-400"></i>
+              <span>블로그 포스팅 사례</span>
+            </h2>
+            <!-- Slider Controls -->
+            <div class="flex items-center gap-2">
+              <button id="blog-slide-prev" onclick="scrollSlider('blog-slider', -1)" class="slider-control-btn w-10 h-10 rounded-full flex items-center justify-center text-slate-300 hover:text-white" disabled>
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button id="blog-slide-next" onclick="scrollSlider('blog-slider', 1)" class="slider-control-btn w-10 h-10 rounded-full flex items-center justify-center text-slate-300 hover:text-white">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+          <div id="blog-slider" class="slider-container scrollbar-none" onscroll="checkScrollLimits('blog-slider', 'blog-slide-prev', 'blog-slide-next')">
+
+            <!-- ITEM 16: Naver Blog Post (제주 소원사 유래와 역사) -->
+            <div class="port-item blog activity global glass-panel rounded-3xl overflow-hidden border border-emerald-500/30 hover:border-emerald-500 transition-all flex flex-col justify-between group">
+              <div>
+                <div class="relative h-56 overflow-hidden cursor-pointer" onclick="window.open('https://blog.naver.com/csjeju/224363185130', '_blank')">
+                  <img src="https://sowonsa.vercel.app/images/20260719_135118.jpg" alt="제주 소원사 블로그 브랜딩" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-between p-4">
+                    <div class="flex justify-between items-center">
+                      <span class="bg-emerald-500 text-slate-950 text-xs px-2.5 py-1 rounded-lg font-black flex items-center gap-1">
+                        <i class="fa-solid fa-pen-nib"></i> 네이버 블로그
+                      </span>
+                      <span class="bg-slate-900/90 backdrop-blur text-emerald-300 text-xs px-2.5 py-1 rounded-lg font-mono">전통 사찰 홍보</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                      <span class="w-12 h-12 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center text-lg font-bold shadow-xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-6 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="text-emerald-300 text-xs font-semibold">스토리텔링 마케팅</span>
+                    <span class="text-emerald-400 text-xs font-bold"><i class="fa-solid fa-circle-check mr-1"></i>최적화 검색 노출</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white leading-snug">제주 소원사 유래와 역사 스토리텔링 블로그 포스팅</h3>
+                  <p class="text-xs text-slate-400 leading-relaxed">한라산 백록의 전설과 전통 사찰의 깊은 역사 소개 • 감성 스토리 기획 및 키워드 최적화 • 온라인 브랜딩 구축 사례</p>
+                </div>
+              </div>
+              <div class="p-4 bg-slate-900/90 border-t border-slate-800 text-xs flex justify-between items-center text-slate-300">
+                <span class="text-emerald-400 font-bold text-xs"><i class="fa-solid fa-link mr-1"></i>blog.naver.com/csjeju/224363185130</span>
+                <a href="https://blog.naver.com/csjeju/224363185130" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition-colors flex items-center gap-1">
+                  포스팅 바로가기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
         <!-- CTA Banner inside Portfolio Page -->
         <div class="mt-16 glass-panel p-8 sm:p-12 rounded-3xl border border-sky-400/40 text-center space-y-6">
           <div class="w-16 h-16 rounded-2xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-3xl mx-auto">
@@ -1106,6 +1167,7 @@
       // Update button disabled state
       checkScrollLimits('website-slider', 'web-slide-prev', 'web-slide-next');
       checkScrollLimits('video-slider', 'video-slide-prev', 'video-slide-next');
+      checkScrollLimits('blog-slider', 'blog-slide-prev', 'blog-slide-next');
     }
 
     // Slider Scroll Interaction Functions
@@ -1137,12 +1199,14 @@
       setTimeout(() => {
         checkScrollLimits('website-slider', 'web-slide-prev', 'web-slide-next');
         checkScrollLimits('video-slider', 'video-slide-prev', 'video-slide-next');
+        checkScrollLimits('blog-slider', 'blog-slide-prev', 'blog-slide-next');
       }, 300);
     });
 
     window.addEventListener('resize', () => {
       checkScrollLimits('website-slider', 'web-slide-prev', 'web-slide-next');
       checkScrollLimits('video-slider', 'video-slide-prev', 'video-slide-next');
+      checkScrollLimits('blog-slider', 'blog-slide-prev', 'blog-slide-next');
     });
   </script>
 </body>
