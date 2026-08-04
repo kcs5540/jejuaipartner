@@ -596,3 +596,23 @@ body.light-theme footer h3 {
   border-color: rgba(255, 255, 255, 0.05) !important;
 }
 
+/* Light Theme overrides for Slider Controls */
+body.light-theme .slider-control-btn {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(2, 132, 199, 0.25) !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+body.light-theme .slider-control-btn:hover:not(:disabled) {
+  background: var(--primary-blue) !important;
+  border-color: var(--accent-sky) !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.3);
+}
+body.light-theme .slider-control-btn:disabled {
+  opacity: 0.4;
+  background: rgba(241, 245, 249, 0.8) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
+  color: #94a3b8 !important;
+}
+
