@@ -563,7 +563,6 @@ body.light-theme footer h3 {
 .slider-container .port-item {
   scroll-snap-align: start;
   flex: 0 0 85%;
-  height: 20.5rem; /* Force exact identical card heights on mobile (increased from 19rem to prevent text clipping) */
 }
 
 /* Card Height & Padding adjustments for a sleeker, more compact look */
@@ -575,7 +574,6 @@ body.light-theme footer h3 {
 }
 .slider-container .port-item h3 {
   font-size: 1rem; /* Reduced title size on mobile (16px instead of 18px) */
-  height: 1.4rem; /* Fixed height for 1 line of title on mobile */
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -588,7 +586,6 @@ body.light-theme footer h3 {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 2.5rem; /* Fixed height for 2 lines of description text to align heights across all sliders */
 }
 
 /* Hide top-left and top-right badges inside card image overlays and center the action button */
@@ -607,7 +604,6 @@ body.light-theme footer h3 {
 @media (min-width: 640px) {
   .slider-container .port-item {
     flex: 0 0 calc(50% - 0.75rem);
-    height: 23.5rem; /* Force exact identical card heights on tablet/desktop (increased from 22rem to prevent text clipping) */
   }
   .slider-container .port-item .h-56 {
     height: 12.5rem; /* Reduced image height on tablet/desktop (200px instead of 224px) */
@@ -617,7 +613,6 @@ body.light-theme footer h3 {
   }
   .slider-container .port-item h3 {
     font-size: 1.125rem; /* Restore text-lg (18px) on tablet/desktop */
-    height: 1.6rem; /* Fixed height for 1 line of title on tablet/desktop */
   }
 }
 
