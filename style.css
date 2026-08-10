@@ -574,6 +574,12 @@ body.light-theme footer h3 {
 }
 .slider-container .port-item h3 {
   font-size: 1rem; /* Reduced title size on mobile (16px instead of 18px) */
+  height: 1.4rem; /* Fixed height for 1 line of title on mobile */
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .slider-container .port-item p {
   display: -webkit-box;
@@ -581,6 +587,7 @@ body.light-theme footer h3 {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  height: 2.5rem; /* Fixed height for 2 lines of description text to align heights across all sliders */
 }
 
 @media (min-width: 640px) {
@@ -595,6 +602,7 @@ body.light-theme footer h3 {
   }
   .slider-container .port-item h3 {
     font-size: 1.125rem; /* Restore text-lg (18px) on tablet/desktop */
+    height: 1.6rem; /* Fixed height for 1 line of title on tablet/desktop */
   }
 }
 
