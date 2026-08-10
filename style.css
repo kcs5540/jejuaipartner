@@ -572,6 +572,16 @@ body.light-theme footer h3 {
 .slider-container .port-item .p-6 {
   padding: 1rem; /* Reduced body padding on mobile (16px instead of 24px) */
 }
+.slider-container .port-item h3 {
+  font-size: 1rem; /* Reduced title size on mobile (16px instead of 18px) */
+}
+.slider-container .port-item p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 @media (min-width: 640px) {
   .slider-container .port-item {
@@ -582,6 +592,9 @@ body.light-theme footer h3 {
   }
   .slider-container .port-item .p-6 {
     padding: 1.25rem; /* Reduced body padding on tablet/desktop (20px instead of 24px) */
+  }
+  .slider-container .port-item h3 {
+    font-size: 1.125rem; /* Restore text-lg (18px) on tablet/desktop */
   }
 }
 
