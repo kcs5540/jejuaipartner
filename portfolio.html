@@ -1518,6 +1518,43 @@
       checkScrollLimits('video-slider', 'video-slide-prev', 'video-slide-next');
       checkScrollLimits('blog-slider', 'blog-slide-prev', 'blog-slide-next');
     });
+
+    // 3초마다 자동 슬라이드 이동 기능 (마우스 오버/터치 시 일시정지)
+    const autoSliders = ['website-slider', 'video-slider', 'blog-slider'];
+    const hoverStates = { 'website-slider': false, 'video-slider': false, 'blog-slider': false };
+
+    autoSliders.forEach(sliderId => {
+      const slider = document.getElementById(sliderId);
+      if (!slider) return;
+
+      // 마우스가 올라가거나 모바일 터치 시 슬라이드 자동 이동 멈춤 (UX 배려)
+      slider.addEventListener('mouseenter', () => hoverStates[sliderId] = true);
+      slider.addEventListener('mouseleave', () => hoverStates[sliderId] = false);
+      slider.addEventListener('touchstart', () => hoverStates[sliderId] = true);
+      slider.addEventListener('touchend', () => {
+        setTimeout(() => hoverStates[sliderId] = false, 2000);
+      });
+
+      setInterval(() => {
+        if (hoverStates[sliderId]) return;
+
+        // 필터링 등으로 인해 노출되고 있는 카드 개수 체크
+        const visibleItems = slider.querySelectorAll('.port-item:not(.hidden)');
+        if (visibleItems.length <= 1) return;
+
+        // 끝에 도달했는지 확인 (안전 마진 15px 적용)
+        const isAtEnd = (slider.scrollLeft + slider.clientWidth) >= (slider.scrollWidth - 15);
+        if (isAtEnd) {
+          // 처음 위치로 부드럽게 복귀
+          slider.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          // 다음 카드 넓이 + 여백(24px) 만큼 우측으로 부드럽게 이동
+          const card = slider.querySelector('.port-item:not(.hidden)');
+          const cardWidth = card ? card.clientWidth : slider.clientWidth * 0.75;
+          slider.scrollBy({ left: cardWidth + 24, behavior: 'smooth' });
+        }
+      }, 3000);
+    });
   </script>
 </body>
 </html>
