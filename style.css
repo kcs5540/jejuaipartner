@@ -563,7 +563,7 @@ body.light-theme footer h3 {
 .slider-container .port-item {
   scroll-snap-align: start;
   flex: 0 0 85%;
-  height: 22.5rem; /* Force exact identical card heights on mobile */
+  height: 19rem; /* Force exact identical card heights on mobile (reduced from 22.5rem after hiding footer) */
 }
 
 /* Card Height & Padding adjustments for a sleeker, more compact look */
@@ -599,10 +599,15 @@ body.light-theme footer h3 {
   justify-content: center !important;
 }
 
+/* Hide card footer (domain link and view button) */
+.slider-container .port-item > div:last-child {
+  display: none !important;
+}
+
 @media (min-width: 640px) {
   .slider-container .port-item {
     flex: 0 0 calc(50% - 0.75rem);
-    height: 25.5rem; /* Force exact identical card heights on tablet/desktop */
+    height: 22rem; /* Force exact identical card heights on tablet/desktop (reduced from 25.5rem after hiding footer) */
   }
   .slider-container .port-item .h-56 {
     height: 12.5rem; /* Reduced image height on tablet/desktop (200px instead of 224px) */
