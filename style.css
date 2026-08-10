@@ -565,9 +565,23 @@ body.light-theme footer h3 {
   flex: 0 0 85%;
 }
 
+/* Card Height & Padding adjustments for a sleeker, more compact look */
+.slider-container .port-item .h-56 {
+  height: 11rem; /* Reduced image height on mobile (176px instead of 224px) */
+}
+.slider-container .port-item .p-6 {
+  padding: 1rem; /* Reduced body padding on mobile (16px instead of 24px) */
+}
+
 @media (min-width: 640px) {
   .slider-container .port-item {
     flex: 0 0 calc(50% - 0.75rem);
+  }
+  .slider-container .port-item .h-56 {
+    height: 12.5rem; /* Reduced image height on tablet/desktop (200px instead of 224px) */
+  }
+  .slider-container .port-item .p-6 {
+    padding: 1.25rem; /* Reduced body padding on tablet/desktop (20px instead of 24px) */
   }
 }
 
