@@ -591,6 +591,14 @@ body.light-theme footer h3 {
   height: 2.5rem; /* Fixed height for 2 lines of description text to align heights across all sliders */
 }
 
+/* Hide top-left and top-right badges inside card image overlays and center the action button */
+.slider-container .port-item .absolute.inset-0 > div:first-child {
+  display: none !important;
+}
+.slider-container .port-item .absolute.inset-0 {
+  justify-content: center !important;
+}
+
 @media (min-width: 640px) {
   .slider-container .port-item {
     flex: 0 0 calc(50% - 0.75rem);
