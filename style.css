@@ -562,7 +562,7 @@ body.light-theme footer h3 {
 
 .slider-container .port-item {
   scroll-snap-align: start;
-  flex: 0 0 100%;
+  flex: 0 0 85%;
 }
 
 @media (min-width: 640px) {
