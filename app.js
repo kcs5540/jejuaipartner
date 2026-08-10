@@ -1,5 +1,5 @@
 /* ==========================================================================
-   제주AI파트너스 (Jeju AI Partners) - Interactive JavaScript Application
+   제주AI파트너 (Jeju AI Partner) - Interactive JavaScript Application
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -153,7 +153,7 @@ function calculateSavings() {
   const count = parseInt(select.value, 10);
   
   // Traditional agency cost per video: approx 350,000 KRW
-  // Jeju AI Partners package average cost per video: approx 72,500 KRW (Monthly package)
+  // Jeju AI Partner package average cost per video: approx 72,500 KRW (Monthly package)
   const traditionalCost = count * 350000;
   let ourCost = 100000; // Single default
   
@@ -289,7 +289,7 @@ function sendChatMessage() {
 
   // Simulate AI Response after 700ms
   setTimeout(() => {
-    let aiAnswer = '사장님! 문의하신 사항은 제주AI파트너스 AI 엔진이 즉시 대본과 채널 세팅에 반영해 드립니다.';
+    let aiAnswer = '사장님! 문의하신 사항은 제주AI파트너 AI 엔진이 즉시 대본과 채널 세팅에 반영해 드립니다.';
     
     if (userText.includes('홈페이지') || userText.includes('웹') || userText.includes('사이트')) {
       aiAnswer = '소상공인 전용 홈페이지 제작은 단일 30만 원(VAT 별도)에 100% 모바일 반응형 SPA, SEO 검색등록, 온라인 상담예약, 셀프 데이터 허브까지 일체 포함하여 제작해 드립니다!';
@@ -349,7 +349,7 @@ function closeGuideModal() {
 }
 
 function triggerGuideDownload() {
-  showToast('서비스 안내서 (Jeju_AI_Partners_Guide.pdf) 다운로드가 시작되었습니다!');
+  showToast('서비스 안내서 (Jeju_AI_Partner_Guide.pdf) 다운로드가 시작되었습니다!');
   closeGuideModal();
 }
 
@@ -413,7 +413,7 @@ async function handleReservationSubmit(event) {
   const memo = document.getElementById('res-memo')?.value || '없음';
 
   // 1. Prepare formatted message for clipboard & email
-  const formattedText = `[제주AI파트너스 상담 신청서]\n• 상호명: ${storeName}\n• 성함: ${ownerName}\n• 연락처: ${phone}\n• 희망서비스: ${service}\n• 상담날짜: ${date}\n• 상담방식: ${method}\n• 문의내용: ${memo}`;
+  const formattedText = `[제주AI파트너 상담 신청서]\n• 상호명: ${storeName}\n• 성함: ${ownerName}\n• 연락처: ${phone}\n• 희망서비스: ${service}\n• 상담날짜: ${date}\n• 상담방식: ${method}\n• 문의내용: ${memo}`;
 
   // 2. Copy to clipboard for easy KakaoTalk pasting
   try {
@@ -429,7 +429,7 @@ async function handleReservationSubmit(event) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
     body: JSON.stringify({
-      _subject: `[제주AI파트너스] ${storeName} 사장님의 신규 상담 신청 접수!`,
+      _subject: `[제주AI파트너] ${storeName} 사장님의 신규 상담 신청 접수!`,
       상호명: storeName,
       대표자명: ownerName,
       연락처: phone,
@@ -455,7 +455,7 @@ async function handleModalConsultingSubmit(event) {
   const issue = document.getElementById('modal-issue')?.value || '';
 
   // 1. Formatted Text
-  const formattedText = `[제주AI파트너스 무료 컨설팅 신청]\n• 상호명: ${storeName}\n• 연락처: ${phone}\n• 고민부분: ${issue}`;
+  const formattedText = `[제주AI파트너 무료 컨설팅 신청]\n• 상호명: ${storeName}\n• 연락처: ${phone}\n• 고민부분: ${issue}`;
 
   // 2. Clipboard auto copy
   try {
@@ -471,7 +471,7 @@ async function handleModalConsultingSubmit(event) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
     body: JSON.stringify({
-      _subject: `[제주AI파트너스 컨설팅] ${storeName} 사장님의 컨설팅 신청!`,
+      _subject: `[제주AI파트너 컨설팅] ${storeName} 사장님의 컨설팅 신청!`,
       상호명: storeName,
       연락처: phone,
       고민부분: issue
