@@ -1619,46 +1619,6 @@
         checkScrollLimits('video-slider', 'video-slide-prev', 'video-slide-next');
         checkScrollLimits('blog-slider', 'blog-slide-prev', 'blog-slide-next');
       }, 300);
-
-      // 유튜브 쇼츠 및 비디오 카드 클릭 시 새 탭 대신 내부 모달에서 자동 재생되도록 처리
-      document.querySelectorAll('.port-item.shortform').forEach(card => {
-        // 1. 카드 이미지/본문 클릭 시
-        const clickArea = card.querySelector('.cursor-pointer');
-        if (clickArea) {
-          const originalOnclick = clickArea.getAttribute('onclick');
-          if (originalOnclick && (originalOnclick.includes('youtube.com') || originalOnclick.includes('youtu.be'))) {
-            const urlMatch = originalOnclick.match(/'([^']+)'/);
-            if (urlMatch) {
-              const videoUrl = urlMatch[1];
-              const titleEl = card.querySelector('h3');
-              const title = titleEl ? titleEl.textContent : '포트폴리오 영상';
-              clickArea.removeAttribute('onclick');
-              clickArea.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                openVideoModal(videoUrl, title);
-              });
-            }
-          }
-        }
-
-        // 2. 하단 감상 버튼 클릭 시
-        const button = card.querySelector('a');
-        if (button) {
-          const href = button.getAttribute('href');
-          if (href && (href.includes('youtube.com') || href.includes('youtu.be'))) {
-            const titleEl = card.querySelector('h3');
-            const title = titleEl ? titleEl.textContent : '포트폴리오 영상';
-            button.removeAttribute('target');
-            button.setAttribute('href', 'javascript:void(0)');
-            button.addEventListener('click', (e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              openVideoModal(href, title);
-            });
-          }
-        }
-      });
     });
 
     window.addEventListener('resize', () => {
