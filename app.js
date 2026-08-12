@@ -353,18 +353,55 @@ function triggerGuideDownload() {
   closeGuideModal();
 }
 
-function openVideoModal(title) {
+function openVideoModal(videoUrl, title) {
   const modal = document.getElementById('video-modal');
-  const modalTitle = document.getElementById('video-modal-title');
-  if (modal && modalTitle) {
-    modalTitle.textContent = title;
-    modal.classList.remove('hidden');
+  if (!modal) return;
+
+  // Extract YouTube Video ID
+  let videoId = '';
+  if (videoUrl.includes('shorts/')) {
+    videoId = videoUrl.split('shorts/')[1].split('?')[0];
+  } else if (videoUrl.includes('youtu.be/')) {
+    videoId = videoUrl.split('youtu.be/')[1].split('?')[0];
+  } else if (videoUrl.includes('v=')) {
+    videoId = videoUrl.split('v=')[1].split('&')[0];
   }
+
+  // If it's not a YouTube video, open in a new tab as fallback
+  if (!videoId) {
+    window.open(videoUrl, '_blank');
+    return;
+  }
+
+  // Dynamically load iframe in the phone mockup area
+  const mockupContainer = modal.querySelector('.phone-mockup');
+  if (mockupContainer) {
+    // Keep it clean and fit the container
+    mockupContainer.innerHTML = `
+      <div class="w-full h-full bg-black relative">
+        <iframe 
+          src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&rel=0&controls=1&modestbranding=1" 
+          class="w-full h-full border-0" 
+          allow="autoplay; encrypted-media; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    `;
+  }
+
+  modal.classList.remove('hidden');
 }
 
 function closeVideoModal() {
   const modal = document.getElementById('video-modal');
-  if (modal) modal.classList.add('hidden');
+  if (modal) {
+    modal.classList.add('hidden');
+    // Clear inner content of mockup to stop video playing
+    const mockupContainer = modal.querySelector('.phone-mockup');
+    if (mockupContainer) {
+      mockupContainer.innerHTML = '';
+    }
+  }
 }
 
 function openWebsiteModal(title, imgUrl, stats, tech) {
