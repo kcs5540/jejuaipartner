@@ -248,16 +248,56 @@ function handleFileSelect(event) {
         <i class="fa-solid fa-file-image text-sky-400 text-base"></i>
         <div>
           <div class="font-bold text-slate-200">${file.name}</div>
-          <div class="text-[10px] text-slate-400">${(file.size / (1024 * 1024)).toFixed(2)} MB • 새로 추가됨</div>
+          <div class="text-[10px] text-slate-400">${(file.size / (1024 * 1024)).toFixed(2)} MB • 업로드 중...</div>
         </div>
       </div>
-      <span class="text-emerald-400 font-bold"><i class="fa-solid fa-circle-check"></i> 업로드 완료</span>
+      <span class="text-amber-400 font-bold"><i class="fa-solid fa-spinner animate-spin"></i> 대기중</span>
     `;
 
     fileListContainer.appendChild(fileElem);
-  }
 
-  showToast('자료가 성공적으로 데이터 허브에 등록되었습니다!');
+    // Read file and upload to Google Apps Script
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const base64Data = e.target.result.split(',')[1];
+      
+      fetch('https://script.google.com/macros/s/AKfycbwdcJwlnIRpE8MGgnbdqLA-ZiA_qHB6jvPWXFebuiCB7unbVFD5BTeO-LXGBCkmnJOlog/exec', {
+        method: 'POST',
+        body: JSON.stringify({
+          상호명: '가맹점_셀프데이터허브_업로드',
+          성함: '드래그앤드롭_데모',
+          연락처: '010-0000-0000',
+          희망서비스: '자료수급',
+          상담날짜: '오늘',
+          상담방식: '온라인 대시보드',
+          문의내용: `셀프 데이터 허브 업로드: ${file.name}`,
+          fileName: file.name,
+          fileType: file.type,
+          fileData: base64Data
+        })
+      })
+      .then(res => res.json())
+      .then(resData => {
+        if (resData.result === 'success') {
+          fileElem.querySelector('span').className = 'text-emerald-400 font-bold';
+          fileElem.querySelector('span').innerHTML = '<i class="fa-solid fa-circle-check"></i> 드라이브 완료';
+          fileElem.querySelector('.text-slate-400').textContent = `${(file.size / (1024 * 1024)).toFixed(2)} MB • 클라우드 저장됨`;
+          showToast(`파일 [${file.name}]이 구글 드라이브에 안전하게 업로드되었습니다!`);
+        } else {
+          fileElem.querySelector('span').className = 'text-red-400 font-bold';
+          fileElem.querySelector('span').innerHTML = '<i class="fa-solid fa-circle-xmark"></i> 업로드 실패';
+          showToast(`오류: ${resData.message}`);
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        fileElem.querySelector('span').className = 'text-red-400 font-bold';
+        fileElem.querySelector('span').innerHTML = '<i class="fa-solid fa-circle-xmark"></i> 에러 발생';
+        showToast('구글 서버와 연결할 수 없습니다.');
+      });
+    };
+    reader.readAsDataURL(file);
+  }
 }
 
 /* ==================== AI ASSISTANT CHATBOT ==================== */
@@ -400,7 +440,6 @@ function selectPackage(packageName) {
 }
 
 /* ==================== RESERVATION FORM SUBMISSION ==================== */
-/* ==================== RESERVATION FORM SUBMISSION ==================== */
 async function handleReservationSubmit(event) {
   event.preventDefault();
   
@@ -441,8 +480,22 @@ async function handleReservationSubmit(event) {
     })
   }).catch(e => console.log('Email send notification:', e));
 
+  // 3-2. Send data to Google Sheets
+  fetch('https://script.google.com/macros/s/AKfycbwdcJwlnIRpE8MGgnbdqLA-ZiA_qHB6jvPWXFebuiCB7unbVFD5BTeO-LXGBCkmnJOlog/exec', {
+    method: 'POST',
+    body: JSON.stringify({
+      상호명: storeName,
+      성함: ownerName,
+      연락처: phone,
+      희망서비스: service,
+      상담날짜: date,
+      상담방식: method,
+      문의내용: memo
+    })
+  }).catch(e => console.log('Google Sheets submit error:', e));
+
   // 4. Show friendly alert & open Kakao Open Chat
-  alert(`🎉 상담 및 방문 예약이 정상 접수되었습니다!\n\n• 신청서가 김철수 대표 이메일(csjeju21@gmail.com)로 즉시 전송되었습니다.\n• 신청 내용이 클립보드에 자동 복사되었습니다. 카카오톡 창이 열리면 [붙여넣기]만 누르시면 바로 1:1 상담도 가능합니다.`);
+  alert(`🎉 상담 및 방문 예약이 정상 접수되었습니다!\n\n• 신청서가 구글 스프레드시트 및 김철수 대표 이메일(csjeju21@gmail.com)로 즉시 전송되었습니다.\n• 신청 내용이 클립보드에 자동 복사되었습니다. 카카오톡 창이 열리면 [붙여넣기]만 누르시면 바로 1:1 상담도 가능합니다.`);
   window.open('https://open.kakao.com/o/s7J7jYEi', '_blank');
   form.reset();
 }
@@ -479,8 +532,22 @@ async function handleModalConsultingSubmit(event) {
     })
   }).catch(e => console.log('Email send notification:', e));
 
+  // 3-2. Send to Google Sheets
+  fetch('https://script.google.com/macros/s/AKfycbwdcJwlnIRpE8MGgnbdqLA-ZiA_qHB6jvPWXFebuiCB7unbVFD5BTeO-LXGBCkmnJOlog/exec', {
+    method: 'POST',
+    body: JSON.stringify({
+      상호명: storeName,
+      성함: '모달신청',
+      연락처: phone,
+      희망서비스: '마케팅컨설팅',
+      상담날짜: '오늘',
+      상담방식: '온라인/전화',
+      문의내용: `고민부분: ${issue}`
+    })
+  }).catch(e => console.log('Google Sheets submit error:', e));
+
   closeConsultingModal();
-  alert(`🎉 무료 마케팅 컨설팅 신청이 접수되었습니다!\n\n• 김철수 대표 이메일(csjeju21@gmail.com)로 신청 내용이 전송되었습니다.\n• 신청 내용이 복사되었습니다. 카카오톡 대화창에서 [붙여넣기]를 하시면 더욱 빠른 1:1 상담이 가능합니다.`);
+  alert(`🎉 무료 마케팅 컨설팅 신청이 접수되었습니다!\n\n• 구글 스프레드시트 및 김철수 대표 이메일(csjeju21@gmail.com)로 신청 내용이 전송되었습니다.\n• 신청 내용이 복사되었습니다. 카카오톡 대화창에서 [붙여넣기]를 하시면 더욱 빠른 1:1 상담이 가능합니다.`);
   window.open('https://open.kakao.com/o/s7J7jYEi', '_blank');
   form.reset();
 }
