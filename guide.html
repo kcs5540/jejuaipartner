@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>제주 소상공인 AI 마케팅 성공 비법서 | 제주AI파트너</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            jeju: {
+              dark: '#050C1A',
+              navy: '#0F2C59',
+              blue: '#0284C7',
+              cyan: '#06B6D4',
+              sky: '#38BDF8',
+              emerald: '#10B981',
+              amber: '#F59E0B'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <style>
+    /* Custom style for print optimization */
+    @media print {
+      body {
+        background-color: white !important;
+        color: black !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-card {
+        border: 1px solid #ccc !important;
+        background-color: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+      }
+      .text-gradient {
+        background: none !important;
+        -webkit-text-fill-color: initial !important;
+        color: #0F2C59 !important;
+        font-weight: bold;
+      }
+    }
+    .text-gradient {
+      background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 50%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glass-panel {
+      background: rgba(15, 44, 89, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(56, 189, 248, 0.15);
+    }
+  </style>
+</head>
+<body class="bg-[#050C1A] text-slate-100 antialiased selection:bg-sky-500 selection:text-white min-h-screen pb-16">
+
+  <!-- Background Decorative Glowing Orbs -->
+  <div class="fixed top-0 left-1/4 w-[500px] h-[500px] bg-sky-600/5 rounded-full blur-[140px] pointer-events-none z-0"></div>
+  <div class="fixed bottom-10 right-10 w-[600px] h-[600px] bg-cyan-600/5 rounded-full blur-[160px] pointer-events-none z-0"></div>
+
+  <!-- Header / Navigation (No-print) -->
+  <header class="no-print border-b border-slate-800 bg-[#050C1A]/80 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 group">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-sky-500 to-cyan-400 p-0.5 shadow-lg flex items-center justify-center">
+          <i class="fa-solid fa-water text-slate-950 text-xs"></i>
+        </div>
+        <span class="font-extrabold text-sm text-white">제주<span class="text-sky-400">AI</span>파트너</span>
+      </a>
+      <div class="flex items-center gap-3">
+        <button onclick="window.print()" class="px-4 py-2 bg-gradient-to-r from-sky-500 to-blue-600 text-white rounded-xl text-xs font-bold hover:scale-105 transition-all flex items-center gap-1.5 shadow-md shadow-sky-500/20">
+          <i class="fa-solid fa-print"></i> PDF 저장 / 인쇄하기
+        </button>
+        <a href="index.html" class="px-4 py-2 bg-slate-900 border border-slate-700 hover:border-slate-500 text-slate-300 rounded-xl text-xs font-bold transition-all">
+          메인으로
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="max-w-4xl mx-auto px-4 pt-8 relative z-10 space-y-10">
+
+    <!-- Document Cover / Header Section -->
+    <div class="text-center space-y-4 py-6 border-b border-slate-800/80">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-950/80 border border-sky-500/30 text-sky-400 text-xs font-bold">
+        <i class="fa-solid fa-book-open"></i> Jeju AI Partner Guidebook
+      </div>
+      <h1 class="text-2xl sm:text-4xl font-extrabold text-white leading-tight">
+        제주 소상공인을 위한 <br class="sm:hidden" />
+        <span class="text-gradient">AI 로컬 마케팅 성공 비법서</span>
+      </h1>
+      <p class="text-slate-400 text-sm max-w-xl mx-auto">
+        급변하는 디지털 환경과 글로벌 관광 시장 속에서 <br class="hidden sm:inline"/>
+        제주 자영업 사장님들이 최소 비용으로 최대 효율을 낼 수 있는 핵심 실전 노하우를 공개합니다.
+      </p>
+      <div class="text-xs text-slate-500 flex items-center justify-center gap-4 pt-2">
+        <span><strong class="text-slate-400">발행처:</strong> 제주AI파트너</span>
+        <span>|</span>
+        <span><strong class="text-slate-400">집필:</strong> 기술대표 김철수</span>
+        <span>|</span>
+        <span><strong class="text-slate-400">버전:</strong> 2026.08 Latest</span>
+      </div>
+    </div>
+
+    <!-- Section 1: Intro Alert (Highlight) -->
+    <div class="glass-panel print-card p-6 rounded-2xl border border-sky-500/20 space-y-3">
+      <h3 class="text-base font-bold text-sky-300 flex items-center gap-2">
+        <i class="fa-solid fa-circle-exclamation text-sky-400"></i>
+        왜 소상공인에게 AI 마케팅이 필수일까요?
+      </h3>
+      <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+        대기업이나 유명 프랜차이즈는 매달 수백만 원의 마케팅 대행비를 지불하며 노출을 독점합니다. 
+        반면, 제주의 1인 자영업 사장님들은 본업만으로도 시간이 부족하고 예산이 한정되어 있습니다. 
+        <strong>AI 기술(ChatGPT, Gemini, Vrew 등)</strong>을 워크플로우에 결합하면 콘텐츠 제작 단가를 70% 낮춰 대기업 부럽지 않은 고품질 마케팅을 매일 실행할 수 있습니다.
+      </p>
+    </div>
+
+    <!-- Section 2: Core Strategy 3 Elements -->
+    <div class="space-y-6">
+      <h2 class="text-xl font-bold text-white flex items-center gap-2">
+        <span class="w-1.5 h-6 bg-sky-500 rounded-full"></span>
+        Part 1. 숏폼(Short-form) 비디오 정복하기
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Step 1 -->
+        <div class="glass-panel print-card p-5 rounded-2xl border border-slate-800 space-y-3">
+          <div class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 font-bold flex items-center justify-center text-sm">
+            01
+          </div>
+          <h4 class="font-bold text-white text-sm">3초 이내에 시선 잡기</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            숏폼(쇼츠, 릴스, 네이버클립)의 생명은 '이탈 방지'입니다. 첫 화면에 핵심 메뉴의 비주얼이나 매장만의 독특한 포인트를 임팩트 있게 배치하여 호기심을 유발하세요.
+          </p>
+        </div>
+        <!-- Step 2 -->
+        <div class="glass-panel print-card p-5 rounded-2xl border border-slate-800 space-y-3">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center text-sm">
+            02
+          </div>
+          <h4 class="font-bold text-white text-sm">스토리텔링 대본 기획</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            "우리 고기 맛있어요"라는 주장은 효과가 없습니다. "제주 현지인 해녀가 매일 아침 직송하는 해산물을 요리하게 된 이유"와 같이 스토리를 30초 내외로 풀어냅니다.
+          </p>
+        </div>
+        <!-- Step 3 -->
+        <div class="glass-panel print-card p-5 rounded-2xl border border-slate-800 space-y-3">
+          <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-sm">
+            03
+          </div>
+          <h4 class="font-bold text-white text-sm">AI 자동 자막 & 오디오</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            CapCut과 Vrew의 AI 자동 자막 기능을 사용해 음성이 없어도 가독성 높은 자막을 입히고, AI 성우 보이스를 통해 완성도를 에이전시 급으로 올려 배포합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Naver Place SEO -->
+    <div class="space-y-6">
+      <h2 class="text-xl font-bold text-white flex items-center gap-2">
+        <span class="w-1.5 h-6 bg-emerald-500 rounded-full"></span>
+        Part 2. 네이버 플레이스 로컬 SEO 상위 노출 팁
+      </h2>
+
+      <div class="glass-panel print-card p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <h3 class="text-base font-bold text-emerald-400">💡 핵심 최적화 요인</h3>
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                <div>
+                  <strong>키워드가 반영된 매장 설명</strong>
+                  <p class="text-xs text-slate-400 mt-0.5">단순 나열이 아닌, 대표 타깃 키워드(예: 노형동 흑돼지, 제주 애월 카페 등)를 자연스러운 문장 속에 매칭 적용합니다.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i>
+                <div>
+                  <strong>활발한 예약/주문 시스템 연동</strong>
+                  <p class="text-xs text-slate-400 mt-0.5">네이버 예약을 적극 연동하여 플레이스 엔진에 '활성도가 높은 매장'이라는 긍정적인 신호를 제공합니다.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="space-y-4">
+            <h3 class="text-base font-bold text-amber-400">⚠️ 사장님이 흔히 하는 실수</h3>
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-circle-xmark text-red-400 mt-1"></i>
+                <div>
+                  <strong>해시태그의 방치 및 오용</strong>
+                  <p class="text-xs text-slate-400 mt-0.5">의미 없는 단어나 유입량이 제로에 가까운 단어들로 채우는 대신, 월간 검색량이 검증된 세부 키워드를 심어야 합니다.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-circle-xmark text-red-400 mt-1"></i>
+                <div>
+                  <strong>매장 대표 사진 업로드 부족</strong>
+                  <p class="text-xs text-slate-400 mt-0.5">시각 자료가 없거나 어두운 사진은 고객 이탈을 불러옵니다. 대표 메뉴 5가지 이상은 고화질 푸드 뷰로 반드시 세팅해야 합니다.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4: Global Marketing (Xiaohongshu) -->
+    <div class="space-y-6">
+      <h2 class="text-xl font-bold text-white flex items-center gap-2">
+        <span class="w-1.5 h-6 bg-red-500 rounded-full"></span>
+        Part 3. 중국인 관광객(싼커) 유치 핵심 전략
+      </h2>
+
+      <div class="glass-panel print-card p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-6">
+        <div class="flex flex-col md:flex-row gap-6 items-center">
+          <div class="w-16 h-16 rounded-2xl bg-red-600/10 text-red-500 flex items-center justify-center text-3xl shrink-0">
+            <i class="fa-brands fa-red-river"></i>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-base font-bold text-white">샤오홍슈(小红书)는 중국의 인스타그램이자 검색창입니다</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              제주도를 방문하는 개별 중국인 관광객(싼커)들은 바이두나 구글을 사용하지 않고 샤오홍슈에 <strong>'济州岛美食(제주도 맛집)', '济州岛咖啡厅(제주도 카페)'</strong>를 검색합니다.
+              이들의 유입을 잡기 위해 중국어 해시태그를 포함한 숏폼과 이미지 카드 형태의 콘텐츠를 일주일에 최소 1~2회 업로드 대행 또는 관리해주어야 매출이 비약적으로 성장합니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to action for consulting (No-print) -->
+    <div class="no-print text-center py-10 border-t border-slate-800/80 space-y-4">
+      <h3 class="text-lg font-bold text-white">우리 매장도 AI 마케팅 시스템을 구축하고 싶으신가요?</h3>
+      <p class="text-xs text-slate-400">
+        정보처리기사 자격을 보유한 대표가 직접 최신 기술 프롬프트와 홈페이지, 숏폼을 일괄 세팅해 드립니다.
+      </p>
+      <div class="pt-2">
+        <a href="index.html#reservation" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-black text-sm shadow-xl shadow-amber-500/25 hover:scale-105 transition-transform">
+          <i class="fa-solid fa-headset"></i> 무료 1:1 맞춤 컨설팅 신청하기
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-xs text-slate-600 pt-10 border-t border-slate-900">
+    <p>&copy; 2026 제주AI파트너 (Jeju AI Partner). All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

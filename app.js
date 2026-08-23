@@ -349,7 +349,8 @@ function closeGuideModal() {
 }
 
 function triggerGuideDownload() {
-  showToast('서비스 안내서 (Jeju_AI_Partner_Guide.pdf) 다운로드가 시작되었습니다!');
+  window.open('guide.html', '_blank');
+  showToast('AI 마케팅 성공 비법서 가이드북 페이지가 성공적으로 열렸습니다! (인쇄/PDF 저장을 원하시면 상단 버튼을 클릭하세요)');
   closeGuideModal();
 }
 
