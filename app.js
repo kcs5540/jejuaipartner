@@ -72,14 +72,14 @@ function initHeroCarousel() {
   if (!container) return;
 
   const images = [
+    { id: "gn", src: "https://shop-phinf.pstatic.net/20231104_254/1699073431135lz391_JPEG/%C8%B2%B1%DD%B3%B6_%B9%E8%B3%CA_%BD%BA%B8%B6%C6%AE%BD%BA%C5%E4%BE%EE-002.jpg", alt: "황금낭 농원", rotation: -12, url: "https://goldennang.vercel.app/" },
+    { id: "rs", src: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=600&q=80", alt: "록산에버그린", rotation: 8, url: "https://roksanever.vercel.app/" },
     { id: "1", src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80", alt: "제주 푸른 바다", rotation: -15 },
     { id: "2", src: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80", alt: "노형동 흑돼지", rotation: -8 },
     { id: "3", src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80", alt: "애월 감성 펜션", rotation: 5 },
     { id: "4", src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80", alt: "서귀포 힐링 스파", rotation: 12 },
     { id: "5", src: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80", alt: "승마 & 카트", rotation: -12 },
-    { id: "6", src: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80", alt: "노형 카페 몽상", rotation: 8 },
-    { id: "7", src: "images/maru_breadsim.png", alt: "반려동물 펫스토리", rotation: -6 },
-    { id: "8", src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80", alt: "한화생명 FP", rotation: 10 }
+    { id: "6", src: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80", alt: "노형 카페 몽상", rotation: 8 }
   ];
 
   let currentAngles = images.map((_, i) => i * (360 / images.length));
@@ -138,6 +138,14 @@ function initHeroCarousel() {
 }
 
 function openPortfolioModal(title) {
+  if (title === '황금낭 농원') {
+    window.open('https://goldennang.vercel.app/', '_blank');
+    return;
+  }
+  if (title === '록산에버그린') {
+    window.open('https://roksanever.vercel.app/', '_blank');
+    return;
+  }
   const modal = document.getElementById('website-modal');
   if (modal) {
     openWebsiteModal(title + ' 포트폴리오 사례', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80', '조회수/예약률 +50% 상승', '100% 모바일 SPA • AI 카피라이팅');
