@@ -3078,8 +3078,14 @@
           <p>• 대표자: 김철수 (정보처리기사 자격 보유)</p>
           <p class="flex items-center gap-2 flex-wrap">
             • 사업자등록번호: <strong class="text-white font-mono">110-22-77128</strong>
-            <button type="button" onclick="openLicenseModal()" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 text-[11px] font-semibold transition-all shadow-sm">
+            <button type="button" onclick="openLicenseModal('business')" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 text-[11px] font-semibold transition-all shadow-sm">
               <i class="fa-solid fa-certificate text-[10px]"></i> 사업자등록증 확인
+            </button>
+          </p>
+          <p class="flex items-center gap-2 flex-wrap">
+            • 통신판매업신고: <strong class="text-white font-mono">정식 신고 완료</strong>
+            <button type="button" onclick="openLicenseModal('online')" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 text-[11px] font-semibold transition-all shadow-sm">
+              <i class="fa-solid fa-shield-halved text-[10px]"></i> 통신판매신고증 확인
             </button>
           </p>
           <p>• 대표 전화: <a href="tel:010-3306-5540" class="text-emerald-400 font-bold font-mono hover:underline">010-3306-5540</a></p>
@@ -3100,6 +3106,268 @@
       </div>
     </div>
   </footer>
+
+  <!-- ==================== MODAL 1: CONSULTING MODAL ==================== -->
+  <div id="consulting-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
+    <div class="glass-panel max-w-lg w-full p-6 sm:p-8 rounded-3xl border border-sky-400/40 relative shadow-2xl animate-pop-once">
+      <button onclick="closeConsultingModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="text-center mb-6">
+        <div class="w-12 h-12 rounded-2xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-xl mx-auto mb-3">
+          <i class="fa-solid fa-headset"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white">무료 마케팅 컨설팅 신청</h3>
+        <p class="text-xs text-slate-300 mt-1">제주 노형동 김철수 대표가 직접 매장 진단 후 24시간 내 연락드립니다.</p>
+        
+        <!-- Modal Gift Alert -->
+        <div class="mt-3 p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[11px] font-bold flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-gift"></i>
+          <span>성공 비법서 + 플레이스 무료 진단 혜택 100% 증정!</span>
+        </div>
+
+        <div class="mt-2 text-xs font-mono text-slate-400">
+          <i class="fa-solid fa-phone mr-1"></i>직통 문의: 010-3306-5540
+        </div>
+      </div>
+
+      <form onsubmit="handleModalConsultingSubmit(event)" class="space-y-4 text-xs">
+        <div>
+          <label class="block font-bold text-slate-300 mb-1">상호명</label>
+          <input type="text" id="modal-store-name" name="상호명" required placeholder="예: 애월 흑돼지 식당" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-white focus:outline-none focus:border-sky-400" />
+        </div>
+        <div>
+          <label class="block font-bold text-slate-300 mb-1">연락처</label>
+          <input type="tel" id="modal-phone" name="연락처" required placeholder="예: 010-1234-5678" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-white focus:outline-none focus:border-sky-400" />
+        </div>
+        <div>
+          <label class="block font-bold text-slate-300 mb-1">고민되는 부분</label>
+          <select id="modal-issue" name="고민부분" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-white focus:outline-none focus:border-sky-400">
+            <option value="소상공인 홈페이지 제작">소상공인 홈페이지 제작</option>
+            <option value="마케팅 비용 대비 효과 부족">마케팅 비용 대비 효과 부족</option>
+            <option value="중국인 관광객 (샤오홍슈) 유치 희망">중국인 관광객 (샤오홍슈) 유치 희망</option>
+            <option value="숏폼 대본 기획 및 편집 어려움">숏폼 대본 기획 및 편집 어려움</option>
+          </select>
+        </div>
+        <button type="submit" class="w-full py-3.5 bg-gradient-button text-white font-bold text-sm rounded-xl shadow-lg mt-2">
+          신청 완료하기
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL 2: DIAGNOSIS MODAL ==================== -->
+  <div id="diagnosis-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
+    <div class="glass-panel max-w-lg w-full p-6 sm:p-8 rounded-3xl border border-emerald-400/40 relative shadow-2xl">
+      <button onclick="closeDiagnosisModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      
+      <div id="diagnosis-step-1" class="space-y-4">
+        <div class="text-center">
+          <span class="text-emerald-400 text-xs font-bold">1분 AI 자가 진단</span>
+          <h3 class="text-lg font-bold text-white mt-1">현재 매장의 마케팅 채널 현황은?</h3>
+        </div>
+        <div class="space-y-2 pt-2">
+          <button onclick="nextDiagnosisStep(2)" class="w-full p-3 rounded-xl bg-slate-900 hover:bg-sky-500/20 border border-slate-700 text-left text-xs font-semibold text-slate-200 flex justify-between">
+            <span>1. 유튜브/인스타 운영 안 함 또는 방치 중</span>
+            <i class="fa-solid fa-chevron-right text-slate-500"></i>
+          </button>
+          <button onclick="nextDiagnosisStep(2)" class="w-full p-3 rounded-xl bg-slate-900 hover:bg-sky-500/20 border border-slate-700 text-left text-xs font-semibold text-slate-200 flex justify-between">
+            <span>2. 국내 채널만 가끔 올리고 있음</span>
+            <i class="fa-solid fa-chevron-right text-slate-500"></i>
+          </button>
+          <button onclick="nextDiagnosisStep(2)" class="w-full p-3 rounded-xl bg-slate-900 hover:bg-sky-500/20 border border-slate-700 text-left text-xs font-semibold text-slate-200 flex justify-between">
+            <span>3. 중국 관광객 유치 (샤오홍슈) 시급함</span>
+            <i class="fa-solid fa-chevron-right text-slate-500"></i>
+          </button>
+        </div>
+      </div>
+
+      <div id="diagnosis-step-2" class="hidden space-y-4 text-center">
+        <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl mx-auto">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h3 class="text-lg font-bold text-white">맞춤 진단 결과 완료!</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          사장님 매장은 <strong class="text-emerald-400">[홈페이지 제작 및 숏폼 마케팅]</strong> 적용 시 최소 <strong class="text-white">월 3.8배의 노출 증가 및 제작비 70% 절감</strong>이 기대됩니다!
+        </p>
+        <button onclick="closeDiagnosisModal(); openConsultingModal();" class="w-full py-3 bg-gradient-button text-white font-bold text-xs rounded-xl">
+          이 솔루션으로 무료 상담받기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL 3: GUIDE DOWNLOAD MODAL ==================== -->
+  <div id="guide-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
+    <div class="glass-panel max-w-md w-full p-6 sm:p-8 rounded-3xl border border-sky-400/40 relative text-center">
+      <button onclick="closeGuideModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="w-14 h-14 rounded-2xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-2xl mx-auto mb-4">
+        <i class="fa-solid fa-book-open"></i>
+      </div>
+      <h3 class="text-lg font-bold text-white">AI 마케팅 성공 비법서</h3>
+      <p class="text-xs text-slate-300 mt-2">
+        제주 소상공인을 위한 최신 숏폼 및 로컬 SEO 가이드북입니다.
+      </p>
+      <div class="mt-6">
+        <button onclick="triggerGuideDownload()" class="w-full py-3.5 bg-gradient-button text-white font-bold text-xs rounded-xl shadow-lg flex items-center justify-center gap-2">
+          <i class="fa-solid fa-file-pdf"></i> 성공 비법서 웹으로 읽기 / PDF 저장
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL 4: VIDEO PREVIEW MODAL ==================== -->
+  <div id="video-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
+    <div class="relative max-w-sm w-full bg-black rounded-3xl overflow-hidden border border-sky-500/40 shadow-2xl">
+      <button onclick="closeVideoModal()" class="absolute top-3 right-3 z-30 w-8 h-8 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-red-500">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Video Player Frame Simulation -->
+      <div class="phone-mockup mx-auto my-0 w-full h-[540px] rounded-none border-0">
+        <div class="w-full h-full relative bg-slate-900 flex flex-col justify-between p-4">
+          <img id="video-modal-thumb" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Video Preview" class="absolute inset-0 w-full h-full object-cover opacity-80" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+          
+          <div class="relative z-10 pt-6">
+            <span class="bg-sky-500 text-white text-[10px] px-2 py-0.5 rounded font-bold">CapCut + Vrew AI Demo</span>
+          </div>
+
+          <div class="relative z-10 space-y-2">
+            <h4 id="video-modal-title" class="text-sm font-bold text-white">포트폴리오 숏폼 영상</h4>
+            <div class="flex items-center justify-between text-[11px] text-slate-300">
+              <span><i class="fa-solid fa-music text-sky-400 mr-1"></i>Jeju AI Original Audio</span>
+              <span class="text-emerald-400"><i class="fa-solid fa-heart mr-1"></i>12.4k</span>
+            </div>
+            <!-- Animated Sound Wave Simulator -->
+            <div class="flex items-center gap-1 pt-1 justify-center h-4">
+              <div class="w-1 bg-sky-400 h-3 animate-pulse"></div>
+              <div class="w-1 bg-sky-400 h-4 animate-pulse" style="animation-delay: 0.1s;"></div>
+              <div class="w-1 bg-sky-400 h-2 animate-pulse" style="animation-delay: 0.2s;"></div>
+              <div class="w-1 bg-sky-400 h-4 animate-pulse" style="animation-delay: 0.3s;"></div>
+              <div class="w-1 bg-sky-400 h-3 animate-pulse" style="animation-delay: 0.4s;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL 5: WEBSITE PREVIEW MODAL ==================== -->
+  <div id="website-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
+    <div class="glass-panel max-w-2xl w-full p-6 sm:p-8 rounded-3xl border border-amber-400/40 relative shadow-2xl space-y-6">
+      <button onclick="closeWebsiteModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg font-bold">
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
+        <div>
+          <span class="text-amber-400 text-xs font-mono font-bold">JEJU AI WEBSITE PREVIEW</span>
+          <h3 id="website-modal-title" class="text-lg font-bold text-white">홈페이지 제작 사례</h3>
+        </div>
+      </div>
+
+      <!-- Simulated Browser Frame -->
+      <div class="rounded-2xl border border-slate-700 overflow-hidden bg-slate-900 shadow-inner">
+        <div class="bg-slate-800 px-4 py-2 flex items-center gap-2 border-b border-slate-700">
+          <div class="w-3 h-3 rounded-full bg-red-500"></div>
+          <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+          <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+          <span class="text-[11px] text-slate-400 font-mono ml-2">https://jeju-partner-demo.com/merchant-spec</span>
+        </div>
+        <div class="relative h-64 overflow-hidden">
+          <img id="website-modal-img" src="" alt="Web Preview" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent p-4 flex flex-col justify-end">
+            <span id="website-modal-stats" class="text-emerald-400 text-xs font-extrabold bg-slate-900/90 px-3 py-1 rounded-full w-fit mb-1 border border-emerald-500/30"></span>
+            <span id="website-modal-tech" class="text-slate-300 text-xs"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-slate-800">
+        <div class="text-xs text-slate-400">
+          제작 사양: <strong class="text-white font-mono text-sm">맞춤형 모바일 SPA 구축</strong>
+        </div>
+        <button onclick="closeWebsiteModal(); selectPackage('홈페이지 제작 대행');" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-extrabold text-xs shadow-lg hover:scale-105 transition-transform">
+          이 스타일로 홈페이지 제작 신청하기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FLOATING QUICK CONTACT BAR (카카오톡 1:1 상담) ==================== -->
+  <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 opacity-90 hover:opacity-100 transition-opacity">
+    <!-- Kakao Floating Button -->
+    <a id="btn-kakao-chat" href="https://open.kakao.com/o/s7J7jYEi" target="_blank" rel="noopener noreferrer" class="relative group flex items-center gap-2 px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-full bg-[#FEE500]/85 backdrop-blur-md border border-[#FEE500]/60 text-[#3c1e1e] font-extrabold text-xs sm:text-sm shadow-xl shadow-yellow-500/25 hover:bg-[#FEE500] hover:scale-105 active:scale-95 transition-all">
+      <i class="fa-solid fa-comment text-sm sm:text-base"></i>
+      <span class="whitespace-nowrap">카톡 1:1 상담</span>
+      <span class="flex h-2 w-2 relative">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+      </span>
+    </a>
+  </div>
+
+  <!-- JavaScript App Logic -->
+  <script src="app.js"></script>
+
+  <!-- ==================== MODAL: BUSINESS & ONLINE SALES LICENSE MODAL ==================== -->
+  <div id="license-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden" onclick="if(event.target === this) closeLicenseModal()">
+    <div class="glass-panel max-w-lg w-full p-6 sm:p-7 rounded-3xl border border-sky-400/40 relative shadow-2xl animate-pop-once">
+      <button onclick="closeLicenseModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 flex items-center justify-center text-sm transition-all">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      
+      <!-- Modal Header -->
+      <div class="text-center mb-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-bold mb-2">
+          <i class="fa-solid fa-circle-check"></i> 정식 인허가 등록 인증
+        </div>
+        <h3 id="license-modal-title" class="text-xl font-bold text-white">제주AI파트너 인허가 서류</h3>
+        <p class="text-xs text-slate-400 mt-1">사업자등록번호: 110-22-77128 • 대표자: 김철수</p>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="flex gap-2 mb-4 bg-slate-900/90 p-1.5 rounded-2xl border border-slate-800">
+        <button id="tab-btn-business" onclick="switchLicenseTab('business')" class="flex-1 py-2 text-xs font-bold rounded-xl transition-all bg-sky-500 text-white shadow-md">
+          <i class="fa-solid fa-certificate mr-1"></i> 사업자등록증명
+        </button>
+        <button id="tab-btn-online" onclick="switchLicenseTab('online')" class="flex-1 py-2 text-xs font-bold rounded-xl transition-all text-slate-400 hover:text-white">
+          <i class="fa-solid fa-shield-halved mr-1"></i> 통신판매업신고증
+        </button>
+      </div>
+
+      <!-- Document Image Viewer -->
+      <div class="rounded-2xl overflow-hidden border border-slate-700 bg-slate-950/80 shadow-inner max-h-[55vh] overflow-y-auto">
+        <!-- Business License View -->
+        <div id="view-business" class="p-2">
+          <img src="images/business_license.jpg" alt="제주AI파트너 사업자등록증명" class="w-full h-auto object-contain cursor-zoom-in rounded-lg" onclick="window.open('images/business_license.jpg', '_blank')" title="클릭하여 원본 크게보기" />
+        </div>
+        
+        <!-- Online Sales License View (2 Pages) -->
+        <div id="view-online" class="hidden p-2 space-y-3">
+          <img src="images/online_license_p1.jpg" alt="통신판매업신고증 1페이지" class="w-full h-auto object-contain cursor-zoom-in rounded-lg" onclick="window.open('images/online_license_p1.jpg', '_blank')" title="클릭하여 1페이지 원본 크게보기" />
+          <div class="border-t border-slate-800 pt-2">
+            <span class="text-[11px] text-slate-400 block mb-1 text-center font-mono">Page 2 (문서 확인원)</span>
+            <img src="images/online_license_p2.jpg" alt="통신판매업신고증 2페이지" class="w-full h-auto object-contain cursor-zoom-in rounded-lg" onclick="window.open('images/online_license_p2.jpg', '_blank')" title="클릭하여 2페이지 원본 크게보기" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="mt-4 pt-3 border-t border-slate-800 flex justify-between items-center text-xs text-slate-400">
+        <span>이미지 클릭 시 원본으로 확대됩니다.</span>
+        <button onclick="closeLicenseModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition-colors">닫기</button>
+      </div>
+    </div>
+  </div>
 
   <!-- ==================== MODAL 1: CONSULTING MODAL ==================== -->
   <div id="consulting-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">

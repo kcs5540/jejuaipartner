@@ -1899,8 +1899,14 @@
             <li>상호명: 제주AI파트너</li>
             <li class="flex items-center gap-2 flex-wrap">
               <span>사업자등록번호: 110-22-77128</span>
-              <button type="button" onclick="openLicenseModal()" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 text-[11px] font-semibold transition-all">
+              <button type="button" onclick="openLicenseModal('business')" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 text-[11px] font-semibold transition-all">
                 <i class="fa-solid fa-certificate text-[10px]"></i> 사업자등록증 확인
+              </button>
+            </li>
+            <li class="flex items-center gap-2 flex-wrap">
+              <span>통신판매업: 정식 신고 완료</span>
+              <button type="button" onclick="openLicenseModal('online')" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 text-[11px] font-semibold transition-all">
+                <i class="fa-solid fa-shield-halved text-[10px]"></i> 통신판매신고증 확인
               </button>
             </li>
             <li>카카오톡 오픈채팅: open.kakao.com/o/s7J7jYEi</li>
@@ -2056,28 +2062,57 @@
     // Filtering and sliders are now handled globally by app.js
   </script>
 
-  <!-- ==================== MODAL: BUSINESS LICENSE MODAL ==================== -->
+  <!-- ==================== MODAL: BUSINESS & ONLINE SALES LICENSE MODAL ==================== -->
   <div id="license-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden" onclick="if(event.target === this) closeLicenseModal()">
     <div class="glass-panel max-w-lg w-full p-6 sm:p-7 rounded-3xl border border-sky-400/40 relative shadow-2xl animate-pop-once">
       <button onclick="closeLicenseModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 flex items-center justify-center text-sm transition-all">
         <i class="fa-solid fa-xmark"></i>
       </button>
+      
+      <!-- Modal Header -->
       <div class="text-center mb-4">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-bold mb-2">
-          <i class="fa-solid fa-circle-check"></i> 국세청 정식 등록 사업자
+          <i class="fa-solid fa-circle-check"></i> 정식 인허가 등록 인증
         </div>
-        <h3 class="text-xl font-bold text-white">제주AI파트너 사업자등록증명</h3>
+        <h3 id="license-modal-title" class="text-xl font-bold text-white">제주AI파트너 인허가 서류</h3>
         <p class="text-xs text-slate-400 mt-1">사업자등록번호: 110-22-77128 • 대표자: 김철수</p>
       </div>
-      <div class="rounded-2xl overflow-hidden border border-slate-700 bg-slate-950/80 shadow-inner max-h-[60vh] overflow-y-auto">
-        <img src="images/business_license.jpg" alt="제주AI파트너 사업자등록증명" class="w-full h-auto object-contain cursor-zoom-in" onclick="window.open('images/business_license.jpg', '_blank')" title="클릭하여 원본 보기" />
+
+      <!-- Tab Buttons -->
+      <div class="flex gap-2 mb-4 bg-slate-900/90 p-1.5 rounded-2xl border border-slate-800">
+        <button id="tab-btn-business" onclick="switchLicenseTab('business')" class="flex-1 py-2 text-xs font-bold rounded-xl transition-all bg-sky-500 text-white shadow-md">
+          <i class="fa-solid fa-certificate mr-1"></i> 사업자등록증명
+        </button>
+        <button id="tab-btn-online" onclick="switchLicenseTab('online')" class="flex-1 py-2 text-xs font-bold rounded-xl transition-all text-slate-400 hover:text-white">
+          <i class="fa-solid fa-shield-halved mr-1"></i> 통신판매업신고증
+        </button>
       </div>
+
+      <!-- Document Image Viewer -->
+      <div class="rounded-2xl overflow-hidden border border-slate-700 bg-slate-950/80 shadow-inner max-h-[55vh] overflow-y-auto">
+        <!-- Business License View -->
+        <div id="view-business" class="p-2">
+          <img src="images/business_license.jpg" alt="제주AI파트너 사업자등록증명" class="w-full h-auto object-contain cursor-zoom-in rounded-lg" onclick="window.open('images/business_license.jpg', '_blank')" title="클릭하여 원본 크게보기" />
+        </div>
+        
+        <!-- Online Sales License View (2 Pages) -->
+        <div id="view-online" class="hidden p-2 space-y-3">
+          <img src="images/online_license_p1.jpg" alt="통신판매업신고증 1페이지" class="w-full h-auto object-contain cursor-zoom-in rounded-lg" onclick="window.open('images/online_license_p1.jpg', '_blank')" title="클릭하여 1페이지 원본 크게보기" />
+          <div class="border-t border-slate-800 pt-2">
+            <span class="text-[11px] text-slate-400 block mb-1 text-center font-mono">Page 2 (문서 확인원)</span>
+            <img src="images/online_license_p2.jpg" alt="통신판매업신고증 2페이지" class="w-full h-auto object-contain cursor-zoom-in rounded-lg" onclick="window.open('images/online_license_p2.jpg', '_blank')" title="클릭하여 2페이지 원본 크게보기" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
       <div class="mt-4 pt-3 border-t border-slate-800 flex justify-between items-center text-xs text-slate-400">
-        <span>클릭 시 고화질 원본으로 확대됩니다.</span>
+        <span>이미지 클릭 시 원본으로 확대됩니다.</span>
         <button onclick="closeLicenseModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition-colors">닫기</button>
       </div>
     </div>
   </div>
 
+  
 </body>
 </html>

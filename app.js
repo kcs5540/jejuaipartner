@@ -739,12 +739,13 @@ window.addEventListener('resize', () => {
 // Automatic slider scroll disabled by user preference
 
 
-// Business License Modal
-function openLicenseModal() {
+// Business & Online Sales License Modal
+function openLicenseModal(tab = 'business') {
   const modal = document.getElementById('license-modal');
   if (modal) {
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
+    switchLicenseTab(tab);
   }
 }
 
@@ -753,5 +754,27 @@ function closeLicenseModal() {
   if (modal) {
     modal.classList.add('hidden');
     document.body.style.overflow = '';
+  }
+}
+
+function switchLicenseTab(tab) {
+  const btnBusiness = document.getElementById('tab-btn-business');
+  const btnOnline = document.getElementById('tab-btn-online');
+  const viewBusiness = document.getElementById('view-business');
+  const viewOnline = document.getElementById('view-online');
+  const title = document.getElementById('license-modal-title');
+
+  if (tab === 'business') {
+    btnBusiness.className = 'flex-1 py-2 text-xs font-bold rounded-xl transition-all bg-sky-500 text-white shadow-md';
+    btnOnline.className = 'flex-1 py-2 text-xs font-bold rounded-xl transition-all text-slate-400 hover:text-white';
+    viewBusiness.classList.remove('hidden');
+    viewOnline.classList.add('hidden');
+    if (title) title.textContent = '제주AI파트너 사업자등록증명';
+  } else {
+    btnBusiness.className = 'flex-1 py-2 text-xs font-bold rounded-xl transition-all text-slate-400 hover:text-white';
+    btnOnline.className = 'flex-1 py-2 text-xs font-bold rounded-xl transition-all bg-emerald-500 text-white shadow-md';
+    viewBusiness.classList.add('hidden');
+    viewOnline.classList.remove('hidden');
+    if (title) title.textContent = '제주AI파트너 통신판매업신고증';
   }
 }
