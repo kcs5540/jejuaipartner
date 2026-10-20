@@ -1,3 +1,10 @@
 node_modules/
 .DS_Store
 *.log
+
+# Personal & Confidential Business Raw Documents
+common-docs/*.pdf
+common-docs/*.jpg
+common-docs/*.png
+!common-docs/README.md
+
