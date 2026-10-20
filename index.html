@@ -2566,57 +2566,59 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
         
         <!-- Connecting line for desktop -->
-        <div class="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-sky-500/10 via-sky-500/40 to-cyan-500/10 -translate-y-8 z-0"></div>
+        <div class="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-500/10 via-sky-500/40 to-cyan-500/10 -translate-y-8 z-0"></div>
 
-        <!-- Engine 1: Video AI -->
+        <!-- Engine 1: Planning & Prompt AI (텍스트 기획 엔진) -->
+        <div class="glass-panel p-8 rounded-3xl border border-emerald-500/20 relative z-10 hover:border-emerald-400/50 transition-all group">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 text-white flex items-center justify-center text-2xl font-bold mb-6 shadow-lg shadow-emerald-500/20 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <div class="text-xs text-emerald-400 font-mono font-bold mb-1">01. PLANNING &amp; PROMPT AI</div>
+          <h3 class="text-lg font-bold text-white mb-3">기획 &amp; 카피라이팅 엔진</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            <strong class="text-white">ChatGPT &amp; Gemini</strong> 초정밀 프롬프트를 통해 비즈니스 특성을 심층 분석하고, 고객의 시선을 단번에 사로잡는 훅(Hook) 대본과 바이럴 키워드를 설계합니다.
+          </p>
+          <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-slate-400 space-y-1">
+            <div class="text-emerald-300 font-semibold"><i class="fa-solid fa-check mr-1"></i>주요 기능:</div>
+            <div>• 업종별 맞춤형 훅(Hook) 숏폼 대본 생성</div>
+            <div>• 알고리즘 검색 최적화(SEO) 키워드 추출</div>
+            <div>• 브랜드 스토리텔링 및 감성 카피라이팅</div>
+          </div>
+        </div>
+
+        <!-- Engine 2: Video & Premium Voice AI (영상 & 프리미엄 보이스 엔진) -->
         <div class="glass-panel p-8 rounded-3xl border border-sky-500/20 relative z-10 hover:border-sky-400/50 transition-all group">
           <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500 to-amber-500 text-white flex items-center justify-center text-2xl font-bold mb-6 shadow-lg shadow-red-500/20 group-hover:scale-110 transition-transform">
             <i class="fa-solid fa-film"></i>
           </div>
-          <div class="text-xs text-sky-400 font-mono font-bold mb-1">01. VIDEO AI ENGINE</div>
-          <h3 class="text-lg font-bold text-white mb-3">비디오 제작 엔진</h3>
+          <div class="text-xs text-sky-400 font-mono font-bold mb-1">02. VIDEO &amp; VOICE AI</div>
+          <h3 class="text-lg font-bold text-white mb-3">영상 &amp; 프리미엄 보이스 엔진</h3>
           <p class="text-slate-300 text-sm leading-relaxed mb-4">
-            <strong class="text-white">구글 플로우(Flow)</strong>의 혁신적 시네마틱 AI 영상 생성과 <strong class="text-white">Vrew</strong>의 자동 자막·음성 싱크, <strong class="text-white">CapCut</strong>의 예능 트랜지션을 결합하여 압도적 몰입감의 숏폼을 제작합니다.
+            <strong class="text-white">구글 플로우(Flow)</strong>의 시네마틱 AI 영상과 <strong class="text-white">일레븐랩스·타입캐스트</strong>의 초실사 AI 휴먼 보이스, <strong class="text-white">CapCut·Vrew</strong>의 예능 트랜지션 기술을 결합합니다.
           </p>
           <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-slate-400 space-y-1">
             <div class="text-sky-300 font-semibold"><i class="fa-solid fa-check mr-1"></i>주요 기능:</div>
-            <div>• 구글 플로우(Flow) AI 씬 &amp; 시네마틱 영상 생성</div>
-            <div>• Vrew AI 성우 음성 &amp; 자동 자막 싱크</div>
-            <div>• CapCut 트렌디 효과음 &amp; 모션 트랜지션</div>
+            <div>• 구글 플로우(Flow) AI 씬 &amp; 시네마틱 연출</div>
+            <div>• 일레븐랩스 &amp; 타입캐스트 초실사 AI 감정 성우</div>
+            <div>• CapCut &amp; Vrew 자동 자막·효과음 싱크 편집</div>
           </div>
         </div>
 
-        <!-- Engine 2: Text AI -->
-        <div class="glass-panel p-8 rounded-3xl border border-sky-500/20 relative z-10 hover:border-sky-400/50 transition-all group">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 text-white flex items-center justify-center text-2xl font-bold mb-6 shadow-lg shadow-emerald-500/20 group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-brain"></i>
-          </div>
-          <div class="text-xs text-emerald-400 font-mono font-bold mb-1">02. TEXT AI ENGINE</div>
-          <h3 class="text-lg font-bold text-white mb-3">텍스트 기획 엔진</h3>
-          <p class="text-slate-300 text-sm leading-relaxed mb-4">
-            <strong class="text-white">ChatGPT &amp; Gemini</strong> 맞춤 프롬프트를 연동하여 소상공인 비즈니스별 특성을 세분화 분석하고, 감성 카피라이팅과 최적화 해시태그를 자동 추출합니다.
-          </p>
-          <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-slate-400 space-y-1">
-            <div class="text-emerald-300 font-semibold"><i class="fa-solid fa-check mr-1"></i>주요 기능:</div>
-            <div>• 매장 특성별 훅(Hook) 대본 자동 생성</div>
-            <div>• 연동 알고리즘 검색 키워드 추출</div>
-          </div>
-        </div>
-
-        <!-- Engine 3: Graphic AI -->
+        <!-- Engine 3: Vibe Coding & Design AI (바이브코딩 & 디자인 엔진) -->
         <div class="glass-panel p-8 rounded-3xl border border-cyan-500/20 relative z-10 hover:border-cyan-400/50 transition-all group">
           <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white flex items-center justify-center text-2xl font-bold mb-6 shadow-lg shadow-cyan-500/20 group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-pen-ruler"></i>
+            <i class="fa-solid fa-code"></i>
           </div>
-          <div class="text-xs text-cyan-400 font-mono font-bold mb-1">03. GRAPHIC AI ENGINE</div>
-          <h3 class="text-lg font-bold text-white mb-3">디자인 엔진</h3>
+          <div class="text-xs text-cyan-400 font-mono font-bold mb-1">03. VIBE CODING &amp; DESIGN</div>
+          <h3 class="text-lg font-bold text-white mb-3">바이브코딩 &amp; 디자인 엔진</h3>
           <p class="text-slate-300 text-sm leading-relaxed mb-4">
-            지능형 레이아웃 빌더를 활용해 모바일 디지털 비즈니스 명함, 브랜드 로고, 홍보물 패키지를 신속하게 제작 및 제공합니다.
+            자연어 프롬프트 기반의 <strong class="text-white">안티그래비티(Antigravity)</strong> 바이브코딩 기술로 고성능 반응형 웹사이트를 초고속 구축하고, 스마트 모바일 명함 및 브랜드 디자인을 완성합니다.
           </p>
           <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-slate-400 space-y-1">
             <div class="text-cyan-300 font-semibold"><i class="fa-solid fa-check mr-1"></i>주요 기능:</div>
-            <div>• 디지털 비즈니스 모바일 명함</div>
-            <div>• 썸네일 &amp; 로고 자동 레이아웃</div>
+            <div>• 안티그래비티(Antigravity) 초고속 웹 바이브코딩</div>
+            <div>• 디지털 비즈니스 모바일 명함 제작</div>
+            <div>• 스마트 썸네일 &amp; 브랜드 패키지 디자인</div>
           </div>
         </div>
 
