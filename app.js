@@ -736,34 +736,4 @@ window.addEventListener('resize', () => {
   checkScrollLimits('blog-slider', 'blog-slide-prev', 'blog-slide-next');
 });
 
-// Automatic slider scroll setup
-const autoSliders = ['website-slider', 'video-slider', 'blog-slider'];
-const hoverStates = { 'website-slider': false, 'video-slider': false, 'blog-slider': false };
-
-autoSliders.forEach(sliderId => {
-  const slider = document.getElementById(sliderId);
-  if (!slider) return;
-
-  slider.addEventListener('mouseenter', () => hoverStates[sliderId] = true);
-  slider.addEventListener('mouseleave', () => hoverStates[sliderId] = false);
-  slider.addEventListener('touchstart', () => hoverStates[sliderId] = true);
-  slider.addEventListener('touchend', () => {
-    setTimeout(() => hoverStates[sliderId] = false, 2000);
-  });
-
-  setInterval(() => {
-    if (hoverStates[sliderId]) return;
-
-    const visibleItems = slider.querySelectorAll('.port-item:not(.hidden)');
-    if (visibleItems.length <= 1) return;
-
-    const isAtEnd = (slider.scrollLeft + slider.clientWidth) >= (slider.scrollWidth - 15);
-    if (isAtEnd) {
-      slider.scrollTo({ left: 0, behavior: 'smooth' });
-    } else {
-      const card = slider.querySelector('.port-item:not(.hidden)');
-      const cardWidth = card ? card.clientWidth : slider.clientWidth * 0.75;
-      slider.scrollBy({ left: cardWidth + 24, behavior: 'smooth' });
-    }
-  }, 5000);
-});
+// Automatic slider scroll disabled by user preference
