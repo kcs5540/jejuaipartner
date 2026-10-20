@@ -737,3 +737,21 @@ window.addEventListener('resize', () => {
 });
 
 // Automatic slider scroll disabled by user preference
+
+
+// Business License Modal
+function openLicenseModal() {
+  const modal = document.getElementById('license-modal');
+  if (modal) {
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeLicenseModal() {
+  const modal = document.getElementById('license-modal');
+  if (modal) {
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+}

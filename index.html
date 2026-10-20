@@ -3076,7 +3076,12 @@
           <h4 class="text-sm font-bold text-white uppercase tracking-wider">사업자 정보</h4>
           <p class="text-slate-300 font-semibold">제주AI파트너 (Jeju AI Partner)</p>
           <p>• 대표자: 김철수 (정보처리기사 자격 보유)</p>
-          <p>• 사업자등록번호: <strong class="text-white font-mono">110-22-77128</strong></p>
+          <p class="flex items-center gap-2 flex-wrap">
+            • 사업자등록번호: <strong class="text-white font-mono">110-22-77128</strong>
+            <button type="button" onclick="openLicenseModal()" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 text-[11px] font-semibold transition-all shadow-sm">
+              <i class="fa-solid fa-certificate text-[10px]"></i> 사업자등록증 확인
+            </button>
+          </p>
           <p>• 대표 전화: <a href="tel:010-3306-5540" class="text-emerald-400 font-bold font-mono hover:underline">010-3306-5540</a></p>
           <p>• 카카오톡: <a href="https://open.kakao.com/o/s7J7jYEi" target="_blank" rel="noopener noreferrer" class="text-amber-300 font-bold hover:underline">1:1 오픈채팅 바로가기</a></p>
           <p>• 위치: 대한민국 특별자치도 제주시 노형동</p>
@@ -3306,5 +3311,29 @@
 
   <!-- JavaScript App Logic -->
   <script src="app.js"></script>
+
+  <!-- ==================== MODAL: BUSINESS LICENSE MODAL ==================== -->
+  <div id="license-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden" onclick="if(event.target === this) closeLicenseModal()">
+    <div class="glass-panel max-w-lg w-full p-6 sm:p-7 rounded-3xl border border-sky-400/40 relative shadow-2xl animate-pop-once">
+      <button onclick="closeLicenseModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 flex items-center justify-center text-sm transition-all">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="text-center mb-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-bold mb-2">
+          <i class="fa-solid fa-circle-check"></i> 국세청 정식 등록 사업자
+        </div>
+        <h3 class="text-xl font-bold text-white">제주AI파트너 사업자등록증명</h3>
+        <p class="text-xs text-slate-400 mt-1">사업자등록번호: 110-22-77128 • 대표자: 김철수</p>
+      </div>
+      <div class="rounded-2xl overflow-hidden border border-slate-700 bg-slate-950/80 shadow-inner max-h-[60vh] overflow-y-auto">
+        <img src="images/business_license.jpg" alt="제주AI파트너 사업자등록증명" class="w-full h-auto object-contain cursor-zoom-in" onclick="window.open('images/business_license.jpg', '_blank')" title="클릭하여 원본 보기" />
+      </div>
+      <div class="mt-4 pt-3 border-t border-slate-800 flex justify-between items-center text-xs text-slate-400">
+        <span>클릭 시 고화질 원본으로 확대됩니다.</span>
+        <button onclick="closeLicenseModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition-colors">닫기</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
