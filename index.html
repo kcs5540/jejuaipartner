@@ -51,6 +51,13 @@
   
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css" />
+  <!-- PWA & Mobile Web App Meta -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#050C1A" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="제주AI파트너" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
 </head>
 <body class="bg-[#050C1A] text-slate-100 antialiased selection:bg-sky-500 selection:text-white">
   <!-- Initial theme setter script to prevent flash -->
@@ -3766,5 +3773,65 @@
     </div>
   </div>
 
+
+  <!-- PWA Service Worker & Install Banner -->
+  <div id="pwa-install-banner" class="hidden fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-md bg-slate-900/95 backdrop-blur-xl border border-sky-500/40 rounded-2xl p-3.5 shadow-2xl flex items-center justify-between gap-3 text-white transition-all">
+    <div class="flex items-center gap-3">
+      <img src="/images/icon-192.png" alt="제주AI파트너 앱 아이콘" class="w-10 h-10 rounded-xl shadow-md border border-sky-400/40" />
+      <div>
+        <p class="text-xs font-bold text-white">제주AI파트너 앱으로 보기</p>
+        <p class="text-[11px] text-slate-300">홈 화면에 추가하여 앱처럼 편리하게 이용하세요</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-1.5 shrink-0">
+      <button id="btn-pwa-install" class="px-3 py-1.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs shadow-md transition-all">
+        앱 설치
+      </button>
+      <button id="btn-pwa-close" class="p-1.5 text-slate-400 hover:text-white text-xs">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // PWA Service Worker Registration
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+
+    // PWA Install Prompt handling
+    let deferredPrompt;
+    const installBanner = document.getElementById('pwa-install-banner');
+    const installBtn = document.getElementById('btn-pwa-install');
+    const closeBtn = document.getElementById('btn-pwa-close');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      if (installBanner && !sessionStorage.getItem('pwa_dismissed')) {
+        installBanner.classList.remove('hidden');
+      }
+    });
+
+    if (installBtn) {
+      installBtn.addEventListener('click', async () => {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          const { outcome } = await deferredPrompt.userChoice;
+          deferredPrompt = null;
+          if (installBanner) installBanner.classList.add('hidden');
+        }
+      });
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        if (installBanner) installBanner.classList.add('hidden');
+        sessionStorage.setItem('pwa_dismissed', 'true');
+      });
+    }
+  </script>
 </body>
 </html>
