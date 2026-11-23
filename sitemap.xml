@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 메인 홈페이지 -->
+  <url>
+    <loc>https://www.jejuaipartner.com/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- 형제들감자탕 연동점 B2B 제안서 -->
+  <url>
+    <loc>https://www.jejuaipartner.com/proposal-brothers-gamjatang-yeondong.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.jejuaipartner.com/proposal-%ED%98%95%EC%A0%9C%EB%93%A4%EA%B0%90%EC%9E%90%ED%83%95(%EC%97%B0%EB%8F%99%EC%A0%90).html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

@@ -1,0 +1,18 @@
+# robots.txt for 제주AI파트너 (https://www.jejuaipartner.com)
+User-agent: *
+Allow: /
+
+# 네이버 Yeti 검색로봇 허용
+User-agent: Yeti
+Allow: /
+
+# 구글 Googlebot 검색로봇 허용
+User-agent: Googlebot
+Allow: /
+
+# 다음/카카오 Daumoa 검색로봇 허용
+User-agent: Daumoa
+Allow: /
+
+# 공식 사이트맵 위치
+Sitemap: https://www.jejuaipartner.com/sitemap.xml
