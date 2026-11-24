@@ -502,9 +502,9 @@ async function handleReservationSubmit(event) {
     })
   }).catch(e => console.log('Google Sheets submit error:', e));
 
-  // 4. Show friendly alert & open Kakao Open Chat
-  alert(`🎉 상담 및 방문 예약이 정상 접수되었습니다!\n\n• 신청서가 구글 스프레드시트 및 김철수 대표 이메일(csjeju21@gmail.com)로 즉시 전송되었습니다.\n• 신청 내용이 클립보드에 자동 복사되었습니다. 카카오톡 창이 열리면 [붙여넣기]만 누르시면 바로 1:1 상담도 가능합니다.`);
-  window.open('https://open.kakao.com/o/s7J7jYEi', '_blank');
+  // 4. Show friendly alert & open Kakao Official Business Channel Chat
+  alert(`🎉 상담 및 방문 예약이 정상 접수되었습니다!\n\n• 신청서가 구글 스프레드시트 및 김철수 대표 이메일(csjeju21@gmail.com)로 즉시 전송되었습니다.\n• 신청 내용이 클립보드에 자동 복사되었습니다. 카카오톡 공식 채널 창이 열리면 [붙여넣기]만 누르시면 바로 1:1 상담도 가능합니다.`);
+  window.open('http://pf.kakao.com/_wMxjvX/chat', '_blank');
   form.reset();
 }
 
@@ -555,8 +555,8 @@ async function handleModalConsultingSubmit(event) {
   }).catch(e => console.log('Google Sheets submit error:', e));
 
   closeConsultingModal();
-  alert(`🎉 무료 마케팅 컨설팅 신청이 접수되었습니다!\n\n• 구글 스프레드시트 및 김철수 대표 이메일(csjeju21@gmail.com)로 신청 내용이 전송되었습니다.\n• 신청 내용이 복사되었습니다. 카카오톡 대화창에서 [붙여넣기]를 하시면 더욱 빠른 1:1 상담이 가능합니다.`);
-  window.open('https://open.kakao.com/o/s7J7jYEi', '_blank');
+  alert(`🎉 무료 마케팅 컨설팅 신청이 접수되었습니다!\n\n• 구글 스프레드시트 및 김철수 대표 이메일(csjeju21@gmail.com)로 신청 내용이 전송되었습니다.\n• 신청 내용이 복사되었습니다. 카카오톡 공식 채널 대화창에서 [붙여넣기]를 하시면 더욱 빠른 1:1 상담이 가능합니다.`);
+  window.open('http://pf.kakao.com/_wMxjvX/chat', '_blank');
   form.reset();
 }
 
