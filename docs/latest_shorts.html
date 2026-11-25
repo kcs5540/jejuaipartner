@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>제주AI파트너 쇼츠 마스터 대시보드 — 도청도 AI 파트너 시대</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111c33;
+      --panel-2: #16233d;
+      --border: #263656;
+      --cyan: #38bdf8;
+      --gold: #fbbf24;
+      --emerald: #34d399;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      line-height: 1.65;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 20px;
+    }
+    .topbar-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 16px; color: #fff; }
+    .badge {
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.16);
+      color: var(--cyan);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      font-weight: 700;
+    }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 6px; }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      color: #cbd5e1;
+      background: var(--panel-2);
+      border: 1px solid var(--border);
+      padding: 6px 11px;
+      border-radius: 8px;
+    }
+    .nav-links a:hover { border-color: var(--cyan); color: #fff; }
+    .wrap { max-width: 1080px; margin: 26px auto 80px; padding: 0 20px; display: grid; gap: 22px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+    .card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+    .step-tag { font-size: 11px; font-weight: 800; color: var(--gold); letter-spacing: 0.05em; text-transform: uppercase; }
+    h2 { margin: 2px 0 0; font-size: 19px; color: #fff; }
+    h3 { margin: 0 0 8px; font-size: 15px; color: #fff; }
+    .btn {
+      border: 0;
+      border-radius: 9px;
+      padding: 8px 13px;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.12s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-cyan { background: var(--cyan); color: #082f49; }
+    .btn-gold { background: var(--gold); color: #271700; }
+    .btn-emerald { background: var(--emerald); color: #052e16; }
+    .btn-dark { background: #1e293b; color: #e2e8f0; border: 1px solid #334155; }
+    .codebox {
+      background: #080f1e;
+      border: 1px solid #1e2d4a;
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 13px;
+      white-space: pre-wrap;
+      color: #f1f5f9;
+      margin: 0;
+    }
+    .scene-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+    .scene-item {
+      background: var(--panel-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .scene-top { display: flex; gap: 12px; align-items: center; }
+    .scene-thumb {
+      width: 58px;
+      height: 102px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      background: #080f1e;
+      flex-shrink: 0;
+    }
+    .meta-small { font-size: 12px; color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 16px; }
+    th, td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; }
+    th { background: #172542; color: var(--cyan); font-weight: 800; }
+    .check-list { display: grid; gap: 8px; }
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #0b1324;
+      border: 1px solid #1f2e4d;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .check-item input { margin-top: 3px; accent-color: var(--emerald); }
+    .channel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 14px; }
+    .channel-card {
+      background: var(--panel-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 6px; }
+    .warn {
+      font-size: 12px;
+      color: #fde68a;
+      background: rgba(251, 191, 36, 0.1);
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10b981;
+      color: #022c22;
+      font-weight: 800;
+      font-size: 13px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      transform: translateY(12px);
+      transition: all 0.2s ease;
+      pointer-events: none;
+      z-index: 999;
+    }
+    #toast.show { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span>🚀 제주AI파트너 쇼츠 마스터 대시보드</span>
+        <span class="badge">도청도 AI 파트너 시대 · 시사 후킹</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#step1">STEP 1 브루 대본</a>
+        <a href="#step2">STEP 2 플로우 6초</a>
+        <a href="#step25">STEP 2.5 매칭표</a>
+        <a href="#step3">STEP 3 캡컷 마감</a>
+        <a href="#step4">STEP 4 6대 채널 발행</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- STEP 1 -->
+    <section id="step1" class="card">
+      <div class="card-header">
+        <div>
+          <div class="step-tag">STEP 1 · Vrew All-in-One Script</div>
+          <h2>브루(Vrew) 원스톱 나레이션 대본 (6씬 · 약 36초 · 루프 0%)</h2>
+        </div>
+        <button class="btn btn-cyan" onclick="copyById('vrew-script', '브루 대본')">📋 브루 대본 원클릭 복사</button>
+      </div>
+      <pre id="vrew-script" class="codebox">요즘 제주도청도 공직자 'AI 파트너' 118명을 뽑아 행정 혁신에 나섰습니다.
+
+행정은 도청 AI 파트너가 맡지만, 정작 바쁜 우리 제주 사장님 가게는 누가 도울까요?
+
+제주 소상공인 전문 민간 파트너, 정보처리기사 김철수 대표의 제주AI파트너입니다.
+
+매달 나가는 서버비 영원! 1회 구축만으로 홈페이지 소유권을 100% 드립니다.
+
+내국인은 네이버 플레이스와 블로그·숏폼으로, 외국인은 구글맵과 샤오홍슈로 연결합니다.
+
+의무 약정 없는 투명한 시작! 지금 네이버와 구글에 제주AI파트너를 검색해 보세요.</pre>
+    </section>
+
+    <!-- STEP 2 -->
+    <section id="step2" class="card">
+      <div class="card-header">
+        <div>
+          <div class="step-tag">STEP 2 · Google Flow Image-to-Video (6초 고정)</div>
+          <h2>구글 플로우 씬별 6초 모션 프롬프트 (ref_photos 드래그&amp;드롭)</h2>
+        </div>
+        <span class="badge">Frames to Video · 6초 · No Dialogue</span>
+      </div>
+      <div class="warn" style="margin-bottom:14px;">
+        💡 함께 열린 <strong>ref_photos/</strong> 폴더에서 <code>01~06</code>번 이미지를 구글 플로우 <strong>Frames to Video</strong>에 끌어다 놓은 뒤, 아래 <strong>[2단계 6초 모션 복사]</strong>만 붙여넣고 생성하세요! (파일 저장명: <code>scene01~06.mp4</code>)
+      </div>
+      <div class="scene-grid">
+        <div class="scene-item">
+          <div class="scene-top">
+            <img class="scene-thumb" src="ref_photos/01_scene01_jeju_ai_news.jpg" alt="Scene 01" />
+            <div>
+              <h3>Scene 01 · 도청도 AI 파트너 시대</h3>
+              <div class="meta-small">파일: <code>01_scene01_jeju_ai_news.jpg</code><br/>구간: 0~6초</div>
+            </div>
+          </div>
+          <pre id="p1" class="codebox" style="font-size:11.5px;">Smooth cinematic drone forward glide over the modern Jeju city skyline toward Hallasan mountain in the distance as delicate glowing cyan digital network light lines flow gracefully across the bright sky. Crisp documentary broadcast quality, subtle airy wind ambiance, strictly no dialogue, no speech, 6 seconds.</pre>
+          <button class="btn btn-gold" onclick="copyById('p1', 'Scene 01 모션 프롬프트')">📋 2단계 6초 모션 복사</button>
+        </div>
+
+        <div class="scene-item">
+          <div class="scene-top">
+            <img class="scene-thumb" src="ref_photos/02_scene02_jeju_shop_owner.jpg" alt="Scene 02" />
+            <div>
+              <h3>Scene 02 · 바쁜 제주 사장님 가게</h3>
+              <div class="meta-small">파일: <code>02_scene02_jeju_shop_owner.jpg</code><br/>구간: 6~12초</div>
+            </div>
+          </div>
+          <pre id="p2" class="codebox" style="font-size:11.5px;">Slow cinematic push-in on the Korean small business owner sighing gently as he looks over receipts and his laptop at the warm wooden Jeju cafe counter after a busy day. Shallow depth of field, natural cafe room tone and soft paper rustling Foley, strictly no dialogue, no speech, 6 seconds.</pre>
+          <button class="btn btn-gold" onclick="copyById('p2', 'Scene 02 모션 프롬프트')">📋 2단계 6초 모션 복사</button>
+        </div>
+
+        <div class="scene-item">
+          <div class="scene-top">
+            <img class="scene-thumb" src="ref_photos/03_scene03_kim_ceo_expert.jpg" alt="Scene 03" />
+            <div>
+              <h3>Scene 03 · 민간 전문 제주AI파트너</h3>
+              <div class="meta-small">파일: <code>03_scene03_kim_ceo_expert.jpg</code><br/>구간: 12~18초</div>
+            </div>
+          </div>
+          <pre id="p3" class="codebox" style="font-size:11.5px;">Slow confident pan across the modern Jeju office as the Korean IT specialist types smoothly on the keyboard and reviews the website layout and video timeline on dual monitors, nodding calmly. Clean studio lighting, soft keyboard typing Foley, natural office room tone, strictly no dialogue, no speech, 6 seconds.</pre>
+          <button class="btn btn-gold" onclick="copyById('p3', 'Scene 03 모션 프롬프트')">📋 2단계 6초 모션 복사</button>
+        </div>
+
+        <div class="scene-item">
+          <div class="scene-top">
+            <img class="scene-thumb" src="ref_photos/04_scene04_zero_cost_home.jpg" alt="Scene 04" />
+            <div>
+              <h3>Scene 04 · 서버비 0원 홈페이지</h3>
+              <div class="meta-small">파일: <code>04_scene04_zero_cost_home.jpg</code><br/>구간: 18~24초</div>
+            </div>
+          </div>
+          <pre id="p4" class="codebox" style="font-size:11.5px;">Smooth macro camera glide around the smartphone held in hand as the thumb gently scrolls through the clean dark-navy mobile website UI. Sunlight softly shimmers on the blurred Jeju ocean and stone wall behind, crisp commercial quality, subtle breeze ambiance, strictly no dialogue, no speech, 6 seconds.</pre>
+          <button class="btn btn-gold" onclick="copyById('p4', 'Scene 04 모션 프롬프트')">📋 2단계 6초 모션 복사</button>
+        </div>
+
+        <div class="scene-item">
+          <div class="scene-top">
+            <img class="scene-thumb" src="ref_photos/05_scene05_local_global_flow.jpg" alt="Scene 05" />
+            <div>
+              <h3>Scene 05 · 국내·외국인 동시 유입</h3>
+              <div class="meta-small">파일: <code>05_scene05_local_global_flow.jpg</code><br/>구간: 24~30초</div>
+            </div>
+          </div>
+          <pre id="p5" class="codebox" style="font-size:11.5px;">Lively smooth tracking shot at the sunny Jeju basalt-stone cafe entrance as cheerful Korean and East Asian tourist customers glance at their smartphones and walk happily inside together. Bright Jeju afternoon sunlight, swaying palm leaves, gentle outdoor street ambiance, strictly no dialogue, no speech, 6 seconds.</pre>
+          <button class="btn btn-gold" onclick="copyById('p5', 'Scene 05 모션 프롬프트')">📋 2단계 6초 모션 복사</button>
+        </div>
+
+        <div class="scene-item">
+          <div class="scene-top">
+            <img class="scene-thumb" src="ref_photos/06_scene06_jeju_owner_smile.jpg" alt="Scene 06" />
+            <div>
+              <h3>Scene 06 · 제주AI파트너 검색</h3>
+              <div class="meta-small">파일: <code>06_scene06_jeju_owner_smile.jpg</code><br/>구간: 30~36초</div>
+            </div>
+          </div>
+          <pre id="p6" class="codebox" style="font-size:11.5px;">Inspiring slow pull-back portrait of the Korean small business owner smiling brightly and proudly in front of the Jeju storefront with swaying palm leaves and clear blue Jeju sky behind. Golden hour warmth, uplifting commercial cinema look, gentle island wind ambiance, strictly no dialogue, no speech, 6 seconds.</pre>
+          <button class="btn btn-gold" onclick="copyById('p6', 'Scene 06 모션 프롬프트')">📋 2단계 6초 모션 복사</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 2.5 -->
+    <section id="step25" class="card">
+      <div class="card-header">
+        <div>
+          <div class="step-tag">STEP 2.5 · Vrew 1:1 Cut Matching &amp; Agent Prompt</div>
+          <h2>브루(Vrew) 자막 ↔ 영상 컷 1:1 배치 매칭표 &amp; 체크리스트</h2>
+        </div>
+        <button class="btn btn-emerald" onclick="copyById('vrew-agent-prompt', '브루 AI 일괄 지시문')">🤖 브루 에이전트 일괄 지시 복사</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:95px;">영상 클립</th>
+            <th>브루 대사 (1:1 배치 구간)</th>
+            <th style="width:185px;">황금 1줄 요약 자막</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>scene01.mp4</code></td><td>요즘 제주도청도 공직자 'AI 파트너' 118명을 뽑아 행정 혁신에 나섰습니다.</td><td><strong>도청도 AI 파트너 시대!</strong></td></tr>
+          <tr><td><code>scene02.mp4</code></td><td>행정은 도청 AI 파트너가 맡지만, 정작 바쁜 우리 제주 사장님 가게는 누가 도울까요?</td><td><strong>사장님 가게는 누가?</strong></td></tr>
+          <tr><td><code>scene03.mp4</code></td><td>제주 소상공인 전문 민간 파트너, 정보처리기사 김철수 대표의 제주AI파트너입니다.</td><td><strong>민간 전문 제주AI파트너</strong></td></tr>
+          <tr><td><code>scene04.mp4</code></td><td>매달 나가는 서버비 영원! 1회 구축만으로 홈페이지 소유권을 100% 드립니다.</td><td><strong>서버비 0원·100% 소유</strong></td></tr>
+          <tr><td><code>scene05.mp4</code></td><td>내국인은 네이버 플레이스와 블로그·숏폼으로, 외국인은 구글맵과 샤오홍슈로 연결합니다.</td><td><strong>국내·외국인 동시 공략!</strong></td></tr>
+          <tr><td><code>scene06.mp4</code></td><td>의무 약정 없는 투명한 시작! 지금 네이버와 구글에 제주AI파트너를 검색해 보세요.</td><td><strong>제주AI파트너 검색!</strong></td></tr>
+        </tbody>
+      </table>
+
+      <pre id="vrew-agent-prompt" class="codebox" style="margin-bottom:14px;">자막 키워드에 #fcc800 포인트, 강조 지점에 딩동 효과음, 배경음악은 추천곡으로 교체하고 영상 전체 구간 빈틈없이 깔아줘.</pre>
+
+      <div class="check-list">
+        <label class="check-item"><input type="checkbox" /> <span><strong>1. 음성 생성 &amp; 무음 삭제:</strong> 브루 내장 30~40대 아나운서/비즈니스 톤 음성(속도 1.05x) 적용 후 무음 자동 정리</span></label>
+        <label class="check-item"><input type="checkbox" /> <span><strong>2. 6초 클립 1:1 배치:</strong> <code>scene01~06.mp4</code>를 위 표 대사에 맞춰 순서대로 배치</span></label>
+        <label class="check-item"><input type="checkbox" /> <span><strong>3. 화면 전환 1클릭:</strong> 상단 [화면 전환] → <code>디졸브(Dissolve) 0.3초</code> → [모든 장면에 적용]</span></label>
+        <label class="check-item"><input type="checkbox" /> <span><strong>4. BGM &amp; SFX 마감:</strong> 배경음악 볼륨 15~18% + 0초 <code>Whoosh</code>, 강조 구간 <code>Ding/Pop</code> 후 1080p 내보내기</span></label>
+      </div>
+    </section>
+
+    <!-- STEP 3 -->
+    <section id="step3" class="card">
+      <div class="card-header">
+        <div>
+          <div class="step-tag">STEP 3 · CapCut Pro Finishing</div>
+          <h2>캡컷(CapCut) 최종 마감 체크리스트 (김철수 대표님 공식 규격)</h2>
+        </div>
+        <button class="btn btn-dark" onclick="copyById('ending-text', '엔딩 카드 문구')">📋 엔딩 문구 복사</button>
+      </div>
+      <div class="check-list" style="margin-bottom:12px;">
+        <label class="check-item"><input type="checkbox" /> <span><strong>황금 1줄 요약 자막:</strong> 화면 세로 60~65% 고정 · 레몬 옐로우(<code>#FCC800</code>) + 얇은 외곽선 · 인 <code>탄성 드롭</code> / 아웃 <code>없음</code></span></label>
+        <label class="check-item"><input type="checkbox" /> <span><strong>0초 Whoosh SFX:</strong> 첫 자막 등장 시 <code>Whoosh</code> (-12dB) 1회 믹싱 확인</span></label>
+        <label class="check-item"><input type="checkbox" /> <span><strong>공식 엔딩 규격 (필수):</strong> 폰트 <code>코트라 볼드체(KOTRA BOLD)</code> + 애니메이션 [인(In)] → <code>축소 2</code> (0.3~0.5초)</span></label>
+        <label class="check-item"><input type="checkbox" /> <span><strong>대표 썸네일 적용:</strong> <code>ref_photos/00_유튜브쇼츠_대표썸네일.jpg</code> 확인 후 1080p 최종 내보내기</span></label>
+      </div>
+      <pre id="ending-text" class="codebox">제주AI파트너
+제주 소상공인 전문 민간 AI 파트너
+☎ 010-3306-5540
+네이버·구글 '제주AI파트너' 검색</pre>
+    </section>
+
+    <!-- STEP 4 -->
+    <section id="step4" class="card">
+      <div class="card-header">
+        <div>
+          <div class="step-tag">STEP 4 · 6-Channel One-Click Publish</div>
+          <h2>6대 채널 원클릭 발행 대시보드</h2>
+        </div>
+      </div>
+
+      <div class="channel-grid">
+        <!-- 1. YouTube Shorts -->
+        <div class="channel-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <h3>1. 🎬 유튜브 쇼츠</h3>
+            <label style="font-size:12px;"><input type="checkbox" /> 완료</label>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-cyan" onclick="copyById('yt-title', '유튜브 제목')">제목 복사</button>
+            <button class="btn btn-dark" onclick="copyById('yt-desc', '유튜브 설명')">설명 복사</button>
+            <button class="btn btn-dark" onclick="copyById('yt-tags', '유튜브 태그')">태그 복사</button>
+            <button class="btn btn-gold" onclick="copyById('yt-pin', '유튜브 고정댓글')">고정댓글 복사</button>
+          </div>
+          <pre id="yt-title" class="codebox" style="font-size:11.5px;">제주도청도 AI 파트너 118명 시대! 제주 사장님 가게는? | 제주AI파트너</pre>
+          <pre id="yt-desc" class="codebox" style="display:none;">제주도청도 공직자 'AI 파트너' 118명을 선발해 행정 혁신에 나서는 시대입니다.
+행정은 도청 AI 파트너가 맡지만, 바쁜 제주 소상공인 사장님들의 매장은 민간 전문 파트너인 '제주AI파트너(대표 김철수 · 정보처리기사)'가 함께합니다.
+
+✅ 서버 고정비 0원 · 1회 구축만으로 홈페이지 소유권 100% 이관
+✅ 내국인 유입: 네이버 플레이스 SEO + 블로그 + 4대 AI 숏폼
+✅ 외국인 유입: 구글맵 영·중문 세팅 + 제주 현지 샤오홍슈 홍보
+✅ 초기 구축 40/60/80만원 (1회 완납) · 선택형 무약정 월간 구독 30/50/70만원 (VAT 별도)
+
+📞 대표 직통 상담: 010-3306-5540
+🌐 공식 홈페이지: https://www.jejuaipartner.com/
+💬 카카오톡 1:1 상담: http://pf.kakao.com/_wMxjvX/chat
+🔎 네이버·구글 검색: 제주AI파트너
+
+#제주AI파트너 #제주소상공인 #제주홈페이지제작 #제주마케팅 #네이버플레이스 #구글맵 #샤오홍슈</pre>
+          <pre id="yt-tags" class="codebox" style="display:none;">제주AI파트너, 제주 AI 파트너, 제주도청AI파트너, 제주인공지능파트너, 제주소상공인, 제주소상공인마케팅, 제주홈페이지제작, 서버비0원홈페이지, 제주네이버플레이스, 제주구글맵, 샤오홍슈마케팅, AI숏폼제작, 제주블로그마케팅, 제주맛집홍보, 제주카페홍보, 제주펜션홍보, 김철수대표, 정보처리기사</pre>
+          <pre id="yt-pin" class="codebox" style="display:none;">📌 제주 소상공인 전문 민간 파트너 — 제주AI파트너
+(※ 제주도청 공직자 제도와는 별개의 민간 소상공인 전문 IT·마케팅 파트너입니다)
+☎ 대표 직통 상담: 010-3306-5540
+🔎 네이버·구글에 '제주AI파트너'를 검색하시면 포트폴리오와 투명한 요금표를 바로 확인하실 수 있습니다!
+🌐 공식 홈페이지: https://www.jejuaipartner.com/</pre>
+          <div class="meta-small">※ AI 컷 포함: 세부정보 <code>변경된 콘텐츠 → 예</code> 체크</div>
+        </div>
+
+        <!-- 2. Naver Clip -->
+        <div class="channel-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <h3>2. 🟢 네이버 클립 (5태그 철칙!)</h3>
+            <label style="font-size:12px;"><input type="checkbox" /> 완료</label>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-emerald" onclick="copyById('clip-all', '네이버 클립 본문+5태그')">압축 본문+5태그 복사</button>
+            <button class="btn btn-dark" onclick="copyById('clip-tags', '네이버 클립 5태그')">5태그만 복사</button>
+          </div>
+          <pre id="clip-all" class="codebox" style="font-size:11.5px;">제주도청도 AI 파트너 118명 시대! 행정은 도청이, 제주 사장님 매장은 민간 전문가 '제주AI파트너'가 함께합니다.
+서버비 0원 홈페이지 + 플레이스·구글맵·샤오홍슈 ☎ 010-3306-5540
+
+#제주AI파트너 #제주소상공인 #제주홈페이지제작 #제주마케팅 #AI숏폼</pre>
+          <pre id="clip-tags" class="codebox" style="display:none;">#제주AI파트너 #제주소상공인 #제주홈페이지제작 #제주마케팅 #AI숏폼</pre>
+          <div class="meta-small">※ 커버: <code>00_카톡블로그_대표썸네일.jpg</code> 선택(암전 방지) · [장소] 제주AI파트너</div>
+        </div>
+
+        <!-- 3. Instagram Reels -->
+        <div class="channel-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <h3>3. 📸 인스타그램 릴스</h3>
+            <label style="font-size:12px;"><input type="checkbox" /> 완료</label>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-cyan" onclick="copyById('ig-cap', '인스타 릴스 캡션')">캡션+해시태그 복사</button>
+            <button class="btn btn-gold" onclick="copyById('ig-pin', '인스타 고정댓글')">📌 고정댓글 복사</button>
+          </div>
+          <pre id="ig-cap" class="codebox" style="font-size:11.5px;">제주도청도 공직자 'AI 파트너' 118명을 뽑는 시대! 그럼 우리 제주 사장님 가게는요? 👀
+
+행정은 도청 AI 파트너가,
+제주 소상공인 매장 홍보는 민간 전문가 '제주AI파트너'가 함께합니다.
+
+✅ 서버 고정비 0원 · 1회 구축 100% 소유권 이관
+✅ 국내 손님: 네이버 플레이스 SEO + 블로그 + 4대 숏폼
+✅ 외국인 손님: 구글맵 영·중문 세팅 + 샤오홍슈 홍보
+✅ 의무 약정 없는 투트랙 요금제 (초기 구축 40~80만 / 월 구독 선택)
+
+정보처리기사 김철수 대표가 제주 현지에서 직접 검수합니다.
+👉 프로필 링크 확인 또는 댓글에 '상담' 남겨주세요!
+☎ 직통 상담: 010-3306-5540
+🔎 네이버·구글 검색: 제주AI파트너
+
+#제주AI파트너 #제주소상공인 #제주자영업자 #제주홈페이지제작 #제주마케팅 #네이버플레이스 #구글맵 #샤오홍슈 #AI숏폼 #제주맛집홍보 #제주카페홍보 #제주창업</pre>
+          <pre id="ig-pin" class="codebox" style="display:none;">📌 제주 소상공인 무료 매장 진단 &amp; 맞춤 상담
+댓글에 '상담' 남겨주시거나 ☎ 010-3306-5540 으로 편하게 연락 주세요!
+네이버·구글에 '제주AI파트너' 검색하시면 실제 제작 사례를 바로 보실 수 있습니다 🙌</pre>
+        </div>
+
+        <!-- 4. Threads -->
+        <div class="channel-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <h3>4. 🧵 스레드 (Threads)</h3>
+            <label style="font-size:12px;"><input type="checkbox" /> 완료</label>
+          </div>
+          <button class="btn btn-cyan" onclick="copyById('threads-txt', '스레드 2줄 글')">5초 컷! 2줄 글+링크 복사</button>
+          <pre id="threads-txt" class="codebox" style="font-size:11.5px;">요즘 제주도청도 공직자 'AI 파트너' 118명을 뽑아 행정 혁신에 나섰더군요.
+행정은 도청 AI 파트너가, 바쁜 제주 소상공인 사장님 매장은 민간 전문가 '제주AI파트너'가 서버비 0원 홈페이지와 플레이스·구글맵·샤오홍슈로 함께합니다!
+👉 https://www.jejuaipartner.com/</pre>
+        </div>
+
+        <!-- 5. Karrot -->
+        <div class="channel-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <h3>5. 🥕 당근 비즈프로필/스토리</h3>
+            <label style="font-size:12px;"><input type="checkbox" /> 완료</label>
+          </div>
+          <button class="btn btn-gold" onclick="copyById('karrot-txt', '당근 소식')">제주 도민 친화형 소식 복사</button>
+          <pre id="karrot-txt" class="codebox" style="font-size:11.5px;">[제주 사장님 소식] 제주도청도 공직자 'AI 파트너'를 뽑는 시대!
+행정은 도청이, 제주 소상공인 사장님 가게 홍보는 민간 전문 파트너 '제주AI파트너(대표 김철수 · 정보처리기사)'가 돕습니다.
+매달 서버비 0원 1회 구축 홈페이지부터 네이버 플레이스, 구글맵, 블로그·AI 숏폼, 샤오홍슈까지 의무 약정 없이 투명하게 지원합니다.
+☎ 직통 상담: 010-3306-5540 (네이버·구글 '제주AI파트너' 검색)</pre>
+        </div>
+
+        <!-- 6. Kakao -->
+        <div class="channel-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <h3>6. 💬 카카오톡 비즈채널</h3>
+            <label style="font-size:12px;"><input type="checkbox" /> 완료</label>
+          </div>
+          <button class="btn btn-gold" onclick="copyById('kakao-txt', '카톡 채널 포스트')">카톡 채널 포스트 복사</button>
+          <pre id="kakao-txt" class="codebox" style="font-size:11.5px;">📢 [제주AI파트너] 제주도청도 AI 파트너 시대, 우리 매장 준비되셨나요?
+
+행정은 도청 '인공지능 파트너'가,
+제주 소상공인 사장님 매장 홍보는 민간 전문 파트너 '제주AI파트너'가 함께합니다!
+
+✔ 매달 서버 고정비 0원 · 100% 소유권 이관
+✔ 내국인: 네이버 플레이스 SEO + 블로그·AI 숏폼 4대 채널
+✔ 외국인: 구글맵 영·중문 세팅 + 샤오홍슈 홍보
+✔ 초기 구축 40/60/80만원 · 무약정 월간 구독 30/50/70만원 (VAT 별도)
+
+👉 공식 홈페이지: https://www.jejuaipartner.com/
+📞 대표 직통 상담: 010-3306-5540</pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast"></div>
+
+  <script>
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = '✅ ' + msg + ' 복사 완료!';
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2400);
+    }
+    async function copyById(id, label) {
+      const text = document.getElementById(id).textContent.trim();
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (e) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+      }
+      showToast(label);
+    }
+  </script>
+</body>
+</html>
